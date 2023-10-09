@@ -1,0 +1,1322 @@
+<!DOCTYPE html>
+<html lang="id" prefix="og: https://ogp.me/ns#">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="profile" href="https://gmpg.org/xfn/11">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Student Information System Design - QnA</title>
+    <meta name="description" content="Student Information System Design, , , , , , , 0, Student Information Monitoring System - Student Project Guide, www.studentprojectguide.com, 1280 x 720, jpeg, , 20, student-information-system-design, QnA" />
+    <meta name="robots" content="index,follow" />
+    <meta property="og:locale" content="id_ID" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Student Information System Design - QnA" />
+    <meta property="og:description" content="Student Information System Design, , , , , , , 0, Student Information Monitoring System - Student Project Guide, www.studentprojectguide.com, 1280 x 720, jpeg, , 20, student-information-system-design, QnA" />
+    <meta property="og:site_name" content="QnA" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Student Information System Design - QnA" />
+    <meta name="twitter:description" content="Student Information System Design, , , , , , , 0, Student Information Monitoring System - Student Project Guide, www.studentprojectguide.com, 1280 x 720, jpeg, , 20, student-information-system-design, QnA" />
+    <link rel='stylesheet' id='generate-style-css' href='https://phsmarter.github.io/css/main.min.css'?ver=3.2.4'
+        media='all' />
+    <link rel='stylesheet' id='ez-toc-css' href='https://phsmarter.github.io/css/screen.min.css'?ver=2.0.40' media='all' />
+    <style id='generate-style-inline-css'>
+        body {
+            background-color: #f7f7f7;
+            color: #222222;
+        }
+
+        a {
+            color: #1e73be;
+        }
+
+        a:hover,
+        a:focus,
+        a:active {
+            color: #000000;
+        }
+
+        .wp-block-group__inner-container {
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .generate-back-to-top {
+            font-size: 20px;
+            border-radius: 3px;
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            line-height: 40px;
+            width: 40px;
+            text-align: center;
+            z-index: 10;
+            transition: opacity 300ms ease-in-out;
+            opacity: 0.1;
+            transform: translateY(1000px);
+        }
+
+        .generate-back-to-top__show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .navigation-search {
+            position: absolute;
+            left: -99999px;
+            pointer-events: none;
+            visibility: hidden;
+            z-index: 20;
+            width: 100%;
+            top: 0;
+            transition: opacity 100ms ease-in-out;
+            opacity: 0;
+        }
+
+        .navigation-search.nav-search-active {
+            left: 0;
+            right: 0;
+            pointer-events: auto;
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .navigation-search input[type="search"] {
+            outline: 0;
+            border: 0;
+            vertical-align: bottom;
+            line-height: 1;
+            opacity: 0.9;
+            width: 100%;
+            z-index: 20;
+            border-radius: 0;
+            -webkit-appearance: none;
+            height: 60px;
+        }
+
+        .navigation-search input::-ms-clear {
+            display: none;
+            width: 0;
+            height: 0;
+        }
+
+        .navigation-search input::-ms-reveal {
+            display: none;
+            width: 0;
+            height: 0;
+        }
+
+        .navigation-search input::-webkit-search-decoration,
+        .navigation-search input::-webkit-search-cancel-button,
+        .navigation-search input::-webkit-search-results-button,
+        .navigation-search input::-webkit-search-results-decoration {
+            display: none;
+        }
+
+        .gen-sidebar-nav .navigation-search {
+            top: auto;
+            bottom: 0;
+        }
+
+        :root {
+            --contrast: #222222;
+            --contrast-2: #575760;
+            --contrast-3: #b2b2be;
+            --base: #f0f0f0;
+            --base-2: #f7f8f9;
+            --base-3: #ffffff;
+            --accent: #1e73be;
+        }
+
+        .has-contrast-color {
+            color: var(--contrast);
+        }
+
+        .has-contrast-background-color {
+            background-color: var(--contrast);
+        }
+
+        .has-contrast-2-color {
+            color: var(--contrast-2);
+        }
+
+        .has-contrast-2-background-color {
+            background-color: var(--contrast-2);
+        }
+
+        .has-contrast-3-color {
+            color: var(--contrast-3);
+        }
+
+        .has-contrast-3-background-color {
+            background-color: var(--contrast-3);
+        }
+
+        .has-base-color {
+            color: var(--base);
+        }
+
+        .has-base-background-color {
+            background-color: var(--base);
+        }
+
+        .has-base-2-color {
+            color: var(--base-2);
+        }
+
+        .has-base-2-background-color {
+            background-color: var(--base-2);
+        }
+
+        .has-base-3-color {
+            color: var(--base-3);
+        }
+
+        .has-base-3-background-color {
+            background-color: var(--base-3);
+        }
+
+        .has-accent-color {
+            color: var(--accent);
+        }
+
+        .has-accent-background-color {
+            background-color: var(--accent);
+        }
+
+        body,
+        button,
+        input,
+        select,
+        textarea {
+            font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        }
+
+        body {
+            line-height: 1.5;
+        }
+
+        .entry-content>[class*="wp-block-"]:not(:last-child) {
+            margin-bottom: 1.5em;
+        }
+
+        .main-navigation .main-nav ul ul li a {
+            font-size: 14px;
+        }
+
+        .sidebar .widget,
+        .footer-widgets .widget {
+            font-size: 17px;
+        }
+
+        @media (max-width:768px) {
+            h1 {
+                font-size: 31px;
+            }
+
+            h2 {
+                font-size: 27px;
+            }
+
+            h3 {
+                font-size: 24px;
+            }
+
+            h4 {
+                font-size: 22px;
+            }
+
+            h5 {
+                font-size: 19px;
+            }
+        }
+
+        .top-bar {
+            background-color: #636363;
+            color: #ffffff;
+        }
+
+        .top-bar a {
+            color: #ffffff;
+        }
+
+        .top-bar a:hover {
+            color: #303030;
+        }
+
+        .site-header {
+            background-color: #ffffff;
+        }
+
+        .main-title a,
+        .main-title a:hover {
+            color: #222222;
+        }
+
+        .site-description {
+            color: #757575;
+        }
+
+        .main-navigation,
+        .main-navigation ul ul {
+            background-color: #ed4250;
+        }
+
+        .main-navigation .main-nav ul li a,
+        .main-navigation .menu-toggle,
+        .main-navigation .menu-bar-items {
+            color: #ffffff;
+        }
+
+        .main-navigation .main-nav ul li:not([class*="current-menu-"]):hover>a,
+        .main-navigation .main-nav ul li:not([class*="current-menu-"]):focus>a,
+        .main-navigation .main-nav ul li.sfHover:not([class*="current-menu-"])>a,
+        .main-navigation .menu-bar-item:hover>a,
+        .main-navigation .menu-bar-item.sfHover>a {
+            color: #ffffff;
+            background-color: #c42f2f;
+        }
+
+        button.menu-toggle:hover,
+        button.menu-toggle:focus {
+            color: #ffffff;
+        }
+
+        .main-navigation .main-nav ul li[class*="current-menu-"]>a {
+            color: #ffffff;
+            background-color: #c42f2f;
+        }
+
+        .navigation-search input[type="search"],
+        .navigation-search input[type="search"]:active,
+        .navigation-search input[type="search"]:focus,
+        .main-navigation .main-nav ul li.search-item.active>a,
+        .main-navigation .menu-bar-items .search-item.active>a {
+            color: #ffffff;
+            background-color: #c42f2f;
+        }
+
+        .main-navigation ul ul {
+            background-color: #c42f2f;
+        }
+
+        .main-navigation .main-nav ul ul li a {
+            color: #ffffff;
+        }
+
+        .main-navigation .main-nav ul ul li:not([class*="current-menu-"]):hover>a,
+        .main-navigation .main-nav ul ul li:not([class*="current-menu-"]):focus>a,
+        .main-navigation .main-nav ul ul li.sfHover:not([class*="current-menu-"])>a {
+            color: #fcd9d6;
+            background-color: #c42f2f;
+        }
+
+        .main-navigation .main-nav ul ul li[class*="current-menu-"]>a {
+            color: #fcd9d6;
+            background-color: #c42f2f;
+        }
+
+        .separate-containers .inside-article,
+        .separate-containers .comments-area,
+        .separate-containers .page-header,
+        .one-container .container,
+        .separate-containers .paging-navigation,
+        .inside-page-header {
+            background-color: #ffffff;
+        }
+
+        .entry-title a {
+            color: #222222;
+        }
+
+        .entry-title a:hover {
+            color: #55555e;
+        }
+
+        .entry-meta {
+            color: #595959;
+        }
+
+        .sidebar .widget {
+            background-color: #ffffff;
+        }
+
+        .footer-widgets {
+            background-color: #ffffff;
+        }
+
+        .footer-widgets .widget-title {
+            color: #000000;
+        }
+
+        .site-info {
+            color: #ffffff;
+            background-color: #55555e;
+        }
+
+        .site-info a {
+            color: #ffffff;
+        }
+
+        .site-info a:hover {
+            color: #d3d3d3;
+        }
+
+        .footer-bar .widget_nav_menu .current-menu-item a {
+            color: #d3d3d3;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="url"],
+        input[type="password"],
+        input[type="search"],
+        input[type="tel"],
+        input[type="number"],
+        textarea,
+        select {
+            color: #666666;
+            background-color: #fafafa;
+            border-color: #cccccc;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="url"]:focus,
+        input[type="password"]:focus,
+        input[type="search"]:focus,
+        input[type="tel"]:focus,
+        input[type="number"]:focus,
+        textarea:focus,
+        select:focus {
+            color: #666666;
+            background-color: #ffffff;
+            border-color: #bfbfbf;
+        }
+
+        button,
+        html input[type="button"],
+        input[type="reset"],
+        input[type="submit"],
+        a.button,
+        a.wp-block-button__link:not(.has-background) {
+            color: #ffffff;
+            background-color: #55555e;
+        }
+
+        button:hover,
+        html input[type="button"]:hover,
+        input[type="reset"]:hover,
+        input[type="submit"]:hover,
+        a.button:hover,
+        button:focus,
+        html input[type="button"]:focus,
+        input[type="reset"]:focus,
+        input[type="submit"]:focus,
+        a.button:focus,
+        a.wp-block-button__link:not(.has-background):active,
+        a.wp-block-button__link:not(.has-background):focus,
+        a.wp-block-button__link:not(.has-background):hover {
+            color: #ffffff;
+            background-color: #3f4047;
+        }
+
+        a.generate-back-to-top {
+            background-color: rgba(0, 0, 0, 0.4);
+            color: #ffffff;
+        }
+
+        a.generate-back-to-top:hover,
+        a.generate-back-to-top:focus {
+            background-color: rgba(0, 0, 0, 0.6);
+            color: #ffffff;
+        }
+
+        @media (max-width:768px) {
+
+            .main-navigation .menu-bar-item:hover>a,
+            .main-navigation .menu-bar-item.sfHover>a {
+                background: none;
+                color: #ffffff;
+            }
+        }
+
+        .nav-below-header .main-navigation .inside-navigation.grid-container,
+        .nav-above-header .main-navigation .inside-navigation.grid-container {
+            padding: 0px 20px 0px 20px;
+        }
+
+        .site-main .wp-block-group__inner-container {
+            padding: 40px;
+        }
+
+        .separate-containers .paging-navigation {
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+
+        .entry-content .alignwide,
+        body:not(.no-sidebar) .entry-content .alignfull {
+            margin-left: -40px;
+            width: calc(100% + 80px);
+            max-width: calc(100% + 80px);
+        }
+
+        .rtl .menu-item-has-children .dropdown-menu-toggle {
+            padding-left: 20px;
+        }
+
+        .rtl .main-navigation .main-nav ul li.menu-item-has-children>a {
+            padding-right: 20px;
+        }
+
+        @media (max-width:768px) {
+
+            .separate-containers .inside-article,
+            .separate-containers .comments-area,
+            .separate-containers .page-header,
+            .separate-containers .paging-navigation,
+            .one-container .site-content,
+            .inside-page-header {
+                padding: 30px;
+            }
+
+            .site-main .wp-block-group__inner-container {
+                padding: 30px;
+            }
+
+            .inside-top-bar {
+                padding-right: 30px;
+                padding-left: 30px;
+            }
+
+            .inside-header {
+                padding-right: 30px;
+                padding-left: 30px;
+            }
+
+            .widget-area .widget {
+                padding-top: 30px;
+                padding-right: 30px;
+                padding-bottom: 30px;
+                padding-left: 30px;
+            }
+
+            .footer-widgets-container {
+                padding-top: 30px;
+                padding-right: 30px;
+                padding-bottom: 30px;
+                padding-left: 30px;
+            }
+
+            .inside-site-info {
+                padding-right: 30px;
+                padding-left: 30px;
+            }
+
+            .entry-content .alignwide,
+            body:not(.no-sidebar) .entry-content .alignfull {
+                margin-left: -30px;
+                width: calc(100% + 60px);
+                max-width: calc(100% + 60px);
+            }
+
+            .one-container .site-main .paging-navigation {
+                margin-bottom: 20px;
+            }
+        }
+
+        /* End cached CSS */
+        .is-right-sidebar {
+            width: 30%;
+        }
+
+        .is-left-sidebar {
+            width: 30%;
+        }
+
+        .site-content .content-area {
+            width: 70%;
+        }
+
+        @media (max-width:768px) {
+
+            .main-navigation .menu-toggle,
+            .sidebar-nav-mobile:not(#sticky-placeholder) {
+                display: block;
+            }
+
+            .main-navigation ul,
+            .gen-sidebar-nav,
+            .main-navigation:not(.slideout-navigation):not(.toggled) .main-nav>ul,
+            .has-inline-mobile-toggle #site-navigation .inside-navigation>*:not(.navigation-search):not(.main-nav) {
+                display: none;
+            }
+
+            .nav-align-right .inside-navigation,
+            .nav-align-center .inside-navigation {
+                justify-content: space-between;
+            }
+        }
+    </style>
+    <link rel="icon" href="https://phsmarter.github.io/img/cropped-soalbelajar-32x32.png" sizes="32x32" />
+    <link rel="icon" href="https://phsmarter.github.io/img/cropped-soalbelajar-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="https://phsmarter.github.io/img/cropped-soalbelajar-180x180.png" />
+    <meta name="msapplication-TileImage" content="https://phsmarter.github.io/img/cropped-soalbelajar-270x270.png" />
+</head>
+
+<body
+    class="home blog wp-custom-logo wp-embed-responsive right-sidebar nav-above-header separate-containers nav-search-enabled nav-aligned-center header-aligned-center dropdown-hover"
+    itemtype="https://schema.org/Blog" itemscope>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false"
+        role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+        <defs>
+            <filter id="wp-duotone-dark-grayscale">
+                <feColorMatrix color-interpolation-filters="sRGB" type="matrix"
+                    values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+                <feComponentTransfer color-interpolation-filters="sRGB">
+                    <feFuncR type="table" tableValues="0 0.49803921568627" />
+                    <feFuncG type="table" tableValues="0 0.49803921568627" />
+                    <feFuncB type="table" tableValues="0 0.49803921568627" />
+                    <feFuncA type="table" tableValues="1 1" />
+                </feComponentTransfer>
+                <feComposite in2="SourceGraphic" operator="in" />
+            </filter>
+        </defs>
+    </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false"
+        role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+        <defs>
+            <filter id="wp-duotone-grayscale">
+                <feColorMatrix color-interpolation-filters="sRGB" type="matrix"
+                    values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+                <feComponentTransfer color-interpolation-filters="sRGB">
+                    <feFuncR type="table" tableValues="0 1" />
+                    <feFuncG type="table" tableValues="0 1" />
+                    <feFuncB type="table" tableValues="0 1" />
+                    <feFuncA type="table" tableValues="1 1" />
+                </feComponentTransfer>
+                <feComposite in2="SourceGraphic" operator="in" />
+            </filter>
+        </defs>
+    </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false"
+        role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+        <defs>
+            <filter id="wp-duotone-purple-yellow">
+                <feColorMatrix color-interpolation-filters="sRGB" type="matrix"
+                    values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+                <feComponentTransfer color-interpolation-filters="sRGB">
+                    <feFuncR type="table" tableValues="0.54901960784314 0.98823529411765" />
+                    <feFuncG type="table" tableValues="0 1" />
+                    <feFuncB type="table" tableValues="0.71764705882353 0.25490196078431" />
+                    <feFuncA type="table" tableValues="1 1" />
+                </feComponentTransfer>
+                <feComposite in2="SourceGraphic" operator="in" />
+            </filter>
+        </defs>
+    </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false"
+        role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+        <defs>
+            <filter id="wp-duotone-blue-red">
+                <feColorMatrix color-interpolation-filters="sRGB" type="matrix"
+                    values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+                <feComponentTransfer color-interpolation-filters="sRGB">
+                    <feFuncR type="table" tableValues="0 1" />
+                    <feFuncG type="table" tableValues="0 0.27843137254902" />
+                    <feFuncB type="table" tableValues="0.5921568627451 0.27843137254902" />
+                    <feFuncA type="table" tableValues="1 1" />
+                </feComponentTransfer>
+                <feComposite in2="SourceGraphic" operator="in" />
+            </filter>
+        </defs>
+    </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false"
+        role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+        <defs>
+            <filter id="wp-duotone-midnight">
+                <feColorMatrix color-interpolation-filters="sRGB" type="matrix"
+                    values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+                <feComponentTransfer color-interpolation-filters="sRGB">
+                    <feFuncR type="table" tableValues="0 0" />
+                    <feFuncG type="table" tableValues="0 0.64705882352941" />
+                    <feFuncB type="table" tableValues="0 1" />
+                    <feFuncA type="table" tableValues="1 1" />
+                </feComponentTransfer>
+                <feComposite in2="SourceGraphic" operator="in" />
+            </filter>
+        </defs>
+    </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false"
+        role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+        <defs>
+            <filter id="wp-duotone-magenta-yellow">
+                <feColorMatrix color-interpolation-filters="sRGB" type="matrix"
+                    values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+                <feComponentTransfer color-interpolation-filters="sRGB">
+                    <feFuncR type="table" tableValues="0.78039215686275 1" />
+                    <feFuncG type="table" tableValues="0 0.94901960784314" />
+                    <feFuncB type="table" tableValues="0.35294117647059 0.47058823529412" />
+                    <feFuncA type="table" tableValues="1 1" />
+                </feComponentTransfer>
+                <feComposite in2="SourceGraphic" operator="in" />
+            </filter>
+        </defs>
+    </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false"
+        role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+        <defs>
+            <filter id="wp-duotone-purple-green">
+                <feColorMatrix color-interpolation-filters="sRGB" type="matrix"
+                    values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+                <feComponentTransfer color-interpolation-filters="sRGB">
+                    <feFuncR type="table" tableValues="0.65098039215686 0.40392156862745" />
+                    <feFuncG type="table" tableValues="0 1" />
+                    <feFuncB type="table" tableValues="0.44705882352941 0.4" />
+                    <feFuncA type="table" tableValues="1 1" />
+                </feComponentTransfer>
+                <feComposite in2="SourceGraphic" operator="in" />
+            </filter>
+        </defs>
+    </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false"
+        role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+        <defs>
+            <filter id="wp-duotone-blue-orange">
+                <feColorMatrix color-interpolation-filters="sRGB" type="matrix"
+                    values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+                <feComponentTransfer color-interpolation-filters="sRGB">
+                    <feFuncR type="table" tableValues="0.098039215686275 1" />
+                    <feFuncG type="table" tableValues="0 0.66274509803922" />
+                    <feFuncB type="table" tableValues="0.84705882352941 0.41960784313725" />
+                    <feFuncA type="table" tableValues="1 1" />
+                </feComponentTransfer>
+                <feComposite in2="SourceGraphic" operator="in" />
+            </filter>
+        </defs>
+    </svg><a class="screen-reader-text skip-link" href="#content" title="Langsung ke isi">Langsung ke isi</a>
+    <nav class="main-navigation nav-align-center has-menu-bar-items sub-menu-right" id="site-navigation"
+        aria-label="Utama" itemtype="https://schema.org/SiteNavigationElement" itemscope>
+        <div class="inside-navigation grid-container">
+            <form method="get" class="search-form navigation-search" action="/">
+                <input type="search" class="search-field" value="" name="q" title="Cari" />
+            </form> <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+                <span class="gp-icon icon-menu-bars"><svg viewBox="0 0 512 512" aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg" width="1em" height="1em">
+                        <path
+                            d="M0 96c0-13.255 10.745-24 24-24h464c13.255 0 24 10.745 24 24s-10.745 24-24 24H24c-13.255 0-24-10.745-24-24zm0 160c0-13.255 10.745-24 24-24h464c13.255 0 24 10.745 24 24s-10.745 24-24 24H24c-13.255 0-24-10.745-24-24zm0 160c0-13.255 10.745-24 24-24h464c13.255 0 24 10.745 24 24s-10.745 24-24 24H24c-13.255 0-24-10.745-24-24z" />
+                    </svg><svg viewBox="0 0 512 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                        width="1em" height="1em">
+                        <path
+                            d="M71.029 71.029c9.373-9.372 24.569-9.372 33.942 0L256 222.059l151.029-151.03c9.373-9.372 24.569-9.372 33.942 0 9.372 9.373 9.372 24.569 0 33.942L289.941 256l151.03 151.029c9.372 9.373 9.372 24.569 0 33.942-9.373 9.372-24.569 9.372-33.942 0L256 289.941l-151.029 151.03c-9.373 9.372-24.569 9.372-33.942 0-9.372-9.373-9.372-24.569 0-33.942L222.059 256 71.029 104.971c-9.372-9.373-9.372-24.569 0-33.942z" />
+                    </svg></span><span class="mobile-menu">Menu</span> </button>
+            <div id="primary-menu" class="main-nav">
+                <ul id="menu-soal-belajar" class=" menu sf-menu">
+                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1"><a
+                            href="https://phsmarter.github.io">Home</a></li>
+                </ul>
+                </ul>
+            </div>
+            <div class="menu-bar-items"><span class="menu-bar-item search-item"><a aria-label="Buka Kolom Pencarian"
+                        href="#"><span class="gp-icon icon-search"><svg viewBox="0 0 512 512"
+                                aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M208 48c-88.366 0-160 71.634-160 160s71.634 160 160 160 160-71.634 160-160S296.366 48 208 48zM0 208C0 93.125 93.125 0 208 0s208 93.125 208 208c0 48.741-16.765 93.566-44.843 129.024l133.826 134.018c9.366 9.379 9.355 24.575-.025 33.941-9.379 9.366-24.575 9.355-33.941-.025L337.238 370.987C301.747 399.167 256.839 416 208 416 93.125 416 0 322.875 0 208z" />
+                            </svg><svg viewBox="0 0 512 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                width="1em" height="1em">
+                                <path
+                                    d="M71.029 71.029c9.373-9.372 24.569-9.372 33.942 0L256 222.059l151.029-151.03c9.373-9.372 24.569-9.372 33.942 0 9.372 9.373 9.372 24.569 0 33.942L289.941 256l151.03 151.029c9.372 9.373 9.372 24.569 0 33.942-9.373 9.372-24.569 9.372-33.942 0L256 289.941l-151.029 151.03c-9.373 9.372-24.569 9.372-33.942 0-9.372-9.373-9.372-24.569 0-33.942L222.059 256 71.029 104.971c-9.372-9.373-9.372-24.569 0-33.942z" />
+                            </svg></span></a></span></div>
+        </div>
+    </nav>
+    <header class="site-header grid-container" id="masthead" aria-label="Situs"
+        itemtype="https://schema.org/WPHeader" itemscope>
+        <div class="inside-header grid-container">
+            <h1 class="site-logo">
+                <a href="https://phsmarter.github.io" rel="home"> QnA</a>
+            </h1>
+        </div>
+    </header>
+
+    <div class="site grid-container container hfeed" id="page">
+        <div class="site-content" id="content">
+            <div class="content-area" id="primary">
+                    <main class="site-main" id="main">
+        <article id="post-1327" class="post-1327 post type-post status-publish format-standard hentry category-info"
+            itemtype="https://schema.org/CreativeWork" itemscope="">
+            <div class="inside-article">
+                <header class="entry-header" aria-label="Konten">
+                    <h1 class="entry-title" itemprop="headline">Student Information System Design</h1>
+                    <div class="entry-meta">
+                       <span
+                            class="byline">oleh <span class="author vcard" itemprop="author"
+                                itemtype="https://schema.org/Person" itemscope=""><span class="author-name"
+                                    itemprop="name">rpiasefulan</span></span></span>
+                    </div>
+                </header>
+                <div class="entry-content" itemprop="text">
+                    <div style="text-align: center">
+                        <img src="https://tse1.mm.bing.net/th?q=Student+Information+System+Design" alt="Student Information System Design">
+                    </div>
+                    <p></p>
+                    <p>Example ScenarioThe College of Information Technology and Computer Studies has a large numberof student population in the university. Managing an IT student and bringing togetherdepartments and other colleges to achieve the mission is always a big challenge for theThe management. Most are transferees, irregular students and with failed subjectaffected in this situation because they need to provide a copy of grades during advisingperiod and manually write it on the evaluation checklist to monitor their performancegrade in every semester before processing the enrolment.The college coordinators who have an access to verify, update and monitoring thestudent checklists. This checklist is used to back-up the Microsoft Access database thatuses to record the advising record. During the enrolment, the coordinators runs a reportthat will print out the evaluation checklist for the day. Not only does to maintain theevaluation database, but it also uses a copy of grades to validate the grade of the student.Although the MIS enrolment system supports the student viewing of gradesinformation, the Coordinators has noticed some drawbacks. On particular situation the evaluation for the courses have conflicted with missing subject to enrol due toCurriculum used by the student and will cause to failure of completion to the courseprogram. CITCS will like to get information about the automatic assessment of thestudent evaluation of grades per semester. They have been talking about either updating the system or replacing it with a newinformation system that would meet the current and future needs but needs more detailson which option is feasible for the advising procedures. Your tasks is to help come upwith a plan to address these issues.Project AnalysisWrite one-page review and observation in the CITCS Advisingprocedures for enrolment with the intent of improving it through standardmethodology. For this study, provide some discretion as to how would like tostructure the presentation and must address the following requirements abouteach step in the systems analysis design process: a. Planning: Define the scope of the problem.b. Requirements: Justify the functional requirements. Explain what documentation will be used to analyze the needs of the end users to ensure the new system can meet their expectations?c. Design: Use the information that you received from the system requirement documentation to explain how you will design the new or updated system. What are the necessary specifications and operations of the user interface that will meet the functional requirements? Will you use a Flowchart or any presentation diagram.</p>
+                    <div id="ez-toc-container"
+                        class="ez-toc-v2_0_40 counter-hierarchy ez-toc-counter ez-toc-light-blue ez-toc-container-direction">
+                        <div class="ez-toc-title-container">
+                            <p class="ez-toc-title">Daftar Isi</p>
+                            <span class="ez-toc-title-toggle"><a href="#"
+                                    class="ez-toc-pull-right ez-toc-btn ez-toc-btn-xs ez-toc-btn-default ez-toc-toggle"
+                                    area-label="ez-toc-toggle-icon-1"><label for="item-63b392361c4a0"
+                                        aria-label="Table of Content"><span
+                                            style="display: flex;align-items: center;width: 35px;height: 30px;justify-content: center;direction:ltr;"><svg
+                                                style="fill: #999;color:#999" xmlns="http://www.w3.org/2000/svg"
+                                                class="list-377408" width="20px" height="20px" viewBox="0 0 24 24"
+                                                fill="none">
+                                                <path
+                                                    d="M6 6H4v2h2V6zm14 0H8v2h12V6zM4 11h2v2H4v-2zm16 0H8v2h12v-2zM4 16h2v2H4v-2zm16 0H8v2h12v-2z"
+                                                    fill="currentColor"></path>
+                                            </svg><svg style="fill: #999;color:#999" class="arrow-unsorted-368013"
+                                                xmlns="http://www.w3.org/2000/svg" width="10px" height="10px"
+                                                viewBox="0 0 24 24" version="1.2" baseProfile="tiny">
+                                                <path
+                                                    d="M18.2 9.3l-6.2-6.3-6.2 6.3c-.2.2-.3.4-.3.7s.1.5.3.7c.2.2.4.3.7.3h11c.3 0 .5-.1.7-.3.2-.2.3-.5.3-.7s-.1-.5-.3-.7zM5.8 14.7l6.2 6.3 6.2-6.3c.2-.2.3-.5.3-.7s-.1-.5-.3-.7c-.2-.2-.4-.3-.7-.3h-11c-.3 0-.5.1-.7.3-.2.2-.3.5-.3.7s.1.5.3.7z">
+                                                </path>
+                                            </svg></span></label><input type="checkbox" id="item-63b392361c4a0"></a></span>
+                        </div>
+                        <nav>
+                            <ul class="ez-toc-list ez-toc-list-level-1 ">
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#example-scenariothe-college-of-information-technology-and-computer-studies-has-a-large-numberof-student-population-in-the-university-managing-an-it-student-and-bringing-togetherdepartments-and-other">1.
+                                            Example ScenarioThe College of Information Technology and Computer Studies has a large numberof student population in the university. Managing an IT student and bringing togetherdepartments and other colleges to achieve the mission is always a big challenge for theThe management. Most are transferees, irregular students and with failed subjectaffected in this situation because they need to provide a copy of grades during advisingperiod and manually write it on the evaluation checklist to monitor their performancegrade in every semester before processing the enrolment.The college coordinators who have an access to verify, update and monitoring thestudent checklists. This checklist is used to back-up the Microsoft Access database thatuses to record the advising record. During the enrolment, the coordinators runs a reportthat will print out the evaluation checklist for the day. Not only does to maintain theevaluation database, but it also uses a copy of grades to validate the grade of the student.Although the MIS enrolment system supports the student viewing of gradesinformation, the Coordinators has noticed some drawbacks. On particular situation the evaluation for the courses have conflicted with missing subject to enrol due toCurriculum used by the student and will cause to failure of completion to the courseprogram. CITCS will like to get information about the automatic assessment of thestudent evaluation of grades per semester. They have been talking about either updating the system or replacing it with a newinformation system that would meet the current and future needs but needs more detailson which option is feasible for the advising procedures. Your tasks is to help come upwith a plan to address these issues.Project AnalysisWrite one-page review and observation in the CITCS Advisingprocedures for enrolment with the intent of improving it through standardmethodology. For this study, provide some discretion as to how would like tostructure the presentation and must address the following requirements abouteach step in the systems analysis design process: a. Planning: Define the scope of the problem.b. Requirements: Justify the functional requirements. Explain what documentation will be used to analyze the needs of the end users to ensure the new system can meet their expectations?c. Design: Use the information that you received from the system requirement documentation to explain how you will design the new or updated system. What are the necessary specifications and operations of the user interface that will meet the functional requirements? Will you use a Flowchart or any presentation diagram.</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#what-i-have-learned-questions-1-with-the-arrival-of-the-internet-what-is-a-software-system-that-is-designed-to-search-for-information-on-the-world-wide-web-2-what-is-a-search-engine-a-3-what-ar">2.
+                                            What I Have Learned Questions: 1. With the arrival of the internet, what is a software system that is designed to search for information on the World Wide Web? 2. What is a search engine? a 3. What are the commonly used search engines? 4. Give at least five samples of search engine strategies. 5. How important are the search engines to you as student?​</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#dr-thomas-waggoner-a-local-university-information-systems-professor-has-just-received-a-phone-call-from-his-friend-ted-williams-co-owner-of-his-brother-will-of-williams-bros-the-river-falls-appl">3.
+                                            Dr. Thomas Waggoner, a local university information systems professor, has just received a phone call from his friend, Ted Williams, co-owner of his brother Will of Williams Bros. The River Falls Appliances, Iowa.Ted is highly dissatisfied with their current sluggish, manual system of sales management and inventory monitoring, and worries that they will lose revenue because of that. Ted discusses what he wants and Dr. Waggoner hopes his students can see this as a fantastic idea. He meets Ted to get a better understanding of the initial specifications. He then starts gathering the students in his Systems Analysis and Design class and his System Creation capstone class to see if they can create a solution for the Williams Bros'.</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#activity-1-study-the-following-passages-determine-whether-this-kind-of-oral-language-talks-about-giving-information-giving-instructions-making-explanations-or-narrating-events-write-your-answer">4.
+                                            Activity 1: Study the following passages. Determine whether this kind of oral language talks about giving information, giving instructions, making explanations, or narrating events. Write your answer on the circle provided on the right side. 1. Teacher Esperanza is used to teaching Junior High School students and when she is asked by her director to substitute the Kindergarten teacher, she finds it difficult to teach them. She can't seem to get hold of her students' attentions though she finds every lesson very easy to teach. She wonders why the students actively listening to their Kindergarten teacher while the students seem uninterested in her lessons. She then decides to use a reward system and inserted fun games in each lesson which her students always look up to every time they come into her class 2. The coronavirus disease (COVID-19) according to the World Health Organization is caused by a virus, NOT by bacteria. The virus that causes COVID-19 is in a family of viruses called Coronavirida Antibiotics do not work against viruses. Some people who become ill with COVID-19 can also develop a bacterial infection as a complication. In this case, antibiotics may be recommended by a health care provider. There is currently no licensed medication to cure COVID-19. If you have symptoms, call your health care provider or COVID-19 hotline for assistance. 3. "What we do everyday will define who we'll become. Someone who studies and invests themselves in Science everyday will become a good scientist. Likewise, a good writer will write every day. Habits take time and effort to change. If you do them regularly, it will be more effective. First, avoid doing things at the last minute. Second, study a bit everyday. Avoid cramming. Third, the use of flashcards helps you remember your lessons. Fourth, have a practice test to help identify gaps in your knowledge. Fifth, have a conducive for learning study area. Lastly, put away your phone to avoid distraction."  4. "This is a food pyramid. It is designed to make healthy eating easier. Healthy eating is about getting the correct amount of nutrients to maintain good health. The pyramid looks like a triangle and has four levels. The first level is the grain group which is the best source of food energy. The second level contains vegetables and fruits, which are rich in vitamins and minerals. The third level contains meat and dairy which are rich in protein. The fourth level contains sugar and fats which we should the least because they are unhealthy". 5. At the age of 14, Sunny became a mother and a father of her two siblings. Their parents get divorced when she was eight years old and her father spent all his time working and most of the time went home drunk. A few years later, her father abandoned them with nothing. She then worked as a house keeper lust to feed her siblings. She never gave up instead made her struggle her nspiration. Her boss sponsored her studies up to college. She never stops orking while studying Currently she is supporting her siblings' studies while.​</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#%c2%a0-english-%e2%80%8een%e2%80%8eenglish-%e2%80%8efiledir%e2%80%8e-%ef%bf%bc%c2%a0-%c2%a0kimberly-joy-gonzales-%c2%a0-%c2%a0dashboard%c2%a0profile%c2%a0grades%c2%a0messages%c2%a0preferences">5.
+                                              English ‎(en)‎English ‎(filedir)‎ ￼   KIMBERLY JOY GONZALES    Dashboard Profile Grades Messages Preferences    Log out Skip to main content Business Process Management Home My courses Bulan Campus ICT/EDUC SSU-BC-IT IS 313-BSIS 3A MODULE 2 Assignment to MODULE 2 Assignment to MODULE 2 Opened: Wednesday, 22 September 2021, 12:00 AM Mark as done A university provides education and services to its students. This starts with admission of students to the university. When a regular student, i.e. a student who comes from a Dutch high-school, sends in his admission form such a student is registered by the admissions office. Subsequently, the eligibility to study in a certain program is checked based on the information that the student provided on his admission form. For students who arrive from another school, such as a polytechnic, the previous study that the student took, according to his admission form, must be examined in detail. Polytechnic students can either come to the university after completing one year of courses (propedeuse) or after receiving a polytechnic diploma. Students from universities in other countries are also accepted. Also for them, the studies that they took previously must be examined in detail. When students are considered eligible and the courses that they have already followed (if applicable) check out, they are enrolled at the university, which involves sending a letter that they are accepted and entering the details of their enrollment in the information system of the university. The students then become a student of their respective study: industrial engineering, building or construction engineering. After the students are enrolled, they can take courses or do projects and they can use the services that are provided by the university, which include: language training and sports facilities. Projects are done on an individual basis by a student together with a lecturer. The university recognizes part-time students who do their studies while they are working in a company. These students typically do projects of a more practical nature than the other students, such that the process that is followed during the project are also different for these students. Design a process architecture as follows: 1. identify the case types that should appear in the process architecture 2. identify the functions that should appear in the process architecture 3. draw a case/function matrix 4. identify the processes in the case function matrix, split up processes if and only if one of the guidelines applies, clearly indicate which guideline you applied where​</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#the-researchersthat-addressing-thewide-difference-in-the-emerging-culture-of-the-information-agehelp-students-learneffectively-according-to-prensky-2001-todays-students-who-are-referred-to-a">6.
+                                            The researchers
+that addressing the
+wide difference in the emerging culture of the Information Age
+help students learn
+effectively. According to Prensky (2001), today's students, who are referred to as digital natives, are no longer the people the educational system has been designed to teach. They are now instantaneous, information saturated, wired. It is
+_ that they think and process information differently from their predecessors, the digital immigrants. The digital world has wired the modern students differently, thus making them incredibly sophisticated. It is
+that the
+availability of the Internet helped condition them to ask questions and get answers instantaneously, which is a far cry from the card catalogue and encyclopedias most digital immigrants grew up with (Gandhi, 2009). This is the first generation of students who are more proficient with technology than their teachers are (Moe, 2009). It is
+that teachers who fumble with
+technology will struggle to persuade students that the information they are presenting is worthwhile (Rudi, 2009). This is a challenge to prepare the students to be more imaginative, creative, entrepreneurial and have the capacity for "high touch" abilities such as compassion, personal rapport, social interaction, and caring and helping others (Ahmes, 2008).
+choices :
+Appear to be
+Believe
+Think
+Perhaps
+Maybe
+Suggest
+Looks like
+Assume
+Seem possibly</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#directions-answer-the-following-questions-based-on-the-lesson-on-innovative-and-business-novel-plan-write-your-answer-on-the-lines-provided-for-1-how-are-novel-task-cards-planned_________________">7.
+                                            Directions: Answer the following questions based on the lesson on Innovative and Business novel plan. Write your answer on the line/s provided for.1. How are novel task cards planned?_______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________2. What should be created on a podcast project?_______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________3. What do business owners and managers should clear out to their employees?_______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________4. Give an example for the following novel concepts:a. Constructing facility ________________________________________________________________________________________________________b. Designing a vehicle ________________________________________________________________________________________________________c. Information system ________________________________________________________________________________________________________5. As a senior high school student, what novel plan do you think can you finish? What is your main concept?_______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________​</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#lesson-1identification_________________1-it-is-a-qualitative-research-which-analyzes-the-language-%e2%80%9cbeyond-the-sentence%e2%80%9d-it-is-the-study-of-the-ways-in-which-language-is-used-by-the-p">8.
+                                            LESSON 1IDENTIFICATION_________________1. It is a qualitative research which analyzes the language “beyond the sentence”. It is the study of the ways in which language is used by the people, both written and spoken contexts._________________ 2. It is a qualitative research in which data related to the past events are systematically collected and evaluated to describe potential causes, effects, or trends related to those events._________________ 3. It is the most familiar and applicable type of qualitative research which refers to the investigation of a culture through an in-depth study of the members of the cultural society._________________ 4. Which of the following types of qualitative research is designed to focus on the commonality of a “lived experience” with a particular group and its aim is to determine what an experience means for the persons who have had the experience of living in a certain community which is the subject of the research?_________________ 5. It is primarily used to generate theory through relevant information taken from very reliable sources and its focus is theory development._________________ 6. “A student really idolizes his English teacher who is expert in grammar and literature. The former wants to write a scholarly chronicle about the latter’s experiences including his family background, how he achieved his success in life, his likes and dislikes, his achievements and struggles in life.” What type of qualitative research should a student employ?_________________7. It is an exploration of a “bounded system” over time through detailed, in-depth data collection involving multiple sources of information rich in interesting stories._________________8. A scientific method of observation to gather non-numerical data. It refers to the meanings, concepts, characteristics, metaphors, symbols and description of phenomena, and not to their counts or measures.________________9.  A classroom-based or school-based research seeks transformative change through the process of taking action and doing research, which are linked together by critical reflection._______________10. It is the study of social life, understood through analysis of language it includes face-to-face talk, non-verbal interaction, images and symbols.​</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#b-identify-the-use-of-computers-being-described-in-each-sentence-write-the-letter-of-the-correct-answer-on-the-blanks-a-in-medicine-c-as-record-keeping-equipment-e-in-engineering-architecture">9.
+                                            B. Identify the use of computers being described in each sentence. Write the letter of the correct answer on the blanks. a. in medicine c. as record-keeping equipment e. in engineering, architecture, advertising and design g. as control system i. on information and communication b. at home d. on money, banking and finance f. computerized textile mills h. as business management tools 1. In a microwave oven, a magnetron tube produces a beam of microwaves that is scattered throughout the interior of the oven by the fan. 2. Computers are used extensively in the world of stocks and investments. 3. Computers are used for architectural and electrical designs of houses. 4. Clients can withdraw and deposit money anytime of the day from the ATM which are found in department stores and other convenient places. 5. Computers are also used to record government census, record taxes, and taxpayers, public utility services, and voters. 6. Computers are able to execute complex weaving and spinning job with great speed and accuracy. 7. Air traffic controllers use radar computers, and radio to track air traffic and issue instructions for takeoff and landings. 8. Portable cellular phones have been valuable to people who need to stay in touch while on the move. 9. Computers are now being used for medical diagnosis. 10. Magnetic Resonance Imaging allows the physician to see organs of the body in three dimensions and can provide direct evidence of the disease. 11. Most people no longer carry cash. Instead they carry another piece of plastic in wallets of bags - a general purpose debit or credit cards. 12. Used to maintain employees' records, schedule classes, assign classes and perform other institutional records and handling functions such as students' records. 13. Many hundreds of hours of computation by advanced supercomputers go into the production of special effects for a single major film. 14. Card catalogues have largely been replaced by computer terminals that access the library's online catalogue. 15. Social media networks are great means of finding people with similar interests.​</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#i-multiple-choices1-this-isa-piece-of-sanitary-hardware-used-for-the-collection-or-disposal-ofhuman-urine-and-faecesa-bath-tubb-toiletc-draind-pvc2-which-of-the-following-is-a-designed-to-be-sat">10.
+                                            I. Multiple Choices:1. This isa piece of sanitary hardware used for the collection or disposal ofhuman urine and faeces?a Bath-tubb Toiletc Draind. PVC2. Which of the following is a designed to be sat on for the purpose of washing thehumar senitalia perineum, inner buttocks and anus?a. Showerb. Toiletc. Bowlid. Drain3. It is commonly applied in the electrical layout, plumbing plan, and other drawings toreinforce additional information?a Notes b. Specification c Detailsd. Drainage4. This should be indicated on the working drawing so that the students can easily actualizethe drawing?a. Notes b. Specification c. Layoutd. Piping5. This is a place in which a person bathes under a spray of typically warm or hot water.Indoors, there is a drain in the floor?a Bath- tubb. Toiletc Bowld. Faucet6. It is any system that conveys fiuids for a wide range of applications using pipes,valves, plumbing fixtures, tanks, and other apparatuses?a Lay-outingb. Electricityc Plumbingd. Painting7. This is a device or natural object that regulates, directs or controls the flow of a fluid(gases, liquids, fluidized solids, or slurries) by opening closing, or partially obstructingvarious passageways?a. Bowl b. Bathtubsc Valvesd. Pipes8. Which of the following is a container for holding water in which a person or animalmay bathe. It is usually placed in a bathroom either as a stand-alone fixture or in conjunctionwith a shower?a Bathtubs b. Specification c. Detailsd. Drainage​</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#direction-fill-in-the-blanks-with-the-appropriate-hedges-in-the-following-sample-academic-paragraph-appearsbelievelikelyseemslikely-and-could-the-researchers-that-addressing-the-wide-differen">11.
+                                            Direction: Fill in the blanks with the appropriate hedges in the following sample academic paragraph. Appears,believe,likely,seems,likely, and ,could. The researchers that addressing the wide difference in the emerging culture of information Age Help students learn effectively. According to Prensky (2001), today's students, who are referred to as digital natives, are no longer the people the educational system has been designed to teach. They are now instantaneous, information saturated, wired. It That they think and process information differently from their predecessors, the digital immigrants. The digital world has wired the modern students differently, thus making them incredibly sophisticated. It is that the availability of the Internet helped condition them to ask questions and get answers instantaneously, which is a far cry from the card catalogue and encyclopedias most digital immigrants grew up with (Gandhi, 2009). This is the first generation of students who are more proficient with technology than their teachers are are (Moe, 2009). It​</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#multiple-choice-identify-what-specific-type-of-claim-best-describes-the-following-statements-refer-youranswers-on-the-choices-given-below-________________a-claim-of-factb-claim-of-valuec-claim-of">12.
+                                            Multiple Choice. Identify what specific type of claim best describes the following statements. Refer youranswers on the choices given below.________________A. Claim of FactB. Claim of ValueC. Claim of Policy_________________16. Most of the educational systems across the globe are designed to make students efficiently remember andactualize the concepts.17. Currently, skills are more significant than knowledge.18. To cope with the challenges and demands of the present world, students should be equipped with skills toconstruct knowledge, manage digital information more effectively, and create something new.19. Knowledge is meaningless and useless unless it comes with 21st century global skills.20. Imagination is more important than knowledge.pa help po ineed na this...​</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#true-or-false1-an-electronic-search-engine-is-a-software-system-that-is-designed-to-search-forinformation-on-the-world-wide-web-2-search-engines-are-less-useful-to-students-when-it-comes-to-answerin">13.
+                                            true or false1. An electronic search engine is a software system that is designed to search forinformation on the World Wide Web.2. Search engines are less useful to students when it comes to answering questions asquickly as possible.3. Using only one search engine can help you get around the problems in terms ofdifferent search results.4. Search engines use keywords or phrases you choose to determine which webpageshave relevant information,5. It is important to note the date when the information was published in order todetermine whether it is still relevant.6. The information you are using in your assignment needs not to be relevant to yourtopic.7. Making sure that the information you are using is backed up with reliable referencesand/or original research helps to validate its accuracy and credibility.8. The authors' background and their experience and qualifications in a particular areaare quite important in judging the credibility of their assertions.​</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#activity-2-find-the-generalizationdirections-all-the-information-are-jumbled-look-for-and-write-the-generalization-and-thesupporting-evidence-on-the-designated-box-work-on-a-separate-sheet-of-pape">14.
+                                            Activity 2: Find the generalizationDirections: All the information are jumbled. Look for and write the generalization and thesupporting evidence on the designated box, Work on a separate sheet of paper.A COVD-19There is no face-to-face classroom settingSome feachers follow work from home policy.COVID-19 has drastically changed the educational system of the DepEd.Communication to students and their parents is done through 11. Messenger. VirtualmeetingsSchools implement the Learning Delivery ModalitiesParents Guardians become teacher-substitutes to their children wards.Supporting EvidenceGeneralinton:12.3.4.B Milk teaNik tea provides strength for the bodyMGK tea is a great source of energyMilk tea makes the skin fairer and solier.Milk tea has several health benefits.Milk tea reduces stress.GeneralisationSupporting Evidence12.34.B. Blogging Blogging cams money by placing ads on their site Blogging is one of the means to earn money, Each time a reader clicks on the ad, the blogger is paid for that click Bloggers also cam money by giving a review of an advertiser's product or service. Selling sponsorship space in a blogger's email newsletters, podcasts, and videos provides income.1.2.3.4.​</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#1-directions-read-and-analyze-each-questions-and-choose-the-best-answer-write-the-letter-that-bestcorresponds-to-your-answer-place-your-answer-beside-each-number-1-who-do-you-think-someone-create">15.
+                                            1. Directions: Read and analyze each questions and choose the best answer. Write the letter that bestcorresponds to your answer. Place your answer beside each number.1. Who do you think someone creates a new business in the face of risk and uncertainly?A. EntrepreneurB. Entrepreneurship C. Fashion designer D. Student2. What characteristic of an entrepreneur where one establishes specific, measurable, realisticand time bound objectives?A. Information seeker B. Goal setter C. Optimistic D. Persuasive3. What work of a dressmaker if she does pattern making and sewing?A. Alter clothes B. Fashion designer C. Remodel Garment D. Mend clothes4. What business environment pertains to the management of resources and the system ofproduction?A. Culture B. Economy C. Government regulations D. Technology5. Who do you think are the successful entrepreneurs?A. EntrepreneurB. Hardworking people C. Optimistic peopled. Rich people6.What tool is used for satisfactory cutting apparel fabrics?A. Shear B. Scissor C.Tracing wheel D. Trimming shear7. Which of the following is a flexible measuring device used in taking body measurements?A. L-square B. Ruler C. Tape measureD. Yard stick8. What kind of tool is used to draw perpendicular lines determining square corners anddividing measurement?A. RulerB. L-square C. Hip curveD. Meter stick9. What tool is used to keep pin and needles ready for use?A. Emery bagB. PinC. Pincushion D. Sewing box10. What tool is used to shape the depth of the neck hole and armhole of the fabric?A. French curve B. Hip curve C. L-squareD. Ruler11. Which measurement is taken around the fullest part of the bottom of pants?A. CrotchB. Hem circumferenceC. Knee circumferenceD. Seat12. Which measurement is taken along the side from waistline to the desired length of thepants?A. Sleeve length B. Pants length C. Skirt lengthD. Short length13. What measurement is taken from neck shoulder point passing over the apex point down tothe waistline?A. Apex height B. Figure front width C. Side bodieslength D. Shoulder point14.What measurement is taken by placing ruler under the crotch then measuring fromwaistband to the top level of ruler?A. CrotchC. Thigh D. Waist15. How is bust measurement taken?A. Around the body B. Bust point to bust point C. Left to right D. Top to bottom16. How is apex distance measurement taken?A. Around the bust 8. Apex point to apex point C. Shoulder to apex point D. Waist toapex point17 Which one measures around the torso directly under the bust line?A Bust B. Hips C. Second hipD. Waist18 What must be observed when taking body measurements?A Accuracy B Design C. FigureD. Size19. Which measurement is taken around the arm in line with the armpit?B. Hip​</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#the-researchers-__________-that-addressing-the-wide-difference-in-the-emerging-culture-of-the-information-age-__________-help-students-learn-effectively-according-to-prensky-2001-today%e2%80%99s-s">16.
+                                            The researchers __________ that addressing the wide difference in the emerging culture of the Information Age __________ help students learn effectively. According to Prensky (2001), today’s students, who are referred to as digital natives, are no longer the people the educational system has been designed to teach. They are now instantaneous, information saturated, wired. It is __________ that they think and process information differently from their predecessors, the digital immigrants. The digital world has wired the modern students differently, thus making them incredibly sophisticated. It is __________ that the availability of the Internet helped condition them to ask questions and get answers instantaneously, which is a far cry from the card catalogue and encyclopedias most digital immigrants grew up with (Gandhi, 2009). This is the first generation of students who are more proficient with technology than their teachers are (Moe, 2009). It is __________ that teachers who fumble with technology will struggle to persuade students that the information they are presenting is worthwhile (Rudi, 2009). This is a challenge to prepare the students to be more imaginative, creative, entrepreneurial and have the capacity for “high touch” abilities such as compassion, personal rapport, social interaction, and caring and helping others (Ahmes, 2008).​</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#multiple-choice-direction-read-each-statement-below-copy-and-answer-in-your-pr-1-notebook-1-all-of-the-following-are-strength-of-qualitative-research-except-a-it-is-instrumental-for-positive-so">17.
+                                            Multiple Choice. Direction: Read each statement below. Copy and answer in your PR-1 notebook. 1.	All of the following are strength of qualitative research EXCEPT. A.	It is instrumental for positive societal changes. B.	It is hard to know the validity/reliability of the data. C.	Offers multiple ways of acquiring and examining knowledge about something. D.	Promotes a full understanding of human behavior/personality traits in their natural setting. 2.	Qualitative research allows you to approach or plan your study in varied ways. Here you are free to combine this with quantitative research and use all gathered data and analysis technique. What characteristic of qualitative research is being referred to? A. Active, powerful, and forceful		B. Contextualization C. Internal Analysis		 	D. Multiple research approach and methods 3.	This refers to a qualitative method where there is an examining of past events to draw conclusions and make predictions about the future.		 A. Case Study					B. Grounded Theory C. Historical Analysis				D. Phenomenology 4.	Which of the following is one of the weaknesses of a qualitative research? A.	It is time-consuming. B.	It adopts a naturalistic approach to its subject matter. C.	It’s a way of understanding &amp; interpreting social interactions. D.	Offers multiple ways of acquiring and examining knowledge about something. 5.	It is the most familiar and applicable type of qualitative research which refers to the investigation of a culture through an in-depth study of the members of the cultural society A. Case Study					B. Ethnography 	 C. Grounded Theory 				D. Phenomenology 6.	It is primarily used to generate theory through relevant information taken from very reliable sources and its focus is theory development. A. Case Study					B. Ethnography 	 C. Grounded Theory 				D. Phenomenology 7.	Which of the following types of qualitative research is designed to focus on the commonality of a “lived experience” with a particular group and its aim is to determine what an experience means for the persons who have had the experience of living in a certain community which is the subject of the research? A. Case Study					B. Ethnography 	 C. Grounded Theory 				D. Phenomenology 8.	“A student really idolizes his English teacher who is very expert in grammar and literature. The former wants to write a scholarly chronicle about the latter’s experiences including his family background, how he achieved his success in life, his likes and dislikes, his achievements and struggles in life.” What type of qualitative research should a student employ? A. Biography		 			B. Discourse Analysis C. Historical Research 				D. Narrative Report 9.	It is a qualitative research which analyzes the language “beyond the sentence”. It is the study of the ways in which language is used by the people, both written and spoken contexts. A. Biography		 			B. Discourse Analysis C. Historical Research 				D. Narrative Report 10.	It is an exploration of a “bounded system” over time through detailed, in-depth data collection involving multiple sources of information rich in interesting stories. A. Case Study					B. Ethnography 	 C. Grounded Theory 				D. Phenomenology​</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#2-it-is-a-type-of-networking-where-a-number-of-resources-are-installed-across-a-large-area-such-as-multinational-business-3-this-system-spans-on-a-small-area-like-a-small-office-or-home-4-also-kno">18.
+                                            2. It is a type of networking where a number of resources are installed across a large area such as multinational business. 3.This system spans on a small area like a small office or home. 4. Also known as Client network where the data are not saved on each computer, rather saved on the server. 5.A blueprint of the complete computer communication network, which provides a framework and technology foundation for designing, building and managing a communication network. 6. In this networking system all computers are given equal importance. All the software and data are stored on each computer and accesses to them are given to each user. computer networks. 7. It is a computer-based global information system. It is composed of many interconnected 8. Many individuals use the Internet for communicating through 9. Research on dividing information into packets and switching them from computer to computer began in what year? 10. use the Internet for research and to deliver online courses and course material to students.Pasagot asap bigyan ko brain least ang tamang sagot asap.  ​</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#1-what-is-the-framework-for-building-theory-that-sees-society-as-a-complex-system-whose-parts-work-together-to-promote-solidarity-and-stability-a-structural-design-b-structural-functionalism-c-st">19.
+                                            1. What is the framework for building theory that sees society as a complex system whose parts work together to promote solidarity and stability? a. Structural Design b. Structural Functionalism c. Structural Design 2. What is the patterned of social arrangements of institutions where human beings in a society interact and live together? a. Social Function b. Social Organization c. Social Structure 3. What is the social structure of the society that helps individuals to learn necessary concepts and skills to function in everyday society? a. Church b. Government c. School 4. What is the social structure of the society that brings individual to spiritual maturity? a. Church b. Media c. School 5. What is the social structure of the society that acts as a watchdog to protect public interest? a. Church b. Media c. School 6. What is the smallest unit of the society, whose function is to perpetuate society? a. Church b. Family c. School 7. Which of the following institutions whose function is to maintain social peace? a. Church b. Government c. School 8. What do you call the function that are recognized and intended consequences of any social pattern? a. Apparent Functions b. Latent Functions c. Manifest Functions 9. What are the functions that are unrecognized and unintended consequences which can be beneficial and harmful or can have a negative effect on society? a. Apparent Functions b. Latent Functions c. Manifest Functions 10. Which of the following is the best manifest function of Media? a. Inform and entertain society c. Update the people about stock market. b. Provide information about movie personalities 11. Which of the following is not a manifest function of school? a. Schools teach general skills such as reading, writing and arithmetic b. Schools transmit values, beliefs and attitudes c. Schools assists students to meet their lifetime partner 12. Which are the manifest functions of society where it has intended and desirable results? a. Social Dysfunctions b. Social Functions c. Social Purposes 13. What do you call abnormal and impaired functioning especially of a bodily system or social group? a. Social Dysfunctions b. Social Functions c. Social Purposes 14. Which is not a social structure from the following given below? a. Economy b. Government c. Entrepreneur 15. Which is the best description of what a social structure is? a. Social structure is relating to something built or organized b. Social structure works according to their functions. c. Social structure enables society to achieve solidarity and stabilit PA SAGOT ASAP​</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#a-direction-encircle-the-letter-of-the-correct-answer-1-it-is-the-most-familiar-and-applicable-type-of-qualitative-research-which-refers-to-the-investigation-of-aculture-through-an-in-depth-study-of">20.
+                                            a.Direction: Encircle the letter of the correct answer.1. It is the most familiar and applicable type of qualitative research which refers to the investigation of aculture through an in-depth study of the members of the cultural society.a. Ethnographyc. Grounded Theoryb. Phenomenologyd. Case Study2. It is primarily used to generate theory through relevant information taken from very reliable sources andits focus is theory development.a. Ethnographyc. Grounded Theoryb. Phenomenologyd. Case Study3. Which of the following types of qualitative research is designed to focus on the commonality of a “livedexperience with a particular group and its aim is to determine what an experience means for the personswho have had the experience of living in a certain community which is the subject of the research?a. Ethnographyc. Grounded Theoryb. Phenomenologyd. Case Study4. It is an exploration of a “bounded system over time through detailed, in-depth data collection involvingmultiple sources of information rich in interesting stories.Ethnographyc. Grounded Theoryb. b. Phenomenologyd. Case Study5. It is a qualitative research which analyzes the language "beyond the sentence". It is the study of theways in which language is used by the people, both written and spoken contexts.a. Historical Researchc. Biographyb. Discourse Analysisd. Narrative Report.6. "A student really idolizes his English teacher who is expert in grammar and literature. The former wantsto write a scholarly chronicle about the latter's experiences including his family background, how heachieved his success in life, his likes and dislikes, his achievements and struggles in life." What type ofqualitative research should a student employ?a. Historical Researchc. Biographyb. Discourse Analysisd. Narrative Report7. It is a qualitative research in which data related to the past events are systematically collected andevaluated to describe potential causes, effects, or trends related to those events.a. Historical Researchc. Biographyb. Discourse Analysisd. Narrative Report8. All of the following are strengths of qualitative research EXCEPTa. Explores sensitive issuesb. Captures diversity of experiences and perceptionsc. Allows participants to freely exchange ideasd. Proves a certain theory or principle9. Which of the following is one of the weaknesses of a qualitative research?a. Results are limited as they provide less elaboration of human perceptions.b. Data created through qualitative research are always accepted.c. Data analysis involving numerical data is difficult.d. There is a limited review of related literature or in-depth information about the topic.10. Which of the following is EXCLUDED from the importance of qualitative research in daily life?a. Qualitative unveils individual's perception, feelings and attitudes about a certain phenomenon.b. Qualitative research allows the researcher to immerse in the community where the participants live.c. Qualitative research stimulates people's interdependence or interpersonal relationship.d. Qualitative research lets the researcher to validate the previously constructed theory or principle.​</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#dr-thomas-waggoner-a-local-university-information-systems-professor-has-just-received-a-phone-call-from-his-friend-ted-williams-co-owner-of-his-brother-will-of-williams-bros-the-river-falls-appl">21.
+                                            Dr. Thomas Waggoner, a local university information systems professor, has just received a phone call from his friend, Ted Williams, co-owner of his brother Will of Williams Bros. The River Falls Appliances, Iowa.Ted is highly dissatisfied with their current sluggish, manual system of sales management and inventory monitoring, and worries that they will lose revenue because of that. Ted discusses what he wants and Dr. Waggoner hopes his students can see this as a fantastic idea. He meets Ted to get a better understanding of the initial specifications. He then starts gathering the students in his Systems Analysis and Design class and his System Creation capstone class to see if they can create a solution for the Williams Bros'.​</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#pre-assessment-a-directions-write-the-letter-of-the-correct-answer-on-a-separate-sheet-of-paper-1-what-is-the-first-step-in-the-scientific-method-a-asking-a-question-b-forming-a-hypothesis">22.
+                                            Pre-Assessment 
+A. Directions: Write the letter of the correct answer on a separate sheet of paper. 
+1. What is the first step in the scientific method? 
+a. asking a question 
+b. forming a hypothesis 
+c. gathering information 
+d. organizing data 
+2. Which of the following statements would be true of the scientific method? 
+a. People structure their lives on the principle of scientific method. 
+b. Scientists report the experimental results, but not the experimental design. 
+c. The scientific method is a continuous process by which people learn about his world. 
+d. When the results of the experiment do not fit the hypothesis, a scientist may discard the results and stop the experiment. 
+3. When scientists wish to communicate the results of their research, they are most likely to do which of the following? 
+a. call a press conference 
+b. immediately repeat the research 
+c. sell their findings to other researchers 
+d. write a concise report with complete results and proofs to the experiments performed and formulate conclusions 
+4. Suppose your mother sent you to the market to buy fruits and vegetables. How would you choose good quality fruits and vegetables? 
+a. Ask the vendor to choose it for you. 
+b. Just get any kind and pay right away. 
+c. Examine the fruit if it is free from insect bites and the smell of insecticide. 
+d. Tell your mother that you do not know how to buy good quality fruits and vegetables. 
+5. How is a hypothesis tested ? 
+a. by conducting an experiment and looking for results 
+b. by comparing observations in nature with predictions 
+c. by using the hypothesis to make predictions about a system. 
+d. all of the above 
+26. During an experiment about a coin and feather that were dropped at the same time, it was found that coin reached the ground first. One student said: “Maybe, the coin is heavier than the feather.” What do you call this kind of statement? 
+a. a problem 
+b. a conclusion 
+c. a hypothesis 
+d. an interpretation 
+For items 7-9: A group of students was asked to investigate how fast sugar dissolves in cold and in hot water? 
+7. If this is going to be a fair test, what variables should they control? 
+a. Amount of water and sugar in each cup, method of stirring, time when the solid is added to water, how long each solution is stirred. 
+b. Amount of water and sugar in each cup, method of stirring, how long each solution stirred. 
+c. Amount of sugar in each cup; method of stirring, time when the solid is added to water, how long each solution stirred. 
+d. Amount of water in each cup, method of stirring, time when the solid is added to water, how long each solution is stirred. 
+8. What is the dependent variable (what is being measured)? 
+The temperature of water. 
+The amount of sugar. 
+The length of time that sugar completely dissolves in hot water. 
+The length of time that sugar completely dissolves in cold water. 
+a. I only 
+b. II only 
+c. II and III 
+d. III and IV 
+9. What is the independent variable in the investigation? 
+a. I only 
+c. I, II and III 
+b. II and III 
+d. II, III and IV 
+10. Why is the Scientific Method an important process in doing experiments? 
+a. It takes more work but it’s worth it. 
+b. It helps the experiment to take longer and be better. 
+c. It ensures that the results can be trusted and repeated. 
+d. It ensures that the people doing the experiments are scientific. 
+For items 11-15: You want to prove that trees lower the air temperature under the leaves 
+because of the shade. You stand under the tree, hold out an air 
+thermometer under the shade for a few minutes, and record the air 
+temperature. You then move to an area where there are no trees and 
+record the air temperature. 
+11. What is the experimental setup? 
+12. What is the control setup? 
+13. What is the idependent variable? 
+14. What is the dependent variable? 
+15. What factors will you keep constant? 
+ plspls ngayon na yung deadline po plsplsplspslpslsp</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#3-with-these-software-computers-can-be-used-to-calculate-and-process-numbers-4-it-is-a-software-that-has-fast-and-powerful-computing-ability-computers-can-easily-manipulate-store-classify-and">23.
+                                            3. With these software, computers can be used to calculate and process numbers. 4. It is a software that has fast and powerful computing ability, computers can easily manipulate, store, classify, and change data and information. 5. It is a software that provides students with almost limitless references for their needs such as, electronic books, booklets, and encyclopedia. 6. It is a tool that enables computers to provide computer-aided designs for artists. 7. It is the use of a computer to present and combine text, graphics, audio, and video with links and tools that let the user navigate, interact, create,                                                               andcommunicate. 8. It is the transmission of information by various types of technologies over wire, radio, optical or other electromagnetic systems. 9. It is currently being applied in military defense systems, scientific simulations, and even in games. 10. It is a program or machines that imitate human movement or action.​</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#pre-assessment-directions-write-the-letter-of-the-correct-answer-on-a-separate-sheet-of-paper-1-what-is-the-first-step-in-the-scientific-method-a-asking-a-question-c-gathering-information-b-formi">24.
+                                            Pre-Assessment Directions: Write the letter of the correct answer on a separate sheet of paper 1. What is the first step in the scientific method? A asking a question C. gathering information B. forming a hypothesis D. organizing data 2. Which of the following statements would be TRUE of the scientific method? A People structure their lives on the principle of scientific method. B. Scientists report the experimental results, but not the experimental design. C. The scientific method is a continuous process by which people leam about his world. When the results of the experiment do not fit the hypothesis, a scientist may discard the results and stop the experiment. 3. When scientists wish to communicate the results of their research, they are most likely to do which of the following? A Call a press conference, B. Immediately repeat the research C. Sell their findings to other researchers D. Write a concise report with complete results and proofs to the experiments performed and formulate conclusions. 4. Suppose your mother sent you to the market to buy fruits and vegetables. How would you choose good quality fruits and vegetables? A. Ask the vendor to choose it for you. B. Just get any kind and pay right away. C. Examine the fruit if it is free from insect bites and the smell of insecticide. D. Tell your mother that you do not know how to buy good quality fruits and vegetables 5. How is a hypothesis tested ? A. by conducting an experiment and looking for results B. by comparing observations in nature with predictions C. by using the hypothesis to make predictions about a system D. all of the above 6. During an experiment about a coin and feather that were dropped at the same time, it was found that coin reached the ground first. One student said: "Maybe, the coin is heavier than the feather." What do you call this kind of statement? A. a problem B. a conclusion C. a hypothesis D. an interpretation For items 7-9: A group of students was asked to investigate how fast sugar dissolves in cold and in hot water? 7. If this is going to be a fair test, what variables should they control? A Amount of water and sugar in each cup, method of stirring, time when the solid is added to water, how long each solution is stirred. B. Amount of water and sugar in each cup, method of stirring, how long each solution stirred. C. Amount of sugar in each cup: method of stirring, time when the solid is added to water, how long each solution stirred. D. Amount of water in each cup, method of stirring, time when the solid is added to water, how long each solution is stirred. 8. What is the dependent variable (what is being measured)? L. The temperature of water. It The amount of sugar. HE The length of time that sugar completely dissolves in hot water. IV. The length of time that sugar completely dissolves in cold water. C. II and III D. III and IV A. I only B. Il only​</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#3-andys-dog-was-covered-in-mud-his-mom-was-very-upset-and-told-andy-heneeded-to-help-clean-up-before-he-could-go-to-play-you-can-tell-a-andys-dog-got-the-house-muddy-c-andys-mom-doesnt-like">25.
+                                            3. Andy's dog was covered in mud. His mom was very upset and told Andy heneeded to help clean up before he could go to play. You can tell...A. Andy's dog got the house muddy.C. Andy's mom doesn't like dogs.B. Andy's favorite animal is a dog.D. Andy and his mom love pets.4. It is a form of data-gathering instrument where the researcher could obtain information from alarge number of respondents.A. questionnaireC. formal interviewB. non-directive interviewD. data recording5. What research instrument is most useful in a study entitled, “Online classes: An analysis on itscontribution to the Students' Learning Experience”?A. FGDB. interviewC. observation D. documentary Analysis6. Designing a research is thinkingA. criticallyB. skillfullyC. literallyD. imaginatively7. In data tabulation, what do you call a graph that is used to collate for easy classification anddistribution of numbers based on a certain criterion.A. coding systemC. descriptive statistical techniqueB. data analysisD. data TabulationANSWER PLEASE ASAP​</a>
+                                    </li>
+                                                            </ul>
+                        </nav>
+                    </div>
+                                            <h2 class="ez-toc-section" id="example-scenariothe-college-of-information-technology-and-computer-studies-has-a-large-numberof-student-population-in-the-university-managing-an-it-student-and-bringing-togetherdepartments-and-other">
+                            1. Example ScenarioThe College of Information Technology and Computer Studies has a large numberof student population in the university. Managing an IT student and bringing togetherdepartments and other colleges to achieve the mission is always a big challenge for theThe management. Most are transferees, irregular students and with failed subjectaffected in this situation because they need to provide a copy of grades during advisingperiod and manually write it on the evaluation checklist to monitor their performancegrade in every semester before processing the enrolment.The college coordinators who have an access to verify, update and monitoring thestudent checklists. This checklist is used to back-up the Microsoft Access database thatuses to record the advising record. During the enrolment, the coordinators runs a reportthat will print out the evaluation checklist for the day. Not only does to maintain theevaluation database, but it also uses a copy of grades to validate the grade of the student.Although the MIS enrolment system supports the student viewing of gradesinformation, the Coordinators has noticed some drawbacks. On particular situation the evaluation for the courses have conflicted with missing subject to enrol due toCurriculum used by the student and will cause to failure of completion to the courseprogram. CITCS will like to get information about the automatic assessment of thestudent evaluation of grades per semester. They have been talking about either updating the system or replacing it with a newinformation system that would meet the current and future needs but needs more detailson which option is feasible for the advising procedures. Your tasks is to help come upwith a plan to address these issues.Project AnalysisWrite one-page review and observation in the CITCS Advisingprocedures for enrolment with the intent of improving it through standardmethodology. For this study, provide some discretion as to how would like tostructure the presentation and must address the following requirements abouteach step in the systems analysis design process: a. Planning: Define the scope of the problem.b. Requirements: Justify the functional requirements. Explain what documentation will be used to analyze the needs of the end users to ensure the new system can meet their expectations?c. Design: Use the information that you received from the system requirement documentation to explain how you will design the new or updated system. What are the necessary specifications and operations of the user interface that will meet the functional requirements? Will you use a Flowchart or any presentation diagram.</h2><br />
+                        <p><strong>Answer:</strong></p><p>cheating</p><p><strong>Explanation:</strong></p><p></p><br />
+                                            <h2 class="ez-toc-section" id="what-i-have-learned-questions-1-with-the-arrival-of-the-internet-what-is-a-software-system-that-is-designed-to-search-for-information-on-the-world-wide-web-2-what-is-a-search-engine-a-3-what-ar">
+                            2. What I Have Learned Questions: 1. With the arrival of the internet, what is a software system that is designed to search for information on the World Wide Web? 2. What is a search engine? a 3. What are the commonly used search engines? 4. Give at least five samples of search engine strategies. 5. How important are the search engines to you as student?​</h2><br />
+                        <p><strong>Answer:</strong></p><p>the software system is the good health and wellness coach for the same time and consideration and look forward to hearing from the very best wishes ☺️</p><p><strong>Explanation:</strong></p><p>sana Maka tolung SA pag iisip nyo</p><br />
+                                            <h2 class="ez-toc-section" id="dr-thomas-waggoner-a-local-university-information-systems-professor-has-just-received-a-phone-call-from-his-friend-ted-williams-co-owner-of-his-brother-will-of-williams-bros-the-river-falls-appl">
+                            3. Dr. Thomas Waggoner, a local university information systems professor, has just received a phone call from his friend, Ted Williams, co-owner of his brother Will of Williams Bros. The River Falls Appliances, Iowa.Ted is highly dissatisfied with their current sluggish, manual system of sales management and inventory monitoring, and worries that they will lose revenue because of that. Ted discusses what he wants and Dr. Waggoner hopes his students can see this as a fantastic idea. He meets Ted to get a better understanding of the initial specifications. He then starts gathering the students in his Systems Analysis and Design class and his System Creation capstone class to see if they can create a solution for the Williams Bros'.</h2><br />
+                        <p><strong>Answer:</strong></p><p>sbiakanjaoalnz9z.Pana0</p><br />
+                                            <h2 class="ez-toc-section" id="activity-1-study-the-following-passages-determine-whether-this-kind-of-oral-language-talks-about-giving-information-giving-instructions-making-explanations-or-narrating-events-write-your-answer">
+                            4. Activity 1: Study the following passages. Determine whether this kind of oral language talks about giving information, giving instructions, making explanations, or narrating events. Write your answer on the circle provided on the right side. 1. Teacher Esperanza is used to teaching Junior High School students and when she is asked by her director to substitute the Kindergarten teacher, she finds it difficult to teach them. She can't seem to get hold of her students' attentions though she finds every lesson very easy to teach. She wonders why the students actively listening to their Kindergarten teacher while the students seem uninterested in her lessons. She then decides to use a reward system and inserted fun games in each lesson which her students always look up to every time they come into her class 2. The coronavirus disease (COVID-19) according to the World Health Organization is caused by a virus, NOT by bacteria. The virus that causes COVID-19 is in a family of viruses called Coronavirida Antibiotics do not work against viruses. Some people who become ill with COVID-19 can also develop a bacterial infection as a complication. In this case, antibiotics may be recommended by a health care provider. There is currently no licensed medication to cure COVID-19. If you have symptoms, call your health care provider or COVID-19 hotline for assistance. 3. "What we do everyday will define who we'll become. Someone who studies and invests themselves in Science everyday will become a good scientist. Likewise, a good writer will write every day. Habits take time and effort to change. If you do them regularly, it will be more effective. First, avoid doing things at the last minute. Second, study a bit everyday. Avoid cramming. Third, the use of flashcards helps you remember your lessons. Fourth, have a practice test to help identify gaps in your knowledge. Fifth, have a conducive for learning study area. Lastly, put away your phone to avoid distraction."  4. "This is a food pyramid. It is designed to make healthy eating easier. Healthy eating is about getting the correct amount of nutrients to maintain good health. The pyramid looks like a triangle and has four levels. The first level is the grain group which is the best source of food energy. The second level contains vegetables and fruits, which are rich in vitamins and minerals. The third level contains meat and dairy which are rich in protein. The fourth level contains sugar and fats which we should the least because they are unhealthy". 5. At the age of 14, Sunny became a mother and a father of her two siblings. Their parents get divorced when she was eight years old and her father spent all his time working and most of the time went home drunk. A few years later, her father abandoned them with nothing. She then worked as a house keeper lust to feed her siblings. She never gave up instead made her struggle her nspiration. Her boss sponsored her studies up to college. She never stops orking while studying Currently she is supporting her siblings' studies while.​</h2><br />
+                        <p><strong>Answer:</strong></p><p>1.narrating events</p><p>2.making explanation/giving information</p><p>3.giving instructions</p><p>4.giving information</p><p>5.narrating events</p><br />
+                                            <h2 class="ez-toc-section" id="%c2%a0-english-%e2%80%8een%e2%80%8eenglish-%e2%80%8efiledir%e2%80%8e-%ef%bf%bc%c2%a0-%c2%a0kimberly-joy-gonzales-%c2%a0-%c2%a0dashboard%c2%a0profile%c2%a0grades%c2%a0messages%c2%a0preferences">
+                            5.   English ‎(en)‎English ‎(filedir)‎ ￼   KIMBERLY JOY GONZALES    Dashboard Profile Grades Messages Preferences    Log out Skip to main content Business Process Management Home My courses Bulan Campus ICT/EDUC SSU-BC-IT IS 313-BSIS 3A MODULE 2 Assignment to MODULE 2 Assignment to MODULE 2 Opened: Wednesday, 22 September 2021, 12:00 AM Mark as done A university provides education and services to its students. This starts with admission of students to the university. When a regular student, i.e. a student who comes from a Dutch high-school, sends in his admission form such a student is registered by the admissions office. Subsequently, the eligibility to study in a certain program is checked based on the information that the student provided on his admission form. For students who arrive from another school, such as a polytechnic, the previous study that the student took, according to his admission form, must be examined in detail. Polytechnic students can either come to the university after completing one year of courses (propedeuse) or after receiving a polytechnic diploma. Students from universities in other countries are also accepted. Also for them, the studies that they took previously must be examined in detail. When students are considered eligible and the courses that they have already followed (if applicable) check out, they are enrolled at the university, which involves sending a letter that they are accepted and entering the details of their enrollment in the information system of the university. The students then become a student of their respective study: industrial engineering, building or construction engineering. After the students are enrolled, they can take courses or do projects and they can use the services that are provided by the university, which include: language training and sports facilities. Projects are done on an individual basis by a student together with a lecturer. The university recognizes part-time students who do their studies while they are working in a company. These students typically do projects of a more practical nature than the other students, such that the process that is followed during the project are also different for these students. Design a process architecture as follows: 1. identify the case types that should appear in the process architecture 2. identify the functions that should appear in the process architecture 3. draw a case/function matrix 4. identify the processes in the case function matrix, split up processes if and only if one of the guidelines applies, clearly indicate which guideline you applied where​</h2><br />
+                        <p><strong>Answer:</strong></p><p>paka matay kanalang wala kang silbi sa lipunan</p><br />
+                                            <h2 class="ez-toc-section" id="the-researchersthat-addressing-thewide-difference-in-the-emerging-culture-of-the-information-agehelp-students-learneffectively-according-to-prensky-2001-todays-students-who-are-referred-to-a">
+                            6. The researchers
+that addressing the
+wide difference in the emerging culture of the Information Age
+help students learn
+effectively. According to Prensky (2001), today's students, who are referred to as digital natives, are no longer the people the educational system has been designed to teach. They are now instantaneous, information saturated, wired. It is
+_ that they think and process information differently from their predecessors, the digital immigrants. The digital world has wired the modern students differently, thus making them incredibly sophisticated. It is
+that the
+availability of the Internet helped condition them to ask questions and get answers instantaneously, which is a far cry from the card catalogue and encyclopedias most digital immigrants grew up with (Gandhi, 2009). This is the first generation of students who are more proficient with technology than their teachers are (Moe, 2009). It is
+that teachers who fumble with
+technology will struggle to persuade students that the information they are presenting is worthwhile (Rudi, 2009). This is a challenge to prepare the students to be more imaginative, creative, entrepreneurial and have the capacity for "high touch" abilities such as compassion, personal rapport, social interaction, and caring and helping others (Ahmes, 2008).
+choices :
+Appear to be
+Believe
+Think
+Perhaps
+Maybe
+Suggest
+Looks like
+Assume
+Seem possibly</h2><br />
+                        <p><strong>Answer:</strong></p><p>Based on the given information, the appropriate words to fill in the blanks are "believe" and "appear to be." </p><p></p><p>The sentence "It is _ that they think and process information differently from their predecessors" suggests that the researchers "believe" that the digital natives process information differently from their predecessors. </p><p></p><p>The sentence "It is _ that teachers who fumble with technology will struggle to persuade students that the information they are presenting is worthwhile" suggests that teachers' struggles are apparent, or "appear to be," in convincing students that the information presented is worthwhile when they are not proficient in technology.</p><p></p><p></p><p></p><br />
+                                            <h2 class="ez-toc-section" id="directions-answer-the-following-questions-based-on-the-lesson-on-innovative-and-business-novel-plan-write-your-answer-on-the-lines-provided-for-1-how-are-novel-task-cards-planned_________________">
+                            7. Directions: Answer the following questions based on the lesson on Innovative and Business novel plan. Write your answer on the line/s provided for.1. How are novel task cards planned?_______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________2. What should be created on a podcast project?_______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________3. What do business owners and managers should clear out to their employees?_______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________4. Give an example for the following novel concepts:a. Constructing facility ________________________________________________________________________________________________________b. Designing a vehicle ________________________________________________________________________________________________________c. Information system ________________________________________________________________________________________________________5. As a senior high school student, what novel plan do you think can you finish? What is your main concept?_______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________​</h2><br />
+                        <p><strong>Answer:</strong></p><p>hospital# brinks# Isiah's# Haskell# usual# licks#</p><br />
+                                            <h2 class="ez-toc-section" id="lesson-1identification_________________1-it-is-a-qualitative-research-which-analyzes-the-language-%e2%80%9cbeyond-the-sentence%e2%80%9d-it-is-the-study-of-the-ways-in-which-language-is-used-by-the-p">
+                            8. LESSON 1IDENTIFICATION_________________1. It is a qualitative research which analyzes the language “beyond the sentence”. It is the study of the ways in which language is used by the people, both written and spoken contexts._________________ 2. It is a qualitative research in which data related to the past events are systematically collected and evaluated to describe potential causes, effects, or trends related to those events._________________ 3. It is the most familiar and applicable type of qualitative research which refers to the investigation of a culture through an in-depth study of the members of the cultural society._________________ 4. Which of the following types of qualitative research is designed to focus on the commonality of a “lived experience” with a particular group and its aim is to determine what an experience means for the persons who have had the experience of living in a certain community which is the subject of the research?_________________ 5. It is primarily used to generate theory through relevant information taken from very reliable sources and its focus is theory development._________________ 6. “A student really idolizes his English teacher who is expert in grammar and literature. The former wants to write a scholarly chronicle about the latter’s experiences including his family background, how he achieved his success in life, his likes and dislikes, his achievements and struggles in life.” What type of qualitative research should a student employ?_________________7. It is an exploration of a “bounded system” over time through detailed, in-depth data collection involving multiple sources of information rich in interesting stories._________________8. A scientific method of observation to gather non-numerical data. It refers to the meanings, concepts, characteristics, metaphors, symbols and description of phenomena, and not to their counts or measures.________________9.  A classroom-based or school-based research seeks transformative change through the process of taking action and doing research, which are linked together by critical reflection._______________10. It is the study of social life, understood through analysis of language it includes face-to-face talk, non-verbal interaction, images and symbols.​</h2><br />
+                        <p>Answer:</p><p>1.Discourse Analysis</p><p>2.Historical Research</p><p>3.Ethnography</p><p>4.Phenomenological Method</p><p>5.Grounded Theory</p><p>6.Biography</p><p>7.Case Study</p><p>8.Qualitative Research</p><p>9.Action Research</p><p>10.Discourse Analysis</p><p></p><p>"Please Correct Me If I'm Wrong"</p><p>Hope It Helps!</p><br />
+                                            <h2 class="ez-toc-section" id="b-identify-the-use-of-computers-being-described-in-each-sentence-write-the-letter-of-the-correct-answer-on-the-blanks-a-in-medicine-c-as-record-keeping-equipment-e-in-engineering-architecture">
+                            9. B. Identify the use of computers being described in each sentence. Write the letter of the correct answer on the blanks. a. in medicine c. as record-keeping equipment e. in engineering, architecture, advertising and design g. as control system i. on information and communication b. at home d. on money, banking and finance f. computerized textile mills h. as business management tools 1. In a microwave oven, a magnetron tube produces a beam of microwaves that is scattered throughout the interior of the oven by the fan. 2. Computers are used extensively in the world of stocks and investments. 3. Computers are used for architectural and electrical designs of houses. 4. Clients can withdraw and deposit money anytime of the day from the ATM which are found in department stores and other convenient places. 5. Computers are also used to record government census, record taxes, and taxpayers, public utility services, and voters. 6. Computers are able to execute complex weaving and spinning job with great speed and accuracy. 7. Air traffic controllers use radar computers, and radio to track air traffic and issue instructions for takeoff and landings. 8. Portable cellular phones have been valuable to people who need to stay in touch while on the move. 9. Computers are now being used for medical diagnosis. 10. Magnetic Resonance Imaging allows the physician to see organs of the body in three dimensions and can provide direct evidence of the disease. 11. Most people no longer carry cash. Instead they carry another piece of plastic in wallets of bags - a general purpose debit or credit cards. 12. Used to maintain employees' records, schedule classes, assign classes and perform other institutional records and handling functions such as students' records. 13. Many hundreds of hours of computation by advanced supercomputers go into the production of special effects for a single major film. 14. Card catalogues have largely been replaced by computer terminals that access the library's online catalogue. 15. Social media networks are great means of finding people with similar interests.​</h2><br />
+                        1.G - as control system<br />2.D - on money, banking and finance<br />3.E - in engineering, architecture, advertising and design<br />4.D - on money, banking and finance<br />5.C - as record-keeping equipment<br />6.F - computerized textile mills<br />7.G - as control system<br />8.B - at home<br />9.A - in medicine<br />10.A - in medicine<br />11.D - on money, banking and finance<br />12.H - as business management tools<br />13.E - in engineering, architecture, advertising and design<br />14.C - as record-keeping equipment<br />15.I - on information and communication<br />
+                                            <h2 class="ez-toc-section" id="i-multiple-choices1-this-isa-piece-of-sanitary-hardware-used-for-the-collection-or-disposal-ofhuman-urine-and-faecesa-bath-tubb-toiletc-draind-pvc2-which-of-the-following-is-a-designed-to-be-sat">
+                            10. I. Multiple Choices:1. This isa piece of sanitary hardware used for the collection or disposal ofhuman urine and faeces?a Bath-tubb Toiletc Draind. PVC2. Which of the following is a designed to be sat on for the purpose of washing thehumar senitalia perineum, inner buttocks and anus?a. Showerb. Toiletc. Bowlid. Drain3. It is commonly applied in the electrical layout, plumbing plan, and other drawings toreinforce additional information?a Notes b. Specification c Detailsd. Drainage4. This should be indicated on the working drawing so that the students can easily actualizethe drawing?a. Notes b. Specification c. Layoutd. Piping5. This is a place in which a person bathes under a spray of typically warm or hot water.Indoors, there is a drain in the floor?a Bath- tubb. Toiletc Bowld. Faucet6. It is any system that conveys fiuids for a wide range of applications using pipes,valves, plumbing fixtures, tanks, and other apparatuses?a Lay-outingb. Electricityc Plumbingd. Painting7. This is a device or natural object that regulates, directs or controls the flow of a fluid(gases, liquids, fluidized solids, or slurries) by opening closing, or partially obstructingvarious passageways?a. Bowl b. Bathtubsc Valvesd. Pipes8. Which of the following is a container for holding water in which a person or animalmay bathe. It is usually placed in a bathroom either as a stand-alone fixture or in conjunctionwith a shower?a Bathtubs b. Specification c. Detailsd. Drainage​</h2><br />
+                        <p><strong>Answer:</strong></p><p>1. C</p><p>2. A</p><p>3. A</p><p>4. D</p><p>5.C</p><p>6. D</p><p>7. D</p><p>8. A</p><p><strong>Explanation:</strong></p><p>Kung ayaw mo manilawa bala ka jan</p><br />
+                                            <h2 class="ez-toc-section" id="direction-fill-in-the-blanks-with-the-appropriate-hedges-in-the-following-sample-academic-paragraph-appearsbelievelikelyseemslikely-and-could-the-researchers-that-addressing-the-wide-differen">
+                            11. Direction: Fill in the blanks with the appropriate hedges in the following sample academic paragraph. Appears,believe,likely,seems,likely, and ,could. The researchers that addressing the wide difference in the emerging culture of information Age Help students learn effectively. According to Prensky (2001), today's students, who are referred to as digital natives, are no longer the people the educational system has been designed to teach. They are now instantaneous, information saturated, wired. It That they think and process information differently from their predecessors, the digital immigrants. The digital world has wired the modern students differently, thus making them incredibly sophisticated. It is that the availability of the Internet helped condition them to ask questions and get answers instantaneously, which is a far cry from the card catalogue and encyclopedias most digital immigrants grew up with (Gandhi, 2009). This is the first generation of students who are more proficient with technology than their teachers are are (Moe, 2009). It​</h2><br />
+                        <p><strong>Answer:</strong></p><p></p><p><strong>Explanation:</strong></p><p>uhm san po dyan yung blanks? di kase masyado maintindihan.. :D</p><br />
+                                            <h2 class="ez-toc-section" id="multiple-choice-identify-what-specific-type-of-claim-best-describes-the-following-statements-refer-youranswers-on-the-choices-given-below-________________a-claim-of-factb-claim-of-valuec-claim-of">
+                            12. Multiple Choice. Identify what specific type of claim best describes the following statements. Refer youranswers on the choices given below.________________A. Claim of FactB. Claim of ValueC. Claim of Policy_________________16. Most of the educational systems across the globe are designed to make students efficiently remember andactualize the concepts.17. Currently, skills are more significant than knowledge.18. To cope with the challenges and demands of the present world, students should be equipped with skills toconstruct knowledge, manage digital information more effectively, and create something new.19. Knowledge is meaningless and useless unless it comes with 21st century global skills.20. Imagination is more important than knowledge.pa help po ineed na this...​</h2><br />
+                        <p> </p><p>16.  A</p><p>17.   B</p><p>18.  C</p><p>19.  B</p><p>20. B</p><p> </p><p>–correct me if I'm wrong</p><p></p><br />
+                                            <h2 class="ez-toc-section" id="true-or-false1-an-electronic-search-engine-is-a-software-system-that-is-designed-to-search-forinformation-on-the-world-wide-web-2-search-engines-are-less-useful-to-students-when-it-comes-to-answerin">
+                            13. true or false1. An electronic search engine is a software system that is designed to search forinformation on the World Wide Web.2. Search engines are less useful to students when it comes to answering questions asquickly as possible.3. Using only one search engine can help you get around the problems in terms ofdifferent search results.4. Search engines use keywords or phrases you choose to determine which webpageshave relevant information,5. It is important to note the date when the information was published in order todetermine whether it is still relevant.6. The information you are using in your assignment needs not to be relevant to yourtopic.7. Making sure that the information you are using is backed up with reliable referencesand/or original research helps to validate its accuracy and credibility.8. The authors' background and their experience and qualifications in a particular areaare quite important in judging the credibility of their assertions.​</h2><br />
+                        <p><strong>Answer:</strong></p><p>1.True</p><p>2.False</p><p>3.true</p><p>4.true</p><p>5.false</p><p>6.false</p><p>7.true</p><p>8.true</p><br />
+                                            <h2 class="ez-toc-section" id="activity-2-find-the-generalizationdirections-all-the-information-are-jumbled-look-for-and-write-the-generalization-and-thesupporting-evidence-on-the-designated-box-work-on-a-separate-sheet-of-pape">
+                            14. Activity 2: Find the generalizationDirections: All the information are jumbled. Look for and write the generalization and thesupporting evidence on the designated box, Work on a separate sheet of paper.A COVD-19There is no face-to-face classroom settingSome feachers follow work from home policy.COVID-19 has drastically changed the educational system of the DepEd.Communication to students and their parents is done through 11. Messenger. VirtualmeetingsSchools implement the Learning Delivery ModalitiesParents Guardians become teacher-substitutes to their children wards.Supporting EvidenceGeneralinton:12.3.4.B Milk teaNik tea provides strength for the bodyMGK tea is a great source of energyMilk tea makes the skin fairer and solier.Milk tea has several health benefits.Milk tea reduces stress.GeneralisationSupporting Evidence12.34.B. Blogging Blogging cams money by placing ads on their site Blogging is one of the means to earn money, Each time a reader clicks on the ad, the blogger is paid for that click Bloggers also cam money by giving a review of an advertiser's product or service. Selling sponsorship space in a blogger's email newsletters, podcasts, and videos provides income.1.2.3.4.​</h2><br />
+                        <p><strong>Answer:</strong></p><p>A:GENERALIZATION:COVID 19 HAS DRASTICALLY CHANGED THE EDUCATIONAL SYSTEM OF THE DEPED. </p><p>SUPPORTING EVIDENCE</p><p>=THERE IS NO FACE TO FACE CLASSROOM MEETING</p><p> PAGOD AKO MAG TYPE BASTA SA SUPPORTING EVIDENCE AY YUNG NATIRA KASAMA SA THERE IS NO FACE TO FACE</p><br />
+                                            <h2 class="ez-toc-section" id="1-directions-read-and-analyze-each-questions-and-choose-the-best-answer-write-the-letter-that-bestcorresponds-to-your-answer-place-your-answer-beside-each-number-1-who-do-you-think-someone-create">
+                            15. 1. Directions: Read and analyze each questions and choose the best answer. Write the letter that bestcorresponds to your answer. Place your answer beside each number.1. Who do you think someone creates a new business in the face of risk and uncertainly?A. EntrepreneurB. Entrepreneurship C. Fashion designer D. Student2. What characteristic of an entrepreneur where one establishes specific, measurable, realisticand time bound objectives?A. Information seeker B. Goal setter C. Optimistic D. Persuasive3. What work of a dressmaker if she does pattern making and sewing?A. Alter clothes B. Fashion designer C. Remodel Garment D. Mend clothes4. What business environment pertains to the management of resources and the system ofproduction?A. Culture B. Economy C. Government regulations D. Technology5. Who do you think are the successful entrepreneurs?A. EntrepreneurB. Hardworking people C. Optimistic peopled. Rich people6.What tool is used for satisfactory cutting apparel fabrics?A. Shear B. Scissor C.Tracing wheel D. Trimming shear7. Which of the following is a flexible measuring device used in taking body measurements?A. L-square B. Ruler C. Tape measureD. Yard stick8. What kind of tool is used to draw perpendicular lines determining square corners anddividing measurement?A. RulerB. L-square C. Hip curveD. Meter stick9. What tool is used to keep pin and needles ready for use?A. Emery bagB. PinC. Pincushion D. Sewing box10. What tool is used to shape the depth of the neck hole and armhole of the fabric?A. French curve B. Hip curve C. L-squareD. Ruler11. Which measurement is taken around the fullest part of the bottom of pants?A. CrotchB. Hem circumferenceC. Knee circumferenceD. Seat12. Which measurement is taken along the side from waistline to the desired length of thepants?A. Sleeve length B. Pants length C. Skirt lengthD. Short length13. What measurement is taken from neck shoulder point passing over the apex point down tothe waistline?A. Apex height B. Figure front width C. Side bodieslength D. Shoulder point14.What measurement is taken by placing ruler under the crotch then measuring fromwaistband to the top level of ruler?A. CrotchC. Thigh D. Waist15. How is bust measurement taken?A. Around the body B. Bust point to bust point C. Left to right D. Top to bottom16. How is apex distance measurement taken?A. Around the bust 8. Apex point to apex point C. Shoulder to apex point D. Waist toapex point17 Which one measures around the torso directly under the bust line?A Bust B. Hips C. Second hipD. Waist18 What must be observed when taking body measurements?A Accuracy B Design C. FigureD. Size19. Which measurement is taken around the arm in line with the armpit?B. Hip​</h2><br />
+                        <p><strong>Answer:</strong></p><p>1.a.</p><p>2c</p><p>4b</p><p>5a</p><p>6b</p><p>7c</p><p>8b</p><p>9a</p><p>10c</p><p>11b</p><p>12a</p><p></p><br />
+                                            <h2 class="ez-toc-section" id="the-researchers-__________-that-addressing-the-wide-difference-in-the-emerging-culture-of-the-information-age-__________-help-students-learn-effectively-according-to-prensky-2001-today%e2%80%99s-s">
+                            16. The researchers __________ that addressing the wide difference in the emerging culture of the Information Age __________ help students learn effectively. According to Prensky (2001), today’s students, who are referred to as digital natives, are no longer the people the educational system has been designed to teach. They are now instantaneous, information saturated, wired. It is __________ that they think and process information differently from their predecessors, the digital immigrants. The digital world has wired the modern students differently, thus making them incredibly sophisticated. It is __________ that the availability of the Internet helped condition them to ask questions and get answers instantaneously, which is a far cry from the card catalogue and encyclopedias most digital immigrants grew up with (Gandhi, 2009). This is the first generation of students who are more proficient with technology than their teachers are (Moe, 2009). It is __________ that teachers who fumble with technology will struggle to persuade students that the information they are presenting is worthwhile (Rudi, 2009). This is a challenge to prepare the students to be more imaginative, creative, entrepreneurial and have the capacity for “high touch” abilities such as compassion, personal rapport, social interaction, and caring and helping others (Ahmes, 2008).​</h2><br />
+                        <p><strong>Answer:</strong></p><p>nasaan ang sagot naghahanap rin ako</p><br />
+                                            <h2 class="ez-toc-section" id="multiple-choice-direction-read-each-statement-below-copy-and-answer-in-your-pr-1-notebook-1-all-of-the-following-are-strength-of-qualitative-research-except-a-it-is-instrumental-for-positive-so">
+                            17. Multiple Choice. Direction: Read each statement below. Copy and answer in your PR-1 notebook. 1.	All of the following are strength of qualitative research EXCEPT. A.	It is instrumental for positive societal changes. B.	It is hard to know the validity/reliability of the data. C.	Offers multiple ways of acquiring and examining knowledge about something. D.	Promotes a full understanding of human behavior/personality traits in their natural setting. 2.	Qualitative research allows you to approach or plan your study in varied ways. Here you are free to combine this with quantitative research and use all gathered data and analysis technique. What characteristic of qualitative research is being referred to? A. Active, powerful, and forceful		B. Contextualization C. Internal Analysis		 	D. Multiple research approach and methods 3.	This refers to a qualitative method where there is an examining of past events to draw conclusions and make predictions about the future.		 A. Case Study					B. Grounded Theory C. Historical Analysis				D. Phenomenology 4.	Which of the following is one of the weaknesses of a qualitative research? A.	It is time-consuming. B.	It adopts a naturalistic approach to its subject matter. C.	It’s a way of understanding &amp; interpreting social interactions. D.	Offers multiple ways of acquiring and examining knowledge about something. 5.	It is the most familiar and applicable type of qualitative research which refers to the investigation of a culture through an in-depth study of the members of the cultural society A. Case Study					B. Ethnography 	 C. Grounded Theory 				D. Phenomenology 6.	It is primarily used to generate theory through relevant information taken from very reliable sources and its focus is theory development. A. Case Study					B. Ethnography 	 C. Grounded Theory 				D. Phenomenology 7.	Which of the following types of qualitative research is designed to focus on the commonality of a “lived experience” with a particular group and its aim is to determine what an experience means for the persons who have had the experience of living in a certain community which is the subject of the research? A. Case Study					B. Ethnography 	 C. Grounded Theory 				D. Phenomenology 8.	“A student really idolizes his English teacher who is very expert in grammar and literature. The former wants to write a scholarly chronicle about the latter’s experiences including his family background, how he achieved his success in life, his likes and dislikes, his achievements and struggles in life.” What type of qualitative research should a student employ? A. Biography		 			B. Discourse Analysis C. Historical Research 				D. Narrative Report 9.	It is a qualitative research which analyzes the language “beyond the sentence”. It is the study of the ways in which language is used by the people, both written and spoken contexts. A. Biography		 			B. Discourse Analysis C. Historical Research 				D. Narrative Report 10.	It is an exploration of a “bounded system” over time through detailed, in-depth data collection involving multiple sources of information rich in interesting stories. A. Case Study					B. Ethnography 	 C. Grounded Theory 				D. Phenomenology​</h2><br />
+                        <p><strong>Answer:</strong></p><p>bumuo ng saliya sa tulong ng panlapi at salitang - ugat 1. hiwalay na- </p><br />
+                                            <h2 class="ez-toc-section" id="2-it-is-a-type-of-networking-where-a-number-of-resources-are-installed-across-a-large-area-such-as-multinational-business-3-this-system-spans-on-a-small-area-like-a-small-office-or-home-4-also-kno">
+                            18. 2. It is a type of networking where a number of resources are installed across a large area such as multinational business. 3.This system spans on a small area like a small office or home. 4. Also known as Client network where the data are not saved on each computer, rather saved on the server. 5.A blueprint of the complete computer communication network, which provides a framework and technology foundation for designing, building and managing a communication network. 6. In this networking system all computers are given equal importance. All the software and data are stored on each computer and accesses to them are given to each user. computer networks. 7. It is a computer-based global information system. It is composed of many interconnected 8. Many individuals use the Internet for communicating through 9. Research on dividing information into packets and switching them from computer to computer began in what year? 10. use the Internet for research and to deliver online courses and course material to students.Pasagot asap bigyan ko brain least ang tamang sagot asap.  ​</h2><br />
+                        <p><strong>Answer:</strong></p><p>Explanation: WAN is the network used to connect a company located in one area of a city to another location in a city far away.</p><p><strong>Explanation:</strong></p><p></p><br />
+                                            <h2 class="ez-toc-section" id="1-what-is-the-framework-for-building-theory-that-sees-society-as-a-complex-system-whose-parts-work-together-to-promote-solidarity-and-stability-a-structural-design-b-structural-functionalism-c-st">
+                            19. 1. What is the framework for building theory that sees society as a complex system whose parts work together to promote solidarity and stability? a. Structural Design b. Structural Functionalism c. Structural Design 2. What is the patterned of social arrangements of institutions where human beings in a society interact and live together? a. Social Function b. Social Organization c. Social Structure 3. What is the social structure of the society that helps individuals to learn necessary concepts and skills to function in everyday society? a. Church b. Government c. School 4. What is the social structure of the society that brings individual to spiritual maturity? a. Church b. Media c. School 5. What is the social structure of the society that acts as a watchdog to protect public interest? a. Church b. Media c. School 6. What is the smallest unit of the society, whose function is to perpetuate society? a. Church b. Family c. School 7. Which of the following institutions whose function is to maintain social peace? a. Church b. Government c. School 8. What do you call the function that are recognized and intended consequences of any social pattern? a. Apparent Functions b. Latent Functions c. Manifest Functions 9. What are the functions that are unrecognized and unintended consequences which can be beneficial and harmful or can have a negative effect on society? a. Apparent Functions b. Latent Functions c. Manifest Functions 10. Which of the following is the best manifest function of Media? a. Inform and entertain society c. Update the people about stock market. b. Provide information about movie personalities 11. Which of the following is not a manifest function of school? a. Schools teach general skills such as reading, writing and arithmetic b. Schools transmit values, beliefs and attitudes c. Schools assists students to meet their lifetime partner 12. Which are the manifest functions of society where it has intended and desirable results? a. Social Dysfunctions b. Social Functions c. Social Purposes 13. What do you call abnormal and impaired functioning especially of a bodily system or social group? a. Social Dysfunctions b. Social Functions c. Social Purposes 14. Which is not a social structure from the following given below? a. Economy b. Government c. Entrepreneur 15. Which is the best description of what a social structure is? a. Social structure is relating to something built or organized b. Social structure works according to their functions. c. Social structure enables society to achieve solidarity and stabilit PA SAGOT ASAP​</h2><br />
+                        <p><strong>Answer:</strong></p><p>1.A</p><p>2.C</p><p>3.B</p><p>4.C</p><p>5.D</p><p>6.A</p><p>7.A</p><p>8.D</p><p>9.B</p><p>10.C</p><p>11.D</p><p>12.C</p><p>13.A</p><p>14.B</p><p>15.D</p><br />
+                                            <h2 class="ez-toc-section" id="a-direction-encircle-the-letter-of-the-correct-answer-1-it-is-the-most-familiar-and-applicable-type-of-qualitative-research-which-refers-to-the-investigation-of-aculture-through-an-in-depth-study-of">
+                            20. a.Direction: Encircle the letter of the correct answer.1. It is the most familiar and applicable type of qualitative research which refers to the investigation of aculture through an in-depth study of the members of the cultural society.a. Ethnographyc. Grounded Theoryb. Phenomenologyd. Case Study2. It is primarily used to generate theory through relevant information taken from very reliable sources andits focus is theory development.a. Ethnographyc. Grounded Theoryb. Phenomenologyd. Case Study3. Which of the following types of qualitative research is designed to focus on the commonality of a “livedexperience with a particular group and its aim is to determine what an experience means for the personswho have had the experience of living in a certain community which is the subject of the research?a. Ethnographyc. Grounded Theoryb. Phenomenologyd. Case Study4. It is an exploration of a “bounded system over time through detailed, in-depth data collection involvingmultiple sources of information rich in interesting stories.Ethnographyc. Grounded Theoryb. b. Phenomenologyd. Case Study5. It is a qualitative research which analyzes the language "beyond the sentence". It is the study of theways in which language is used by the people, both written and spoken contexts.a. Historical Researchc. Biographyb. Discourse Analysisd. Narrative Report.6. "A student really idolizes his English teacher who is expert in grammar and literature. The former wantsto write a scholarly chronicle about the latter's experiences including his family background, how heachieved his success in life, his likes and dislikes, his achievements and struggles in life." What type ofqualitative research should a student employ?a. Historical Researchc. Biographyb. Discourse Analysisd. Narrative Report7. It is a qualitative research in which data related to the past events are systematically collected andevaluated to describe potential causes, effects, or trends related to those events.a. Historical Researchc. Biographyb. Discourse Analysisd. Narrative Report8. All of the following are strengths of qualitative research EXCEPTa. Explores sensitive issuesb. Captures diversity of experiences and perceptionsc. Allows participants to freely exchange ideasd. Proves a certain theory or principle9. Which of the following is one of the weaknesses of a qualitative research?a. Results are limited as they provide less elaboration of human perceptions.b. Data created through qualitative research are always accepted.c. Data analysis involving numerical data is difficult.d. There is a limited review of related literature or in-depth information about the topic.10. Which of the following is EXCLUDED from the importance of qualitative research in daily life?a. Qualitative unveils individual's perception, feelings and attitudes about a certain phenomenon.b. Qualitative research allows the researcher to immerse in the community where the participants live.c. Qualitative research stimulates people's interdependence or interpersonal relationship.d. Qualitative research lets the researcher to validate the previously constructed theory or principle.​</h2><br />
+                        <p><strong>Answer:</strong></p><p><strong>1. A.</strong></p><p><strong>2. C.</strong></p><p><strong>3. B.</strong></p><p><strong>4. D.</strong></p><p><strong>5. B.</strong></p><p><strong>6. C.</strong></p><p><strong>7. A.</strong></p><p><strong>8. D.</strong></p><p><strong>9. A.</strong></p><p><strong>10.B.</strong></p><p><strong></strong></p><p><strong>I HOPE IT HELPS:)</strong></p><br />
+                                            <h2 class="ez-toc-section" id="dr-thomas-waggoner-a-local-university-information-systems-professor-has-just-received-a-phone-call-from-his-friend-ted-williams-co-owner-of-his-brother-will-of-williams-bros-the-river-falls-appl">
+                            21. Dr. Thomas Waggoner, a local university information systems professor, has just received a phone call from his friend, Ted Williams, co-owner of his brother Will of Williams Bros. The River Falls Appliances, Iowa.Ted is highly dissatisfied with their current sluggish, manual system of sales management and inventory monitoring, and worries that they will lose revenue because of that. Ted discusses what he wants and Dr. Waggoner hopes his students can see this as a fantastic idea. He meets Ted to get a better understanding of the initial specifications. He then starts gathering the students in his Systems Analysis and Design class and his System Creation capstone class to see if they can create a solution for the Williams Bros'.​</h2><br />
+                        <p><strong>Answer:</strong></p><p>"current" (and any subsequent words) was ignored because we limit queries to 32 words.</p><p><strong>Explanation:</strong></p><p></p><br />
+                                            <h2 class="ez-toc-section" id="pre-assessment-a-directions-write-the-letter-of-the-correct-answer-on-a-separate-sheet-of-paper-1-what-is-the-first-step-in-the-scientific-method-a-asking-a-question-b-forming-a-hypothesis">
+                            22. Pre-Assessment 
+A. Directions: Write the letter of the correct answer on a separate sheet of paper. 
+1. What is the first step in the scientific method? 
+a. asking a question 
+b. forming a hypothesis 
+c. gathering information 
+d. organizing data 
+2. Which of the following statements would be true of the scientific method? 
+a. People structure their lives on the principle of scientific method. 
+b. Scientists report the experimental results, but not the experimental design. 
+c. The scientific method is a continuous process by which people learn about his world. 
+d. When the results of the experiment do not fit the hypothesis, a scientist may discard the results and stop the experiment. 
+3. When scientists wish to communicate the results of their research, they are most likely to do which of the following? 
+a. call a press conference 
+b. immediately repeat the research 
+c. sell their findings to other researchers 
+d. write a concise report with complete results and proofs to the experiments performed and formulate conclusions 
+4. Suppose your mother sent you to the market to buy fruits and vegetables. How would you choose good quality fruits and vegetables? 
+a. Ask the vendor to choose it for you. 
+b. Just get any kind and pay right away. 
+c. Examine the fruit if it is free from insect bites and the smell of insecticide. 
+d. Tell your mother that you do not know how to buy good quality fruits and vegetables. 
+5. How is a hypothesis tested ? 
+a. by conducting an experiment and looking for results 
+b. by comparing observations in nature with predictions 
+c. by using the hypothesis to make predictions about a system. 
+d. all of the above 
+26. During an experiment about a coin and feather that were dropped at the same time, it was found that coin reached the ground first. One student said: “Maybe, the coin is heavier than the feather.” What do you call this kind of statement? 
+a. a problem 
+b. a conclusion 
+c. a hypothesis 
+d. an interpretation 
+For items 7-9: A group of students was asked to investigate how fast sugar dissolves in cold and in hot water? 
+7. If this is going to be a fair test, what variables should they control? 
+a. Amount of water and sugar in each cup, method of stirring, time when the solid is added to water, how long each solution is stirred. 
+b. Amount of water and sugar in each cup, method of stirring, how long each solution stirred. 
+c. Amount of sugar in each cup; method of stirring, time when the solid is added to water, how long each solution stirred. 
+d. Amount of water in each cup, method of stirring, time when the solid is added to water, how long each solution is stirred. 
+8. What is the dependent variable (what is being measured)? 
+The temperature of water. 
+The amount of sugar. 
+The length of time that sugar completely dissolves in hot water. 
+The length of time that sugar completely dissolves in cold water. 
+a. I only 
+b. II only 
+c. II and III 
+d. III and IV 
+9. What is the independent variable in the investigation? 
+a. I only 
+c. I, II and III 
+b. II and III 
+d. II, III and IV 
+10. Why is the Scientific Method an important process in doing experiments? 
+a. It takes more work but it’s worth it. 
+b. It helps the experiment to take longer and be better. 
+c. It ensures that the results can be trusted and repeated. 
+d. It ensures that the people doing the experiments are scientific. 
+For items 11-15: You want to prove that trees lower the air temperature under the leaves 
+because of the shade. You stand under the tree, hold out an air 
+thermometer under the shade for a few minutes, and record the air 
+temperature. You then move to an area where there are no trees and 
+record the air temperature. 
+11. What is the experimental setup? 
+12. What is the control setup? 
+13. What is the idependent variable? 
+14. What is the dependent variable? 
+15. What factors will you keep constant? 
+ plspls ngayon na yung deadline po plsplsplspslpslsp</h2><br />
+                        <p><strong>Answer:</strong></p><p></p><p></p><p></p><p></p><p><strong>1</strong><strong>0</strong><strong> </strong><strong>The scientific method attempts to minimize the influence of bias or prejudice in the experimenter. Even the best-intentioned scientists can't escape bias. That's the job of the scientific method. It provides an objective, standardized approach to conducting experiments and, in doing so, improves their results.</strong></p><p></p><p><strong>1</strong><strong>1</strong><strong> </strong><strong>Experimental Setup In this section you describe how the experiment was done and summarize the data taken. One typically describes the instruments and detectors used in this section. Describe the procedure followed to collect the data. If the experiment is complex, the procedure m</strong><strong>i</strong><strong>ght be described in a separate section.</strong></p><p></p><p><strong>1</strong><strong>2</strong><strong> </strong><strong>A control setup in a scientific experiment is separate from the main experiment and is a setup in which the independent variable under investigation cannot affect the results. This isolates the effect of the independent variable and helps eliminate alternative explanations of the investigation results.</strong></p><p></p><p><strong>1</strong><strong>3</strong><strong> </strong><strong>An independent variable is exactly what it sounds like. It is a variable that stands alone and isn't changed by the other variables you are trying to measure. For example, someone's age might be an independent variable.</strong></p><p></p><p><strong>1</strong><strong>4</strong><strong> </strong><strong>Just like an independent variable, a dependent variable is exactly what it sounds like. It is something that depends on other factors. Usually when you are looking for a relationship between two things you are trying to find out what makes the dependent variable change the way it does.</strong></p><p></p><p><strong>1</strong><strong>5</strong><strong> </strong><strong>The factors that can change value during an experiment or between experiments, such as water temperature, are called variables, while those that stay the same, such as acceleration due to gravity at a certain location, are called </strong><strong>constants</strong></p><br />
+                                            <h2 class="ez-toc-section" id="3-with-these-software-computers-can-be-used-to-calculate-and-process-numbers-4-it-is-a-software-that-has-fast-and-powerful-computing-ability-computers-can-easily-manipulate-store-classify-and">
+                            23. 3. With these software, computers can be used to calculate and process numbers. 4. It is a software that has fast and powerful computing ability, computers can easily manipulate, store, classify, and change data and information. 5. It is a software that provides students with almost limitless references for their needs such as, electronic books, booklets, and encyclopedia. 6. It is a tool that enables computers to provide computer-aided designs for artists. 7. It is the use of a computer to present and combine text, graphics, audio, and video with links and tools that let the user navigate, interact, create,                                                               andcommunicate. 8. It is the transmission of information by various types of technologies over wire, radio, optical or other electromagnetic systems. 9. It is currently being applied in military defense systems, scientific simulations, and even in games. 10. It is a program or machines that imitate human movement or action.​</h2><br />
+                        <p><strong>Answer:</strong></p><p>Uhmmm processing questions?</p><p><strong>Explanation:</strong></p><p>or may choices?</p><br />
+                                            <h2 class="ez-toc-section" id="pre-assessment-directions-write-the-letter-of-the-correct-answer-on-a-separate-sheet-of-paper-1-what-is-the-first-step-in-the-scientific-method-a-asking-a-question-c-gathering-information-b-formi">
+                            24. Pre-Assessment Directions: Write the letter of the correct answer on a separate sheet of paper 1. What is the first step in the scientific method? A asking a question C. gathering information B. forming a hypothesis D. organizing data 2. Which of the following statements would be TRUE of the scientific method? A People structure their lives on the principle of scientific method. B. Scientists report the experimental results, but not the experimental design. C. The scientific method is a continuous process by which people leam about his world. When the results of the experiment do not fit the hypothesis, a scientist may discard the results and stop the experiment. 3. When scientists wish to communicate the results of their research, they are most likely to do which of the following? A Call a press conference, B. Immediately repeat the research C. Sell their findings to other researchers D. Write a concise report with complete results and proofs to the experiments performed and formulate conclusions. 4. Suppose your mother sent you to the market to buy fruits and vegetables. How would you choose good quality fruits and vegetables? A. Ask the vendor to choose it for you. B. Just get any kind and pay right away. C. Examine the fruit if it is free from insect bites and the smell of insecticide. D. Tell your mother that you do not know how to buy good quality fruits and vegetables 5. How is a hypothesis tested ? A. by conducting an experiment and looking for results B. by comparing observations in nature with predictions C. by using the hypothesis to make predictions about a system D. all of the above 6. During an experiment about a coin and feather that were dropped at the same time, it was found that coin reached the ground first. One student said: "Maybe, the coin is heavier than the feather." What do you call this kind of statement? A. a problem B. a conclusion C. a hypothesis D. an interpretation For items 7-9: A group of students was asked to investigate how fast sugar dissolves in cold and in hot water? 7. If this is going to be a fair test, what variables should they control? A Amount of water and sugar in each cup, method of stirring, time when the solid is added to water, how long each solution is stirred. B. Amount of water and sugar in each cup, method of stirring, how long each solution stirred. C. Amount of sugar in each cup: method of stirring, time when the solid is added to water, how long each solution stirred. D. Amount of water in each cup, method of stirring, time when the solid is added to water, how long each solution is stirred. 8. What is the dependent variable (what is being measured)? L. The temperature of water. It The amount of sugar. HE The length of time that sugar completely dissolves in hot water. IV. The length of time that sugar completely dissolves in cold water. C. II and III D. III and IV A. I only B. Il only​</h2><br />
+                        <p><strong>Answer:</strong></p><p>1.b 2.c 3.b 4.a 5. c 6.b 7. a 8.d 9.c</p><br />
+                                            <h2 class="ez-toc-section" id="3-andys-dog-was-covered-in-mud-his-mom-was-very-upset-and-told-andy-heneeded-to-help-clean-up-before-he-could-go-to-play-you-can-tell-a-andys-dog-got-the-house-muddy-c-andys-mom-doesnt-like">
+                            25. 3. Andy's dog was covered in mud. His mom was very upset and told Andy heneeded to help clean up before he could go to play. You can tell...A. Andy's dog got the house muddy.C. Andy's mom doesn't like dogs.B. Andy's favorite animal is a dog.D. Andy and his mom love pets.4. It is a form of data-gathering instrument where the researcher could obtain information from alarge number of respondents.A. questionnaireC. formal interviewB. non-directive interviewD. data recording5. What research instrument is most useful in a study entitled, “Online classes: An analysis on itscontribution to the Students' Learning Experience”?A. FGDB. interviewC. observation D. documentary Analysis6. Designing a research is thinkingA. criticallyB. skillfullyC. literallyD. imaginatively7. In data tabulation, what do you call a graph that is used to collate for easy classification anddistribution of numbers based on a certain criterion.A. coding systemC. descriptive statistical techniqueB. data analysisD. data TabulationANSWER PLEASE ASAP​</h2><br />
+                        ANSWER 3,     A.    <p></p><p></p>4,  D.    <p></p><p></p>5,      D. <p></p><p></p>6,    C. <p></p><p></p><p></p>7,   B. <p></p><br />
+                    
+                </div>
+                <div class="youtubeVideo" style="text-align: center">
+                    <h3>Video Terkait</h3>
+                    <iframe width="560" height="315"
+                        src="https://www.youtube.com/embed/?controls=0" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"allowfullscreen></iframe>
+                </div>
+                <footer class="entry-meta" aria-label="Meta postingan">
+                    <span class="cat-links"><span class="gp-icon icon-categories"><svg viewBox="0 0 512 512"
+                                aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em">
+                                <path
+                                    d="M0 112c0-26.51 21.49-48 48-48h110.014a48 48 0 0143.592 27.907l12.349 26.791A16 16 0 00228.486 128H464c26.51 0 48 21.49 48 48v224c0 26.51-21.49 48-48 48H48c-26.51 0-48-21.49-48-48V112z">
+                                </path>
+                            </svg></span><span class="screen-reader-text">Kategori </span>computer_science</span>
+            </div>
+        </article>
+    </main>
+            </div>
+            <div class="widget-area sidebar is-right-sidebar" id="right-sidebar">
+                <div class="inside-right-sidebar">
+                    <aside id="categories-2" class="widget inner-padding widget_categories">
+                        <h2 class="widget-title">Topik</h2>
+                        <ul>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://phsmarter.github.io/john-locke-concept-of-self.html">John Locke Concept Of Self</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://phsmarter.github.io/examples-of-obstacles-in-life.html">Examples Of Obstacles In Life</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://phsmarter.github.io/forgetting-sarah-marshall-free-watch.html">Forgetting Sarah Marshall Free Watch</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://phsmarter.github.io/choosing-the-right-course-in-college-philippines.html">Choosing The Right Course In College Philippines</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://phsmarter.github.io/clinique-marketing-plan.html">Clinique Marketing Plan</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://phsmarter.github.io/rising-action-of-the-last-leaf.html">Rising Action Of The Last Leaf</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://phsmarter.github.io/mangyan-syllabic-script.html">Mangyan Syllabic Script</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://phsmarter.github.io/is-divorce-allowed-in-the-philippines.html">Is Divorce Allowed In The Philippines</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://phsmarter.github.io/economic-condition-in-rizal-s-time.html">Economic Condition In Rizal s Time</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://phsmarter.github.io/philippine-literature-characters-costumes.html">Philippine Literature Characters Costumes</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://phsmarter.github.io/my-sister-s-keeper-book-ending.html">My Sister s Keeper Book Ending</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://phsmarter.github.io/importance-of-tourism-and-hospitality-essay.html">Importance Of Tourism And Hospitality Essay</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://phsmarter.github.io/thesis-statement-about-mathematics.html">Thesis Statement About Mathematics</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://phsmarter.github.io/impersonal-communication-example.html">Impersonal Communication Example</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://phsmarter.github.io/helping-street-children-s.html">Helping Street Children s</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://phsmarter.github.io/jollibee-introduction.html">Jollibee Introduction</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://phsmarter.github.io/folk-songs-in-pre-spanish-period.html">Folk Songs In Pre Spanish Period</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://phsmarter.github.io/amsterdam-quotes.html">Amsterdam Quotes</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://phsmarter.github.io/samemarriage-argumentative-essay.html">SameMarriage Argumentative Essay</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://phsmarter.github.io/mcdonald-s-breakfast-menu-prices-philippines.html">Mcdonald s Breakfast Menu Prices Philippines</a>
+                                </li>
+                                                    </ul>
+
+                    </aside>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="site-footer">
+        <footer class="site-info" aria-label="Situs" itemtype="https://schema.org/WPFooter" itemscope>
+            <div class="inside-site-info grid-container">
+                <div class="copyright-bar">
+                    <span class="copyright">&copy; 2023 <a href="https://phsmarter.github.io"
+                            itemprop="url">QnA</a></span>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <a title="Gulirkan kembali ke puncak laman" aria-label="Gulirkan kembali ke puncak laman" rel="nofollow"
+        href="#" class="generate-back-to-top" data-scroll-speed="400" data-start-scroll="300">
+        <span class="gp-icon icon-arrow-up"><svg viewBox="0 0 330 512" aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill-rule="evenodd"
+                clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414">
+                <path
+                    d="M305.863 314.916c0 2.266-1.133 4.815-2.832 6.514l-14.157 14.163c-1.699 1.7-3.964 2.832-6.513 2.832-2.265 0-4.813-1.133-6.512-2.832L164.572 224.276 53.295 335.593c-1.699 1.7-4.247 2.832-6.512 2.832-2.265 0-4.814-1.133-6.513-2.832L26.113 321.43c-1.699-1.7-2.831-4.248-2.831-6.514s1.132-4.816 2.831-6.515L158.06 176.408c1.699-1.7 4.247-2.833 6.512-2.833 2.265 0 4.814 1.133 6.513 2.833L303.03 308.4c1.7 1.7 2.832 4.249 2.832 6.515z"
+                    fill-rule="nonzero" />
+            </svg></span>
+    </a>
+    <script id="generate-a11y">
+        ! function() {
+            "use strict";
+            if ("querySelector" in document && "addEventListener" in window) {
+                var e = document.body;
+                e.addEventListener("mousedown", function() {
+                    e.classList.add("using-mouse")
+                }), e.addEventListener("keydown", function() {
+                    e.classList.remove("using-mouse")
+                })
+            }
+        }();
+    </script>
+    <!--[if lte IE 11]>
+<script src='https://phsmarter.github.io/js/classList.min.js' ?ver=3.2.4' id='generate-classlist-js'></script>
+<![endif]-->
+    <script id='generate-menu-js-extra'>
+        var generatepressMenu = {
+            "toggleOpenedSubMenus": "1",
+            "openSubMenuLabel": "Buka Submenu",
+            "closeSubMenuLabel": "Tutup submenu"
+        };
+    </script>
+    <script src='https://phsmarter.github.io/js/menu.min.js' ?ver=3.2.4' id='generate-menu-js'></script>
+    <script id='generate-navigation-search-js-extra'>
+        var generatepressNavSearch = {
+            "open": "Buka Kolom Pencarian",
+            "close": "Tutup Kolom Pencarian"
+        };
+    </script>
+    <script src='https://phsmarter.github.io/js/navigation-search.min.js' ?ver=3.2.4' id='generate-navigation-search-js'></script>
+    <script id='generate-back-to-top-js-extra'>
+        var generatepressBackToTop = {
+            "smooth": "1"
+        };
+    </script>
+    <script src='https://phsmarter.github.io/js/back-to-top.min.js' ?ver=3.2.4' id='generate-back-to-top-js'></script>
+    <script type='text/javascript' src='//jd3j7g5z1fqs.com/96/78/7a/96787a1945876b1a9c10f79941441964.js'></script>
+  <!-- Histats.com  START  (aync)-->
+<script type="text/javascript">var _Hasync= _Hasync|| [];
+_Hasync.push(['Histats.start', '1,4739059,4,0,0,0,00010000']);
+_Hasync.push(['Histats.fasi', '1']);
+_Hasync.push(['Histats.track_hits', '']);
+(function() {
+var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async = true;
+hs.src = ('//s10.histats.com/js15_as.js');
+(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
+})();</script>
+<noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?4739059&101" alt="" border="0"></a></noscript>
+<!-- Histats.com  END  -->
+</body>
+
+</html>

@@ -1,0 +1,1334 @@
+<!DOCTYPE html>
+<html lang="id" prefix="og: https://ogp.me/ns#">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="profile" href="https://gmpg.org/xfn/11">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>System Model Example - QnA</title>
+    <meta name="description" content="System Model Example, Systems Modelling, , , , Systems Innovation, 2018-10-06T10:58:20.000000Z, 20, An Introduction to System Modelling - 2. Building Models - Claytex, www.claytex.com, 1024 x 532, png, , 20, system-model-example, QnA" />
+    <meta name="robots" content="index,follow" />
+    <meta property="og:locale" content="id_ID" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="System Model Example - QnA" />
+    <meta property="og:description" content="System Model Example, Systems Modelling, , , , Systems Innovation, 2018-10-06T10:58:20.000000Z, 20, An Introduction to System Modelling - 2. Building Models - Claytex, www.claytex.com, 1024 x 532, png, , 20, system-model-example, QnA" />
+    <meta property="og:site_name" content="QnA" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="System Model Example - QnA" />
+    <meta name="twitter:description" content="System Model Example, Systems Modelling, , , , Systems Innovation, 2018-10-06T10:58:20.000000Z, 20, An Introduction to System Modelling - 2. Building Models - Claytex, www.claytex.com, 1024 x 532, png, , 20, system-model-example, QnA" />
+    <link rel='stylesheet' id='generate-style-css' href='https://phsmarter.github.io/css/main.min.css'?ver=3.2.4'
+        media='all' />
+    <link rel='stylesheet' id='ez-toc-css' href='https://phsmarter.github.io/css/screen.min.css'?ver=2.0.40' media='all' />
+    <style id='generate-style-inline-css'>
+        body {
+            background-color: #f7f7f7;
+            color: #222222;
+        }
+
+        a {
+            color: #1e73be;
+        }
+
+        a:hover,
+        a:focus,
+        a:active {
+            color: #000000;
+        }
+
+        .wp-block-group__inner-container {
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .generate-back-to-top {
+            font-size: 20px;
+            border-radius: 3px;
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            line-height: 40px;
+            width: 40px;
+            text-align: center;
+            z-index: 10;
+            transition: opacity 300ms ease-in-out;
+            opacity: 0.1;
+            transform: translateY(1000px);
+        }
+
+        .generate-back-to-top__show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .navigation-search {
+            position: absolute;
+            left: -99999px;
+            pointer-events: none;
+            visibility: hidden;
+            z-index: 20;
+            width: 100%;
+            top: 0;
+            transition: opacity 100ms ease-in-out;
+            opacity: 0;
+        }
+
+        .navigation-search.nav-search-active {
+            left: 0;
+            right: 0;
+            pointer-events: auto;
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .navigation-search input[type="search"] {
+            outline: 0;
+            border: 0;
+            vertical-align: bottom;
+            line-height: 1;
+            opacity: 0.9;
+            width: 100%;
+            z-index: 20;
+            border-radius: 0;
+            -webkit-appearance: none;
+            height: 60px;
+        }
+
+        .navigation-search input::-ms-clear {
+            display: none;
+            width: 0;
+            height: 0;
+        }
+
+        .navigation-search input::-ms-reveal {
+            display: none;
+            width: 0;
+            height: 0;
+        }
+
+        .navigation-search input::-webkit-search-decoration,
+        .navigation-search input::-webkit-search-cancel-button,
+        .navigation-search input::-webkit-search-results-button,
+        .navigation-search input::-webkit-search-results-decoration {
+            display: none;
+        }
+
+        .gen-sidebar-nav .navigation-search {
+            top: auto;
+            bottom: 0;
+        }
+
+        :root {
+            --contrast: #222222;
+            --contrast-2: #575760;
+            --contrast-3: #b2b2be;
+            --base: #f0f0f0;
+            --base-2: #f7f8f9;
+            --base-3: #ffffff;
+            --accent: #1e73be;
+        }
+
+        .has-contrast-color {
+            color: var(--contrast);
+        }
+
+        .has-contrast-background-color {
+            background-color: var(--contrast);
+        }
+
+        .has-contrast-2-color {
+            color: var(--contrast-2);
+        }
+
+        .has-contrast-2-background-color {
+            background-color: var(--contrast-2);
+        }
+
+        .has-contrast-3-color {
+            color: var(--contrast-3);
+        }
+
+        .has-contrast-3-background-color {
+            background-color: var(--contrast-3);
+        }
+
+        .has-base-color {
+            color: var(--base);
+        }
+
+        .has-base-background-color {
+            background-color: var(--base);
+        }
+
+        .has-base-2-color {
+            color: var(--base-2);
+        }
+
+        .has-base-2-background-color {
+            background-color: var(--base-2);
+        }
+
+        .has-base-3-color {
+            color: var(--base-3);
+        }
+
+        .has-base-3-background-color {
+            background-color: var(--base-3);
+        }
+
+        .has-accent-color {
+            color: var(--accent);
+        }
+
+        .has-accent-background-color {
+            background-color: var(--accent);
+        }
+
+        body,
+        button,
+        input,
+        select,
+        textarea {
+            font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        }
+
+        body {
+            line-height: 1.5;
+        }
+
+        .entry-content>[class*="wp-block-"]:not(:last-child) {
+            margin-bottom: 1.5em;
+        }
+
+        .main-navigation .main-nav ul ul li a {
+            font-size: 14px;
+        }
+
+        .sidebar .widget,
+        .footer-widgets .widget {
+            font-size: 17px;
+        }
+
+        @media (max-width:768px) {
+            h1 {
+                font-size: 31px;
+            }
+
+            h2 {
+                font-size: 27px;
+            }
+
+            h3 {
+                font-size: 24px;
+            }
+
+            h4 {
+                font-size: 22px;
+            }
+
+            h5 {
+                font-size: 19px;
+            }
+        }
+
+        .top-bar {
+            background-color: #636363;
+            color: #ffffff;
+        }
+
+        .top-bar a {
+            color: #ffffff;
+        }
+
+        .top-bar a:hover {
+            color: #303030;
+        }
+
+        .site-header {
+            background-color: #ffffff;
+        }
+
+        .main-title a,
+        .main-title a:hover {
+            color: #222222;
+        }
+
+        .site-description {
+            color: #757575;
+        }
+
+        .main-navigation,
+        .main-navigation ul ul {
+            background-color: #ed4250;
+        }
+
+        .main-navigation .main-nav ul li a,
+        .main-navigation .menu-toggle,
+        .main-navigation .menu-bar-items {
+            color: #ffffff;
+        }
+
+        .main-navigation .main-nav ul li:not([class*="current-menu-"]):hover>a,
+        .main-navigation .main-nav ul li:not([class*="current-menu-"]):focus>a,
+        .main-navigation .main-nav ul li.sfHover:not([class*="current-menu-"])>a,
+        .main-navigation .menu-bar-item:hover>a,
+        .main-navigation .menu-bar-item.sfHover>a {
+            color: #ffffff;
+            background-color: #c42f2f;
+        }
+
+        button.menu-toggle:hover,
+        button.menu-toggle:focus {
+            color: #ffffff;
+        }
+
+        .main-navigation .main-nav ul li[class*="current-menu-"]>a {
+            color: #ffffff;
+            background-color: #c42f2f;
+        }
+
+        .navigation-search input[type="search"],
+        .navigation-search input[type="search"]:active,
+        .navigation-search input[type="search"]:focus,
+        .main-navigation .main-nav ul li.search-item.active>a,
+        .main-navigation .menu-bar-items .search-item.active>a {
+            color: #ffffff;
+            background-color: #c42f2f;
+        }
+
+        .main-navigation ul ul {
+            background-color: #c42f2f;
+        }
+
+        .main-navigation .main-nav ul ul li a {
+            color: #ffffff;
+        }
+
+        .main-navigation .main-nav ul ul li:not([class*="current-menu-"]):hover>a,
+        .main-navigation .main-nav ul ul li:not([class*="current-menu-"]):focus>a,
+        .main-navigation .main-nav ul ul li.sfHover:not([class*="current-menu-"])>a {
+            color: #fcd9d6;
+            background-color: #c42f2f;
+        }
+
+        .main-navigation .main-nav ul ul li[class*="current-menu-"]>a {
+            color: #fcd9d6;
+            background-color: #c42f2f;
+        }
+
+        .separate-containers .inside-article,
+        .separate-containers .comments-area,
+        .separate-containers .page-header,
+        .one-container .container,
+        .separate-containers .paging-navigation,
+        .inside-page-header {
+            background-color: #ffffff;
+        }
+
+        .entry-title a {
+            color: #222222;
+        }
+
+        .entry-title a:hover {
+            color: #55555e;
+        }
+
+        .entry-meta {
+            color: #595959;
+        }
+
+        .sidebar .widget {
+            background-color: #ffffff;
+        }
+
+        .footer-widgets {
+            background-color: #ffffff;
+        }
+
+        .footer-widgets .widget-title {
+            color: #000000;
+        }
+
+        .site-info {
+            color: #ffffff;
+            background-color: #55555e;
+        }
+
+        .site-info a {
+            color: #ffffff;
+        }
+
+        .site-info a:hover {
+            color: #d3d3d3;
+        }
+
+        .footer-bar .widget_nav_menu .current-menu-item a {
+            color: #d3d3d3;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="url"],
+        input[type="password"],
+        input[type="search"],
+        input[type="tel"],
+        input[type="number"],
+        textarea,
+        select {
+            color: #666666;
+            background-color: #fafafa;
+            border-color: #cccccc;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="url"]:focus,
+        input[type="password"]:focus,
+        input[type="search"]:focus,
+        input[type="tel"]:focus,
+        input[type="number"]:focus,
+        textarea:focus,
+        select:focus {
+            color: #666666;
+            background-color: #ffffff;
+            border-color: #bfbfbf;
+        }
+
+        button,
+        html input[type="button"],
+        input[type="reset"],
+        input[type="submit"],
+        a.button,
+        a.wp-block-button__link:not(.has-background) {
+            color: #ffffff;
+            background-color: #55555e;
+        }
+
+        button:hover,
+        html input[type="button"]:hover,
+        input[type="reset"]:hover,
+        input[type="submit"]:hover,
+        a.button:hover,
+        button:focus,
+        html input[type="button"]:focus,
+        input[type="reset"]:focus,
+        input[type="submit"]:focus,
+        a.button:focus,
+        a.wp-block-button__link:not(.has-background):active,
+        a.wp-block-button__link:not(.has-background):focus,
+        a.wp-block-button__link:not(.has-background):hover {
+            color: #ffffff;
+            background-color: #3f4047;
+        }
+
+        a.generate-back-to-top {
+            background-color: rgba(0, 0, 0, 0.4);
+            color: #ffffff;
+        }
+
+        a.generate-back-to-top:hover,
+        a.generate-back-to-top:focus {
+            background-color: rgba(0, 0, 0, 0.6);
+            color: #ffffff;
+        }
+
+        @media (max-width:768px) {
+
+            .main-navigation .menu-bar-item:hover>a,
+            .main-navigation .menu-bar-item.sfHover>a {
+                background: none;
+                color: #ffffff;
+            }
+        }
+
+        .nav-below-header .main-navigation .inside-navigation.grid-container,
+        .nav-above-header .main-navigation .inside-navigation.grid-container {
+            padding: 0px 20px 0px 20px;
+        }
+
+        .site-main .wp-block-group__inner-container {
+            padding: 40px;
+        }
+
+        .separate-containers .paging-navigation {
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+
+        .entry-content .alignwide,
+        body:not(.no-sidebar) .entry-content .alignfull {
+            margin-left: -40px;
+            width: calc(100% + 80px);
+            max-width: calc(100% + 80px);
+        }
+
+        .rtl .menu-item-has-children .dropdown-menu-toggle {
+            padding-left: 20px;
+        }
+
+        .rtl .main-navigation .main-nav ul li.menu-item-has-children>a {
+            padding-right: 20px;
+        }
+
+        @media (max-width:768px) {
+
+            .separate-containers .inside-article,
+            .separate-containers .comments-area,
+            .separate-containers .page-header,
+            .separate-containers .paging-navigation,
+            .one-container .site-content,
+            .inside-page-header {
+                padding: 30px;
+            }
+
+            .site-main .wp-block-group__inner-container {
+                padding: 30px;
+            }
+
+            .inside-top-bar {
+                padding-right: 30px;
+                padding-left: 30px;
+            }
+
+            .inside-header {
+                padding-right: 30px;
+                padding-left: 30px;
+            }
+
+            .widget-area .widget {
+                padding-top: 30px;
+                padding-right: 30px;
+                padding-bottom: 30px;
+                padding-left: 30px;
+            }
+
+            .footer-widgets-container {
+                padding-top: 30px;
+                padding-right: 30px;
+                padding-bottom: 30px;
+                padding-left: 30px;
+            }
+
+            .inside-site-info {
+                padding-right: 30px;
+                padding-left: 30px;
+            }
+
+            .entry-content .alignwide,
+            body:not(.no-sidebar) .entry-content .alignfull {
+                margin-left: -30px;
+                width: calc(100% + 60px);
+                max-width: calc(100% + 60px);
+            }
+
+            .one-container .site-main .paging-navigation {
+                margin-bottom: 20px;
+            }
+        }
+
+        /* End cached CSS */
+        .is-right-sidebar {
+            width: 30%;
+        }
+
+        .is-left-sidebar {
+            width: 30%;
+        }
+
+        .site-content .content-area {
+            width: 70%;
+        }
+
+        @media (max-width:768px) {
+
+            .main-navigation .menu-toggle,
+            .sidebar-nav-mobile:not(#sticky-placeholder) {
+                display: block;
+            }
+
+            .main-navigation ul,
+            .gen-sidebar-nav,
+            .main-navigation:not(.slideout-navigation):not(.toggled) .main-nav>ul,
+            .has-inline-mobile-toggle #site-navigation .inside-navigation>*:not(.navigation-search):not(.main-nav) {
+                display: none;
+            }
+
+            .nav-align-right .inside-navigation,
+            .nav-align-center .inside-navigation {
+                justify-content: space-between;
+            }
+        }
+    </style>
+    <link rel="icon" href="https://phsmarter.github.io/img/cropped-soalbelajar-32x32.png" sizes="32x32" />
+    <link rel="icon" href="https://phsmarter.github.io/img/cropped-soalbelajar-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="https://phsmarter.github.io/img/cropped-soalbelajar-180x180.png" />
+    <meta name="msapplication-TileImage" content="https://phsmarter.github.io/img/cropped-soalbelajar-270x270.png" />
+</head>
+
+<body
+    class="home blog wp-custom-logo wp-embed-responsive right-sidebar nav-above-header separate-containers nav-search-enabled nav-aligned-center header-aligned-center dropdown-hover"
+    itemtype="https://schema.org/Blog" itemscope>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false"
+        role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+        <defs>
+            <filter id="wp-duotone-dark-grayscale">
+                <feColorMatrix color-interpolation-filters="sRGB" type="matrix"
+                    values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+                <feComponentTransfer color-interpolation-filters="sRGB">
+                    <feFuncR type="table" tableValues="0 0.49803921568627" />
+                    <feFuncG type="table" tableValues="0 0.49803921568627" />
+                    <feFuncB type="table" tableValues="0 0.49803921568627" />
+                    <feFuncA type="table" tableValues="1 1" />
+                </feComponentTransfer>
+                <feComposite in2="SourceGraphic" operator="in" />
+            </filter>
+        </defs>
+    </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false"
+        role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+        <defs>
+            <filter id="wp-duotone-grayscale">
+                <feColorMatrix color-interpolation-filters="sRGB" type="matrix"
+                    values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+                <feComponentTransfer color-interpolation-filters="sRGB">
+                    <feFuncR type="table" tableValues="0 1" />
+                    <feFuncG type="table" tableValues="0 1" />
+                    <feFuncB type="table" tableValues="0 1" />
+                    <feFuncA type="table" tableValues="1 1" />
+                </feComponentTransfer>
+                <feComposite in2="SourceGraphic" operator="in" />
+            </filter>
+        </defs>
+    </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false"
+        role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+        <defs>
+            <filter id="wp-duotone-purple-yellow">
+                <feColorMatrix color-interpolation-filters="sRGB" type="matrix"
+                    values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+                <feComponentTransfer color-interpolation-filters="sRGB">
+                    <feFuncR type="table" tableValues="0.54901960784314 0.98823529411765" />
+                    <feFuncG type="table" tableValues="0 1" />
+                    <feFuncB type="table" tableValues="0.71764705882353 0.25490196078431" />
+                    <feFuncA type="table" tableValues="1 1" />
+                </feComponentTransfer>
+                <feComposite in2="SourceGraphic" operator="in" />
+            </filter>
+        </defs>
+    </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false"
+        role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+        <defs>
+            <filter id="wp-duotone-blue-red">
+                <feColorMatrix color-interpolation-filters="sRGB" type="matrix"
+                    values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+                <feComponentTransfer color-interpolation-filters="sRGB">
+                    <feFuncR type="table" tableValues="0 1" />
+                    <feFuncG type="table" tableValues="0 0.27843137254902" />
+                    <feFuncB type="table" tableValues="0.5921568627451 0.27843137254902" />
+                    <feFuncA type="table" tableValues="1 1" />
+                </feComponentTransfer>
+                <feComposite in2="SourceGraphic" operator="in" />
+            </filter>
+        </defs>
+    </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false"
+        role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+        <defs>
+            <filter id="wp-duotone-midnight">
+                <feColorMatrix color-interpolation-filters="sRGB" type="matrix"
+                    values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+                <feComponentTransfer color-interpolation-filters="sRGB">
+                    <feFuncR type="table" tableValues="0 0" />
+                    <feFuncG type="table" tableValues="0 0.64705882352941" />
+                    <feFuncB type="table" tableValues="0 1" />
+                    <feFuncA type="table" tableValues="1 1" />
+                </feComponentTransfer>
+                <feComposite in2="SourceGraphic" operator="in" />
+            </filter>
+        </defs>
+    </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false"
+        role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+        <defs>
+            <filter id="wp-duotone-magenta-yellow">
+                <feColorMatrix color-interpolation-filters="sRGB" type="matrix"
+                    values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+                <feComponentTransfer color-interpolation-filters="sRGB">
+                    <feFuncR type="table" tableValues="0.78039215686275 1" />
+                    <feFuncG type="table" tableValues="0 0.94901960784314" />
+                    <feFuncB type="table" tableValues="0.35294117647059 0.47058823529412" />
+                    <feFuncA type="table" tableValues="1 1" />
+                </feComponentTransfer>
+                <feComposite in2="SourceGraphic" operator="in" />
+            </filter>
+        </defs>
+    </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false"
+        role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+        <defs>
+            <filter id="wp-duotone-purple-green">
+                <feColorMatrix color-interpolation-filters="sRGB" type="matrix"
+                    values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+                <feComponentTransfer color-interpolation-filters="sRGB">
+                    <feFuncR type="table" tableValues="0.65098039215686 0.40392156862745" />
+                    <feFuncG type="table" tableValues="0 1" />
+                    <feFuncB type="table" tableValues="0.44705882352941 0.4" />
+                    <feFuncA type="table" tableValues="1 1" />
+                </feComponentTransfer>
+                <feComposite in2="SourceGraphic" operator="in" />
+            </filter>
+        </defs>
+    </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false"
+        role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+        <defs>
+            <filter id="wp-duotone-blue-orange">
+                <feColorMatrix color-interpolation-filters="sRGB" type="matrix"
+                    values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+                <feComponentTransfer color-interpolation-filters="sRGB">
+                    <feFuncR type="table" tableValues="0.098039215686275 1" />
+                    <feFuncG type="table" tableValues="0 0.66274509803922" />
+                    <feFuncB type="table" tableValues="0.84705882352941 0.41960784313725" />
+                    <feFuncA type="table" tableValues="1 1" />
+                </feComponentTransfer>
+                <feComposite in2="SourceGraphic" operator="in" />
+            </filter>
+        </defs>
+    </svg><a class="screen-reader-text skip-link" href="#content" title="Langsung ke isi">Langsung ke isi</a>
+    <nav class="main-navigation nav-align-center has-menu-bar-items sub-menu-right" id="site-navigation"
+        aria-label="Utama" itemtype="https://schema.org/SiteNavigationElement" itemscope>
+        <div class="inside-navigation grid-container">
+            <form method="get" class="search-form navigation-search" action="/">
+                <input type="search" class="search-field" value="" name="q" title="Cari" />
+            </form> <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+                <span class="gp-icon icon-menu-bars"><svg viewBox="0 0 512 512" aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg" width="1em" height="1em">
+                        <path
+                            d="M0 96c0-13.255 10.745-24 24-24h464c13.255 0 24 10.745 24 24s-10.745 24-24 24H24c-13.255 0-24-10.745-24-24zm0 160c0-13.255 10.745-24 24-24h464c13.255 0 24 10.745 24 24s-10.745 24-24 24H24c-13.255 0-24-10.745-24-24zm0 160c0-13.255 10.745-24 24-24h464c13.255 0 24 10.745 24 24s-10.745 24-24 24H24c-13.255 0-24-10.745-24-24z" />
+                    </svg><svg viewBox="0 0 512 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                        width="1em" height="1em">
+                        <path
+                            d="M71.029 71.029c9.373-9.372 24.569-9.372 33.942 0L256 222.059l151.029-151.03c9.373-9.372 24.569-9.372 33.942 0 9.372 9.373 9.372 24.569 0 33.942L289.941 256l151.03 151.029c9.372 9.373 9.372 24.569 0 33.942-9.373 9.372-24.569 9.372-33.942 0L256 289.941l-151.029 151.03c-9.373 9.372-24.569 9.372-33.942 0-9.372-9.373-9.372-24.569 0-33.942L222.059 256 71.029 104.971c-9.372-9.373-9.372-24.569 0-33.942z" />
+                    </svg></span><span class="mobile-menu">Menu</span> </button>
+            <div id="primary-menu" class="main-nav">
+                <ul id="menu-soal-belajar" class=" menu sf-menu">
+                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1"><a
+                            href="https://phsmarter.github.io">Home</a></li>
+                </ul>
+                </ul>
+            </div>
+            <div class="menu-bar-items"><span class="menu-bar-item search-item"><a aria-label="Buka Kolom Pencarian"
+                        href="#"><span class="gp-icon icon-search"><svg viewBox="0 0 512 512"
+                                aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M208 48c-88.366 0-160 71.634-160 160s71.634 160 160 160 160-71.634 160-160S296.366 48 208 48zM0 208C0 93.125 93.125 0 208 0s208 93.125 208 208c0 48.741-16.765 93.566-44.843 129.024l133.826 134.018c9.366 9.379 9.355 24.575-.025 33.941-9.379 9.366-24.575 9.355-33.941-.025L337.238 370.987C301.747 399.167 256.839 416 208 416 93.125 416 0 322.875 0 208z" />
+                            </svg><svg viewBox="0 0 512 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                width="1em" height="1em">
+                                <path
+                                    d="M71.029 71.029c9.373-9.372 24.569-9.372 33.942 0L256 222.059l151.029-151.03c9.373-9.372 24.569-9.372 33.942 0 9.372 9.373 9.372 24.569 0 33.942L289.941 256l151.03 151.029c9.372 9.373 9.372 24.569 0 33.942-9.373 9.372-24.569 9.372-33.942 0L256 289.941l-151.029 151.03c-9.373 9.372-24.569 9.372-33.942 0-9.372-9.373-9.372-24.569 0-33.942L222.059 256 71.029 104.971c-9.372-9.373-9.372-24.569 0-33.942z" />
+                            </svg></span></a></span></div>
+        </div>
+    </nav>
+    <header class="site-header grid-container" id="masthead" aria-label="Situs"
+        itemtype="https://schema.org/WPHeader" itemscope>
+        <div class="inside-header grid-container">
+            <h1 class="site-logo">
+                <a href="https://phsmarter.github.io" rel="home"> QnA</a>
+            </h1>
+        </div>
+    </header>
+
+    <div class="site grid-container container hfeed" id="page">
+        <div class="site-content" id="content">
+            <div class="content-area" id="primary">
+                    <main class="site-main" id="main">
+        <article id="post-1327" class="post-1327 post type-post status-publish format-standard hentry category-info"
+            itemtype="https://schema.org/CreativeWork" itemscope="">
+            <div class="inside-article">
+                <header class="entry-header" aria-label="Konten">
+                    <h1 class="entry-title" itemprop="headline">System Model Example</h1>
+                    <div class="entry-meta">
+                       <span
+                            class="byline">oleh <span class="author vcard" itemprop="author"
+                                itemtype="https://schema.org/Person" itemscope=""><span class="author-name"
+                                    itemprop="name">gaelmin</span></span></span>
+                    </div>
+                </header>
+                <div class="entry-content" itemprop="text">
+                    <div style="text-align: center">
+                        <img src="https://tse1.mm.bing.net/th?q=System+Model+Example" alt="System Model Example">
+                    </div>
+                    <p></p>
+                    <p>example of a system that demonstrate the IPO model​</p>
+                    <div id="ez-toc-container"
+                        class="ez-toc-v2_0_40 counter-hierarchy ez-toc-counter ez-toc-light-blue ez-toc-container-direction">
+                        <div class="ez-toc-title-container">
+                            <p class="ez-toc-title">Daftar Isi</p>
+                            <span class="ez-toc-title-toggle"><a href="#"
+                                    class="ez-toc-pull-right ez-toc-btn ez-toc-btn-xs ez-toc-btn-default ez-toc-toggle"
+                                    area-label="ez-toc-toggle-icon-1"><label for="item-63b392361c4a0"
+                                        aria-label="Table of Content"><span
+                                            style="display: flex;align-items: center;width: 35px;height: 30px;justify-content: center;direction:ltr;"><svg
+                                                style="fill: #999;color:#999" xmlns="http://www.w3.org/2000/svg"
+                                                class="list-377408" width="20px" height="20px" viewBox="0 0 24 24"
+                                                fill="none">
+                                                <path
+                                                    d="M6 6H4v2h2V6zm14 0H8v2h12V6zM4 11h2v2H4v-2zm16 0H8v2h12v-2zM4 16h2v2H4v-2zm16 0H8v2h12v-2z"
+                                                    fill="currentColor"></path>
+                                            </svg><svg style="fill: #999;color:#999" class="arrow-unsorted-368013"
+                                                xmlns="http://www.w3.org/2000/svg" width="10px" height="10px"
+                                                viewBox="0 0 24 24" version="1.2" baseProfile="tiny">
+                                                <path
+                                                    d="M18.2 9.3l-6.2-6.3-6.2 6.3c-.2.2-.3.4-.3.7s.1.5.3.7c.2.2.4.3.7.3h11c.3 0 .5-.1.7-.3.2-.2.3-.5.3-.7s-.1-.5-.3-.7zM5.8 14.7l6.2 6.3 6.2-6.3c.2-.2.3-.5.3-.7s-.1-.5-.3-.7c-.2-.2-.4-.3-.7-.3h-11c-.3 0-.5.1-.7.3-.2.2-.3.5-.3.7s.1.5.3.7z">
+                                                </path>
+                                            </svg></span></label><input type="checkbox" id="item-63b392361c4a0"></a></span>
+                        </div>
+                        <nav>
+                            <ul class="ez-toc-list ez-toc-list-level-1 ">
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#example-of-a-system-that-demonstrate-the-ipo-model%e2%80%8b">1.
+                                            example of a system that demonstrate the IPO model​</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#what-the-example-of-respiratory-system-of-bunch-model%e2%80%8b">2.
+                                            what the example of  respiratory system of bunch model?​</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#enumerate-at-least-three-examples-of-countries-each-of-political-system-then-identify-what-policing-systemmodel-exist-in-that-country-political-system-policing-systemmodel">3.
+                                            Enumerate at least three examples of countries each of political system then identify what policing system/model exist in that country.
+POLITICAL SYSTEM         	                POLICING SYSTEM/MODEL
+Democratic
+Republic
+Monarchy
+Communism
+Dictatorship</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#aftowicdc-parallel-linesd-theoremd-same-directions%e2%80%a2-top-and-bottomd-theoremd-axiom7-what-term-can-be-best-used-to-define-parallelogram2-pointb-lines8-the-statement-for-any-angle-the-m">4.
+                                            AFTOWICdc Parallel linesd Theoremd. Same directions• Top and bottomd. Theoremd. Axiom7. What term can be best used to define parallelogram?2. Pointb. Lines8 The statement. For any angle, the measure of the whole is equal to the sum of the measures ofnon-overlapping parts", is an example of what component in a mathematical system?a Postulateb. Definition. What are the directions where a straight line extends indefinitely?c Corollarya. Left and right b Opposite directions10 What are terms can be generated and defined precisely, using undefined terms?a Postulateb. Definitionc Corollary11. What is any statement that can be proven using logical deduction from the axioms?a Undefined Terms b. Definitionc Theorem12. What is a list of undefined terms together with a list of axioms (presupposed to be "true"), the definitionin proving theorems and other components of a mathematical system?13. What is the illustration to define the undefined terms so that the axioms are true?a Mathematical Structure b. Mathematical Set C. Axiomatic Structure d Axiomatic Seta Modelb. Replicac Isometryd Diagram14. What condition exists if an axiomatic system is independent"a. It can be proven from the other axioms.c. It is true based on the other axioms.d. It is false based on the other axioms.15. What condition exists if an axiomatic system is consistent?a It can be proven from the other axioms.b. It cannot be proven from the other axioms.c there is a model for an axiomatic system where the axioms are all trued. there is a model for an axiomatic system where one axiom is independent16 What condition exists if an axiomatic system is complete?a. If every true statement can be proven from the axioms. b. If every true statement exists.c. If every true statement can stand on its own d. If every true statement is independent and consistent.b. It cannot be proven from the other axioms pasagot po thankss​</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#computers-are-electronic-devices-that-process-received-1-_________then-display-or-2_________these-processed-data-and-stores-them-for-futureneed-these-computers-are-grouped-according-to-what-data">5.
+                                            Computers are electronic devices that process received (1)._________then display or (2)_________these processed data and stores them for futureneed. These computers are grouped according to what data they process. Acomputer is an (3)________computer if it uses the continuously changeableaspects of physical phenomena such as electrical, mechanical, or hydraulicquantities to model or (4)_____the problem being solved.Further, the computer is also grouped according to their (5)_____and functionalities. The biggest computer is the (6)________that is used forcomplex calculations such as forecasting weather. The second biggest computeris the (7)________that is used mainly for bulk data processing done forexample by banks, airlines, insurance companies and colleges. Next to these arethe (8)______(9).______(10)________(11)_______The smallest of these is the (12).________Also, we talked about the aspects and general composition of thecomputer. We said that there are (13)_______aspects of the computer and(14)________general parts. The systems (aspects) composing ourcomputers won't work without each other. One of the systems is the touchable,physical parts which are collectively called (15).______The secondsystem is composed of programs, instructions, applications, and the like that wecannot physically touch. This is called the (16)_______And the otheraspect is the people who are involved in the development, usage and making ofthe computers. They are the (17)________Finally, in this module, we also talked about the general grouping ofdevices that compose the hardware aspect of the computer system. The devicesthat we use to put or feed data into the computer are collectively called(18)_______The devices that process the data we feed into the computerare called (19)______After the data are processed, they will then bedisplayed, projected or physically reproduced by the (20)_______devicesThese processed data can also be temporarily or permanently kept in the(21)_____devices​</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#11-cultural-symbols-can-represent-any-aspect-of-the-culture-which-include-the-following-a-belief-systems-c-nationalism-b-language-d-all-of-the-above-12-which-of-the-following-is-an-example-of-s">6.
+                                            11. Cultural symbols can represent any aspect of the culture which include the following: A. belief systems C. nationalism B. language D. all of the above 12. Which of the following is an example of social symbol? A. Clothing and possessions C. Money B. Flags D. Values 13. All of the following are examples of economic symbols EXCEPT: A. Currency C. Mottos B. Life Insurance D. Stock Exchange 14. Members share common norms, activities, goals, and background. A. In-group C. Out-group B. Reference group D. None of the above 15. All of the following are examples of formal organizations EXCEPT A. cliques C. hospitals B. churches D. trade unions 16. This refers to the group characterized by impersonal, business like, contractual, casual relationships. A. In-group C. Primary group B. Out-group D. Secondary group 17. A community of intimate, private, and exclusive living and familism where the activities, interests, and personalities center around the large family groups and neighbors. A. Gemeinschaft B. Gesselschaft 18. They serve as model of standards and we use them as patterns to guide behaviours and attitudes. A. In-group C. Reference group B. Primary group D. Secondary group 19. A social group that an individual does not identify with. A. network C. primary group B. out-group D. reference group 20. Which of the following is an example of cultural symbol? A. cross C. flags B.currency D. gas and petroleum ​</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#math-is-helpful-in-daily-life-for-example-when-ou-building-a-house-or-like-steps-in-our-house-we-can-use-it-by-trigonometry-formulas-measured-by-angles-and-trigonometry-can-be-used-in-oceanography-in">7.
+                                            Math is helpful in daily life for example when ou building a house or like steps in our house we can use it by trigonometry formulas measured by angles and trigonometry can be used in oceanography in calculating the height of tides in ocean the sine and cosine functions are fundamental to the theory of period functions those that describe the sound and light waves, calculus is made up of trigonometry has its applications in satellite systems. quadratic equations lend themselves to modeling situations that happen in real life such as the rise and fall of profits from selling gods the decrease   and increase in the amount of time it takes to run a mile based on you aid and so on. a good understanding of math in everyday life is essential for making sense of all the numbers  and problems life throw at us.</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#introduction-to-online-collaborative-the-growth-of-online-social-networking-has-created-new-opportunities-for-collaboration-how-can-we-ensure-that-everyone-is-able-to-make-full-use-of-it-in-line-of">8.
+                                            Introduction to Online Collaborative The growth of online social networking has created new opportunities for collaboration. How can we ensure that everyone is able to make full use of it? In line of work, we will explore the use of user role assignments as a way to encourage participation in online collaborative. A design for such a roles system to be built into an online collaborative environment that uses the idea of state-space search as a model for problem solving. The simultaneousness of both constructivist ways to deal with learning and the improvement of the Internet has prompted the advancement of a specific type of constructivist educating, initially called PC intervened correspondence (CMC), or arranged leaming. Another vital variable is that in the OCL model, talk gatherings are not an expansion or supplement to center showing materials, for example, course books, recorded addresses, or content in a LMS, however are the center segment of the instructing. Course books, readings and different assets are upheld the exchange, not the other route round. This is a key outline guideline, and clarifies why regularly teachers or coaches grumble, in more "customary" online courses, that understudies don't take an interest in examinations. Frequently this is on the grounds that where online dialogs are auxiliary to more instructive educating, or are not purposely outlined and figured out how to prompt learning development, understudies see the discourses as discretionary or additional work, since they have no immediate effect on evaluations or appraisal. example and meaning ​</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#pretest-matching-typedirection-match-item-on-column-a-with-column-b-write-the-letter-ofyour-answer-on-the-space-provided-ba-middlewareb-operatingsystemc-utility-softwared-device-driverse-compu">9.
+                                            PRETEST: MATCHING TYPEDirection. Match item on Column A with Column B. Write the letter ofyour answer on the space provided.Ba. Middlewareb. OperatingSystemc. Utility Softwared. Device Driverse. ComputerSoftwareA1. It is a software designed to help analyze,configure, optimize, or maintain a computer.2. Divided into three such as System Software,Application Software and Programming Languages.3. It has the following examples such as 1keyboards, printers, scanners, digital cameras, andexternal storage devices.4. It acts like the connective tissue betweenapplications, data, and users.5. Examples are Microsoft windows 7, 8 and 10,Apples macos, chrome OS, Blackberry tablet OS andflavors of Linux.6. An interconnection of multiple devices, alsoknown as hosts, that are connected using multiplepaths for the purpose of sending/receiving data ormedia.7. The layout arrangement of the differentdevices in a network.8. The set of rules or algorithms which define theway how entities can communicate across the networkand there exists different protocols defined at eachlayer of the OSI model.f. IP Addressg. Host Nameh. Protocol9. Each device in the network is associated witha unique device name.10. It is known as the logical address, the IPaddress of the system across the network,i. NetworkTopologyj. ComputerNetwork​</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#lesson-3-economic-systems-circular-flow1-based-in-the-discussion-of-circular-flow-model-why-is-the-model-have-only-two-main-involved-factors-household-and-firm2-explain-the-circular-f">10.
+                                            Lesson 3: ECONOMIC 
+SYSTEMS &amp; CIRCULAR FLOW1. Based in the discussion of Circular Flow Model, 
+why is the model have only two main involved 
+factors (Household and Firm)?
+2. Explain the circular flow model by providing 
+concrete examples of each factor involved in the 
+model.3. What economic system is appropriate in the 
+Philippines? Would it be possible to use the 
+command or mixed economic system? 
+</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#1-it-is-a-set-of-programs-designed-to-perform-a-well-defined-function-in-a-2-it-is-known-as-the-brain-of-the-computer-3-it-is-a-permanent-storage-device-inside-the-computer-system-4-it-is-a-proc">11.
+                                            1. It is a set of programs designed to perform a well-defined function in a 2. It is known as the brain of the computer. 3. It is a permanent storage device inside the computer system. 4. It is a process of entering data and programs into the computer system. 5. The physical docking point of which an external device can be connected 6. It refers to the process of producing results from the data for getting 7. It is a program used for analysis, planning and modeling. 8. It is a software used to satisfy the needs of an organization rather than 9. A well-ordered structure for accessing the main application and contains functions like logging out or searching for applications. 10. The CPU and memory are located on. 11. Servers are computers that provide resources to other computers 12. Windows and the MacOS are examples of two different 13. It is approximately a million bytes. 14. The chips used in computers is made of 15. It is the science that attempts to produce machines that display the computer system. to the computer. useful information. individual users. menu items for major connected to. same type of intelligence that humans do.​</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#1-which-of-the-following-is-an-example-of-a-scientific-model-that-is-too-big-to-seea-model-of-the-cellb-model-of-the-sunc-model-of-an-atomd-model-of-the-human-body2-which-of-the-followin">12.
+                                            1.) Which of the following is an example of a Scientific model that is too big to see?
+A. Model of the Cell
+B. Model of the Sun
+C. Model of an Atom
+D. Model of the Human Body
+2.) Which of the following is an example of an event that occur too fast to see and can be represented by a Scientific model?
+A. Mountain formation
+B. Death of Stars
+C. Growth of frog from being a tadpole
+D. Speed of light
+3.) It is a Scientific model whose characteristics resemble the physical characteristics of the modeled system. It can be seen and touched.
+A. Mathematical Model
+B. Physical Model
+C. Conceptual Model
+D. All of the above
+4.) It is a representation of a system that uses concepts and ideas. It makes comparisons with familiar things to help illustrate or explain an idea.
+A. Mathematical Model
+B. Physical Model
+C. Conceptual Model
+D. All of the above</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#worksheet-no-2-science-9-quarter-1-module-2-most-essential-learning-competency-inter-how-ones-lifestyle-can-affect-the-functioning-of-the-respiratory-and-circulatory-systems89lt-27-directions-co">13.
+                                            Worksheet No. 2 SCIENCE 9 QUARTER 1 MODULE 2 MOST ESSENTIAL LEARNING COMPETENCY: Inter how one's lifestyle can affect the functioning of the respiratory and circulatory systems(89LT-27) Directions: Complete the graphic organizer (Frayer Model) below. Fill in examples from the topic using key terms as well as your own words in the box. How one's lifestyle can affect the functioning of the respiratory and circulatory systems?​</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#ano-po-ba-ibang-example-ng-social-system-about-po-sa-model-of-communication-may-reporting-po-ako-sa-monday-about-dyan-pls-pahelp-naman-po-oral-comm-po-itong-subj-na-ito">14.
+                                            ano po ba ibang example ng social system about po sa model of communication may reporting po ako sa monday about dyan pls pahelp naman po oral comm po itong subj na ito</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#1-the-society-should-be-a-model-for-social-justice-the-leader-must-see-to-it-that-the-rights-of-each-individual-is-respected-protected-and-valued-____________a-peaceb-respect-for-other-people">15.
+                                            1. The society should be a model for social justice. The leader must see to it that the rights of each individual is respected, protected and valued. ____________
+A. Peace
+B. Respect for Other People
+C. Thrift and Economy
+D. The Call for Social Justice and General Welfare
+2. Development is the societal focus needed to provide each member. Example of this is the system of public health, clean environment and progressive economic system. _________________
+A. Peace
+B. Respect for Other People
+C. Thrift and Economy
+D. The Call for Social Justice and General Welfare
+3. It means the absence of troubles, unity in the family, community and society. There is harmony among members of the community, there is obedience in authority. _____________
+A. Peace
+B. Respect for Other People
+C. Thrift and Economy
+D. The Call for Social Justice and General Welfare
+4. What is the primary goal of the society? ____________
+A. Common Good
+B. Peace
+C. Prosperity
+D. Security
+5. The following are the elements of common good except ______________.
+A. Common Good
+B. Peace
+C. Prosperity
+D. Security</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#what-to-do-directions-put-a-check-on-the-blank-if-the-given-example-is-from-the-application-ofsoyles-law-and-cross-out-x-if-not-1-the-scuba-divers-activity-2-on-how-the-hot-air-balloon">16.
+                                            WHAT TO DO 
+Directions: 
+Put a check (/) on the blank if the given example is from the application of
+Soyle's Law and cross out (X) if not.
+1. The scuba diver's activity.
+2. On how the hot air balloon works.
+3. The use of lung model in respiratory system.
+tysm!</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#11-one-way-of-changing-our-impact-on-the-environment-we-live-in-is-to-a-use-a-car-instead-of-a-bus-to-get-to-workb-pack-our-garbage-in-smaller-bagsc-bathe-every-day-instead-of-showeringd-becom">17.
+                                            11. One way of changing our impact on the environment we live in is to ...A. use a car instead of a bus to get to workB. pack our garbage in smaller bagsC. bathe every day instead of showeringD. become aware of all the resources you use12. An ecosystem thrives with biotic and abiotic component parts. An example ofan abiotic part of an ecosystem is ...A. micro-bacteriaC. waterD. decaying plantsB. fungus13. Food chains and food webs are models in science which visually show us thedifferent relationships within an ecosystem. The primary difference betweenthe food chain and the food web is ...A. a food chain shows how energy is storedB. a food web shows how energy is usedC. a food web is a complex system of food chainsD. a food chain is a combination of different food webs​</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#iii-direction-choose-the-letter-of-the-correct-answer-circle-the-letter-ofyour-answer-1-the-dbms-acts-as-an-interface-between-what-two-components-of-anenterprise-class-database-systema-database">18.
+                                            III. Direction: Choose the letter of the correct answer. Circle the letter ofyour answer.1. The DBMS acts as an interface between what two components of anenterprise-class database system?a. Database application and the databaseb. Data and the databaseC. The user and the database applicationd. Database application and SQL2. Which of the following products was an early implementation of therelational model developed by E.F. Codd of IBM?a. IDMSb. DB2c. dBase-11d. R:base3. The following are components of a database excepta. user datab. metadatac. reportsd. indexes4. An application where only one user accesses the database at a giventime is an example of ain)a. single-user database application b. multiuser databaseapplicationc. e-commerce database applicationdatabase applicationd. data mining​</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#pa-help-po-badly-needed-18-which-is-the-best-example-of-a-good-paraphrase-for-this-text-the-emergence-of-advanced-information-and-communication-system-and-technology-will-have-an-impact-in-the-soc">19.
+                                            pa help po badly needed. 18.	Which is the best example of a good paraphrase for this text?  The emergence of advanced information and communication system and technology will have an impact in the society.  Hence, everyone is enjoined to prepare all the time (Masangya, 2015). a.	Because of the effects of the information and communications technology in the society, people are enjoined to plan and prepare for the future (Masangya, 2015).b.	Everyone is enjoined to prepare for the impact of the emergence of advanced information and communication system and technology (Masangya, 2015).c.	Society must be prepared for the effects of new information and communication system and technology (Masangya, 2015).d.	The impact of information and communication system and technology is inevitable.  Therefore government units should be prepared (Masangya, 2015). 19.	 Which one is the best paraphrase for this text?  In recent years, there has been a growing interest among scholars and practitioners on the effects of the integration of service-learning to the curriculum in higher institutions (Sipacio, 2015). a.	Incorporating service-learning to curricular programs in colleges and universities has prompted researchers and practitioners to conduct related studies (Sipacio, 2015).b.	Recently, there has been an interest among scholars and practitioners in the effects of integrating service-learning to curriculum in higher institutions (Sipacio, 2015).c.	Researchers have become interested on the role of service-learning in tertiary institutions (Sipcacio, 2015).d.	Scolars and professionals have shown during the past few years an increased attention on how service-learning is incorporated in the curriculums of higher education establishments (Sipacio, 2015).20.	Which one is the best paraphrase for this text?  In a knowledge-based society, schools are expected to train an educated and skilled labor force and be flexible to a modern information infrastructure and effective innovative system (Marfito, 2016).a.	According to Marfito (2016), the school’s role of developing educated and skilled workers and their need to be adaptive to innovations are crucial to a knowledge-based economy.b.	Marfito (2016) claims that schools are expected to train an educated and skilled labor force and flexible to a modern information infrastructure and effective innovative system in a knowledge-based society.c.	The knowledge-based economy demands all institutions to produce educated and skilled labor force who are flexible to a modern information infrastructure and effective innovative system.d.	Workers in the knowledge-based society must be educated and skilled, and adaptive to advanced technology.21.	What text structure is used in this excerpt?  An archetype is a basic model or a prototype.  Many films today, for all their hi-tech effects, reflect this archetypal situations and characters.  For example, the conflict between Good and Evil has been there since time immemorial and today, plots of modern films reflect the archetypal conflict between these two forces.a.	Description	b.  definition		c. enumeration	d. cause-effect22.	What text structure is used in this excerpt? Texting, as an abbreviated form of writing used on mobile phones and pagers with tiny screens and keyboards, suspends normal conversation of grammar, spelling, and punctuations.  It is a hybrid construct, combining elements of writing with speech forms but its mixing takes entirely new resonances and characteristics.  Texting appears as though people are talking when in fact they are writing. a.	Cause-effect	b.  definition		c. enumeration	d. description23.	What text structure is used in this excerpt? This early Spanish period house has the typical elongated floor plan where rooms follow each other in a train-like sequence.  Typical too is the wooden projecting upper floor cantilevered by the adobe  zaguan below.  The façade is severely ​</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#which-of-the-following-example-is-a-representation-of-something-difficult-to-display-directlya-newtons-law-of-motionb-big-bang-theoryc-solar-system-modeld-special-theory-of-relativity">20.
+                                            Which of the following example is a representation of something difficult to display directly?
+a. Newton's Law of Motion
+b. Big bang theory
+c. Solar system Model
+d. Special Theory of Relativity</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#1-read-the-sentences-and-write-true-if-the-statement-is-correct-if-notwrite-false-particles-1-matter-is-composed-of-atoms-in-which-democritus-believed-were-indivisible2-dmitri-mendeleev-discovere">21.
+                                            1.Read the sentences and write TRUE if the statement is correct, if not,write FALSE.particles.1. Matter is composed of atoms, in which Democritus believed were indivisible2. Dmitri Mendeleev discovered the presence of protons in atoms.3. Water molecule is an example of a compound.4. Dalton described that atoms of an element are identical.5. Rutherford discovered nucleus as a positively charged center of an atom.6.Electrons are negatively charged particles that are found in the nucleus.7. Thompson discovered electrons by cathode ray tube.8.Electrons are found in the orbits around the nucleus.9. Neils Bohr's model of an atom is called Plum Pudding Model.Vian10. Rutherford's model is like a solar system.​</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#pretestdirection-multiple-choices-read-and-understand-sentences-carefully-and-choosethe-letter-of-the-best-answer-ja1-21-it-is-a-multidisciplinary-practice-dealing-with-all-aspects-of-health-and-sa">22.
+                                            PRETESTDirection: Multiple Choices. Read and understand sentences carefully and choosethe letter of the best answer.Ja1.21. It is a multidisciplinary practice dealing with all aspects of health and safety in theworkplace, with a strong focus on preventing workplace hazards.A. Accident Prevention Signs and Symbols B. Occupational Health and SafetyC. Personal Protective EquipmentD. Standard Operating Procedure2. What OHS standard is required and reinforced in civil law and/or criminal law?A. EconomicB. LegalC. MoralD. Safety3. These standards are designed to ensure the safety of products, activities orprocesses and others.A. Economic standardsB. Health standardsC. Legal standardsD. safety standards4. It is an established measure; an accurate type; an authoritative model as an example acomparisonA. AidB. MensurationC. StandardsD. Workplace5. It refers to doing things spontaneously without being told or ordered.A. Self-controlB. Self-disciplineC. Self-madeD. Self - study6. The sure way to keep a safe workplace preventing accidents and injuries savespace, time and materials isA. Accident preventionB. Good housekeepingC. Standard procedureD. Workplace hazards7. It is a graduated measurement to allow production of a drawing to any size desired.A. Meter stickB. RulerC. ScaleD. Zigzag rule8. It is the placing of sizes and related information on a drawing.A. CalculatingB. DimensioningC. MeasuringD. Scaling9. It is a system of measurement based on the meter.A. English systemB. Graduated systemC. Metric systemD. Working system10. It is the act of measuring.A. CalculationB. DimensionC. GraduationD. Mensuration​</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#women-are-expected-to-be-thin-while-men-are-expected-to-be-tall-and-muscular-this-scenario-is-an-example-of-gender-discrimination-true-or-false-seeing-a-guy-with-a-hijab-is-a-terrorist-this-scenari">23.
+                                            Women are expected to be thin while men are expected to be tall and muscular. This scenario is an example of gender discrimination. True or False Seeing a guy with a hijab is a terrorist. This scenario is an example of religious stereotype. True or False Media influence results in a change of beliefs or reinforcement in an audience or individual. True or False Hypodermic needle model is a model of communication which concern in a matter or conflict opinion or a point of view.* True or False Racial stereotype involves part of the system of beliefs about the typical characteristics of members of a giving ethnic group, their status, societal and cultural norms. True or False Politics regulates the media industry. True or False Five common stereotypes are culture, social, racism, gender, and religious stereotypes. True or False Media controversy is a beliefs that various traits or acts results in either a change of reinforcement in audience or individual beliefs.* True or False Stereotyping is define as the process of labeling an entire group of people according to the characteristic of some.* True or False​</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#science-9-quarter-2-module-1-written-work-1-direction-write-true-if-the-statement-is-correct-and-false-if-the-statement-is-wrong-1-bohrs-atomic-model-describes-the-atom-like-a-solar-system-2-an-e">24.
+                                            SCIENCE 9 QUARTER 2 MODULE 1 (WRITTEN WORK 1) DIRECTION: Write TRUE if the statement is correct and FALSE if the statement is wrong. 1.Bohr's atomic model describes the atom like a solar system.2.An electron can jump to a higher energy level by gaining energy and return to a lower energy level by releasing energy in the form of light. 3. Schrodinger formulated a mathematical equation that describes the behaviour of the electron. 4. The quantum mechanical model of the atom describes the atom as having a nucleus at the center around which the electrons move. 5. The distribution of electrons in the different atomic orbitals is called electron configuration. 6. Atomic orbital serves as the "house" of the electron. 7. The further the energy level from the nucleus, the higher the energy. 8. Atoms are made up subatomic particles namely protons, neutrons, and electrons. 9. An atom with 32 electrons has 4 energy levels. 10. Every sublevel has fixed number of atomic orbitals. 11. This atomic orbital is the place where protons are most probably found. 12. The way in which electrons are distributed in the different orbitals around the nucleus is called the atomic orbitals. 13. An example of electron configuration is 1s22s22p for hydrogen atom.​</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#activity-3-matching-type-directions-match-item-on-column-a-with-column-b-draw-a-line-to-connect-them-a-1-it-is-a-software-designed-to-help-analyze-configure-optimize-computer-or-maintain-b-a">25.
+                                            ACTIVITY 3- MATCHING TYPE Directions: Match item on Column A with Column B. Draw a line to connect them. A 1. It is a software designed to help analyze, configure, optimize, computer. or maintain B (A. IP Address )2. It acts like the connective tissue between applications, data, and users. (B. Middleware) 3. Examples are keyboard, printers,scanners, digital cameras, and external storage devices. (C.Utility Software)4. It is known as the logical address, the IP address of the system across the network. (D. Device Drivers )5. The set of rules or algorithms which define the way entities can communicate across the network and there exists different protocols defined at each layer of the OSI model. (E. Protocol)​</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#direction-multiple-choices-read-and-understand-sentences-carefully-and-choosethe-letter-of-the-best-answer-1-it-is-a-multidisciplinary-practice-dealing-with-all-aspects-of-health-and-safety-in-thew">26.
+                                            Direction: Multiple Choices. Read and understand sentences carefully and choosethe letter of the best answer.1. It is a multidisciplinary practice dealing with all aspects of health and safety in theworkplace, with a strong focus on preventing workplace hazards.B. Occupational Health and SafetyA. Accident Prevention Signs and SymbolsD. Standard Operating ProcedureC. Personal Protective Equipment2. What OHS standard is required and reinforced in civil law and/or criminal law?B. LegalA. EconomicD. SafetyC. Moral3. These standards are designed to ensure the safety of products, activities orprocesses and others.A. Economic standardsB. Health standardsC. Legal standardsD. safety standards4. It is an established measure; an accurate type; an authoritative model as an example orcomparisonA. AidB. MensurationC. StandardsD. Workplace5. It refers to doing things spontaneously without being told or ordered.A. Self-controlB. Self - disciplineC. Self - madeD. Self - study6. The sure way to keep a safe workplace preventing accidents and injuries savespace, time and materials isA. Accident preventionB. Good housekeepingC. Standard procedureD. Workplace hazards7. It is a graduated measurement to allow production of a drawing to any size desired.A. Meter stickB. RulerC. ScaleD. Zigzag rule8. It is the placing of sizes and related information on a drawing.A. CalculatingB. DimensioningC. MeasuringD. Scaling9. It is a system of measurement based on the meter.A. English systemB. Graduated systemC. Metric systemD. Working system10. It is the act of measuring.A. CalculationB. DimensionC. GraduationD. Mensuration​</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#validating-the-facts-and-writing-comprehensively-you-may-use-theorganizing-information-from-the-secondary-sourceslocation-you-can-organize-information-by-showing-visual-depiction-ofyou-may-use-diagr">27.
+                                            validating the facts, and writing comprehensively You may use theorganizing information from the secondary sources:Location-you can organize information by showing visual depiction ofYou may use diagrams, analogues, graphic representationsorganize location. For example Paris of the nervous systempresented using a diagram.Alphabet-some information is easy to organize using specific terrns inlike in dictionaries and index at the back of o textoook)Time-another important factor in organizing information is the time ehumanity or events happened in a person's life journey. Youngtimeline, steps and cycle graphic organizers.Category-the use of category in presenting information is differentused to group similar characteristics such as color sizematerials, gender, age, model price, content and notof vehicles that may be written and presented accordname, model and price.Hierarchy-hierarchies are used to indicate the ranks as to heavibiggest. For example: Rank of population in Lucenaone piece of information is connected to another boyou like to emphasize in your written and oral reporAnswer the following questions:1. What are the secondary sources of information2. What different ideas can you use in organizing information3. How are these ideas helpful in organizing information?​</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#pretestdirection-multiple-choices-read-and-understand-sentences-carefully-and-choosethe-letter-of-the-best-answer-ja1-21-it-is-a-multidisciplinary-practice-dealing-with-all-aspects-of-health-and-sa">28.
+                                            PRETESTDirection: Multiple Choices. Read and understand sentences carefully and choosethe letter of the best answer.Ja1.21. It is a multidisciplinary practice dealing with all aspects of health and safety in theworkplace, with a strong focus on preventing workplace hazards.A. Accident Prevention Signs and Symbols B. Occupational Health and SafetyC. Personal Protective EquipmentD. Standard Operating Procedure2. What OHS standard is required and reinforced in civil law and/or criminal law?A. EconomicB. LegalC. MoralD. Safety3. These standards are designed to ensure the safety of products, activities orprocesses and others.A. Economic standardsB. Health standardsC. Legal standardsD. safety standards4. It is an established measure; an accurate type; an authoritative model as an example acomparisonA. AidB. MensurationC. StandardsD. Workplace5. It refers to doing things spontaneously without being told or ordered.A. Self-controlB. Self-disciplineC. Self-madeD. Self - study6. The sure way to keep a safe workplace preventing accidents and injuries savespace, time and materials isA. Accident preventionB. Good housekeepingC. Standard procedureD. Workplace hazards7. It is a graduated measurement to allow production of a drawing to any size desired.A. Meter stickB. RulerC. ScaleD. Zigzag rule8. It is the placing of sizes and related information on a drawing.A. CalculatingB. DimensioningC. MeasuringD. Scaling9. It is a system of measurement based on the meter.A. English systemB. Graduated systemC. Metric systemD. Working system10. It is the act of measuring.A. CalculationB. DimensionC. GraduationD. Mensuration​</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#women-are-expected-to-be-thin-while-men-are-expected-to-be-tall-and-muscular-this-scenario-is-an-example-of-gender-discrimination-2-points-true-false-seeing-a-guy-with-a-hijab-is-a-terrorist-this">29.
+                                            Women are expected to be thin while men are expected to be tall and muscular. This scenario is an example of gender discrimination.* 2 points True False Seeing a guy with a hijab is a terrorist. This scenario is an example of religious stereotype.* 2 points True False Media influence results in a change of beliefs or reinforcement in an audience or individual.* 2 points True False Hypodermic needle model is a model of communication which concern in a matter or conflict opinion or a point of view.* 2 points True False Racial stereotype involves part of the system of beliefs about the typical characteristics of members of a giving ethnic group, their status, societal and cultural norms.* 2 points True False Politics regulates the media industry.* 2 points True False Five common stereotypes are culture, social, racism, gender, and religious stereotypes.* 2 points True False Media controversy is a beliefs that various traits or acts results in either a change of reinforcement in audience or individual beliefs.* 2 points True False Stereotyping is define as the process of labeling an entire group of people according to the characteristic of some.* 2 points True False ​</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#word-problems-commonly-include-mathematical-modelling-questions-where-data-and-information-about-a-certain-system-is-given-and-a-student-is-required-to-develop-a-model-for-example-jane-had-5-00-t">30.
+                                            Word problems commonly include mathematical modelling questions, where data and information about a certain system is given and a student is required to develop a model. For example: Jane had $5.00, then spent $2.00. How much does she have now? ​</a>
+                                    </li>
+                                                            </ul>
+                        </nav>
+                    </div>
+                                            <h2 class="ez-toc-section" id="example-of-a-system-that-demonstrate-the-ipo-model%e2%80%8b">
+                            1. example of a system that demonstrate the IPO model​</h2><br />
+                        <p><strong>Answer:</strong></p><p>example of a system that demonstrate the IPO model​?</p><p><strong>Explanation:</strong></p><p></p><p>The input–process–output (IPO) model is a widely used approach in systems analysis and software engineering for describing the structure of an information processing program or another process. Many introductory programming and systems analysis texts introduce this as the most basic structure for describing a process
+.</p><p>
+</p><p>Discussion
+</p><p>A computer program or any other sort of process using the input-process-output model receives inputs from a user or other source, does some computations on the inputs, and returns the results of the computations. The system divides the work into three categories.</p><p>
+</p><p>A requirement from the environment (input)
+</p><p>A computation based on the requirement (process)
+</p><p>A provision for the environment (output)</p><br />
+                                            <h2 class="ez-toc-section" id="what-the-example-of-respiratory-system-of-bunch-model%e2%80%8b">
+                            2. what the example of  respiratory system of bunch model?​</h2><br />
+                        <p><strong>Explanation:</strong></p><p>this like in ☺️☺️☺️☺️☺️</p><br />
+                                            <h2 class="ez-toc-section" id="enumerate-at-least-three-examples-of-countries-each-of-political-system-then-identify-what-policing-systemmodel-exist-in-that-country-political-system-policing-systemmodel">
+                            3. Enumerate at least three examples of countries each of political system then identify what policing system/model exist in that country.
+POLITICAL SYSTEM         	                POLICING SYSTEM/MODEL
+Democratic
+Republic
+Monarchy
+Communism
+Dictatorship</h2><br />
+                        <p><strong>Answer:</strong></p><p>communism </p><p><strong>Explanation:</strong></p><p>nang grade 7 kopayan</p><br />
+                                            <h2 class="ez-toc-section" id="aftowicdc-parallel-linesd-theoremd-same-directions%e2%80%a2-top-and-bottomd-theoremd-axiom7-what-term-can-be-best-used-to-define-parallelogram2-pointb-lines8-the-statement-for-any-angle-the-m">
+                            4. AFTOWICdc Parallel linesd Theoremd. Same directions• Top and bottomd. Theoremd. Axiom7. What term can be best used to define parallelogram?2. Pointb. Lines8 The statement. For any angle, the measure of the whole is equal to the sum of the measures ofnon-overlapping parts", is an example of what component in a mathematical system?a Postulateb. Definition. What are the directions where a straight line extends indefinitely?c Corollarya. Left and right b Opposite directions10 What are terms can be generated and defined precisely, using undefined terms?a Postulateb. Definitionc Corollary11. What is any statement that can be proven using logical deduction from the axioms?a Undefined Terms b. Definitionc Theorem12. What is a list of undefined terms together with a list of axioms (presupposed to be "true"), the definitionin proving theorems and other components of a mathematical system?13. What is the illustration to define the undefined terms so that the axioms are true?a Mathematical Structure b. Mathematical Set C. Axiomatic Structure d Axiomatic Seta Modelb. Replicac Isometryd Diagram14. What condition exists if an axiomatic system is independent"a. It can be proven from the other axioms.c. It is true based on the other axioms.d. It is false based on the other axioms.15. What condition exists if an axiomatic system is consistent?a It can be proven from the other axioms.b. It cannot be proven from the other axioms.c there is a model for an axiomatic system where the axioms are all trued. there is a model for an axiomatic system where one axiom is independent16 What condition exists if an axiomatic system is complete?a. If every true statement can be proven from the axioms. b. If every true statement exists.c. If every true statement can stand on its own d. If every true statement is independent and consistent.b. It cannot be proven from the other axioms pasagot po thankss​</h2><br />
+                        <p><strong>Answer:</strong></p><p>a</p><p>b</p><p>c</p><p>d</p><p>b</p><p>b</p><p>d</p><p>d</p><p>d</p><p>a</p><p>a</p><p>a</p><p>c </p><p>d</p><p>c</p><p>thanks me later </p><p>pa brainleast</p><br />
+                                            <h2 class="ez-toc-section" id="computers-are-electronic-devices-that-process-received-1-_________then-display-or-2_________these-processed-data-and-stores-them-for-futureneed-these-computers-are-grouped-according-to-what-data">
+                            5. Computers are electronic devices that process received (1)._________then display or (2)_________these processed data and stores them for futureneed. These computers are grouped according to what data they process. Acomputer is an (3)________computer if it uses the continuously changeableaspects of physical phenomena such as electrical, mechanical, or hydraulicquantities to model or (4)_____the problem being solved.Further, the computer is also grouped according to their (5)_____and functionalities. The biggest computer is the (6)________that is used forcomplex calculations such as forecasting weather. The second biggest computeris the (7)________that is used mainly for bulk data processing done forexample by banks, airlines, insurance companies and colleges. Next to these arethe (8)______(9).______(10)________(11)_______The smallest of these is the (12).________Also, we talked about the aspects and general composition of thecomputer. We said that there are (13)_______aspects of the computer and(14)________general parts. The systems (aspects) composing ourcomputers won't work without each other. One of the systems is the touchable,physical parts which are collectively called (15).______The secondsystem is composed of programs, instructions, applications, and the like that wecannot physically touch. This is called the (16)_______And the otheraspect is the people who are involved in the development, usage and making ofthe computers. They are the (17)________Finally, in this module, we also talked about the general grouping ofdevices that compose the hardware aspect of the computer system. The devicesthat we use to put or feed data into the computer are collectively called(18)_______The devices that process the data we feed into the computerare called (19)______After the data are processed, they will then bedisplayed, projected or physically reproduced by the (20)_______devicesThese processed data can also be temporarily or permanently kept in the(21)_____devices​</h2><br />
+                        <p><strong>Answer:</strong></p><p>안녕하세요, 고마워요. ~~~~~~~~~~</p><br />
+                                            <h2 class="ez-toc-section" id="11-cultural-symbols-can-represent-any-aspect-of-the-culture-which-include-the-following-a-belief-systems-c-nationalism-b-language-d-all-of-the-above-12-which-of-the-following-is-an-example-of-s">
+                            6. 11. Cultural symbols can represent any aspect of the culture which include the following: A. belief systems C. nationalism B. language D. all of the above 12. Which of the following is an example of social symbol? A. Clothing and possessions C. Money B. Flags D. Values 13. All of the following are examples of economic symbols EXCEPT: A. Currency C. Mottos B. Life Insurance D. Stock Exchange 14. Members share common norms, activities, goals, and background. A. In-group C. Out-group B. Reference group D. None of the above 15. All of the following are examples of formal organizations EXCEPT A. cliques C. hospitals B. churches D. trade unions 16. This refers to the group characterized by impersonal, business like, contractual, casual relationships. A. In-group C. Primary group B. Out-group D. Secondary group 17. A community of intimate, private, and exclusive living and familism where the activities, interests, and personalities center around the large family groups and neighbors. A. Gemeinschaft B. Gesselschaft 18. They serve as model of standards and we use them as patterns to guide behaviours and attitudes. A. In-group C. Reference group B. Primary group D. Secondary group 19. A social group that an individual does not identify with. A. network C. primary group B. out-group D. reference group 20. Which of the following is an example of cultural symbol? A. cross C. flags B.currency D. gas and petroleum ​</h2><br />
+                        <p><strong>Answer:</strong></p><p>11. C</p><p>12.A</p><p>13.A</p><p>14.B</p><p>15.D</p><p>16.D</p><p>17.C</p><p>18.B</p><p>19C</p><p>20.A</p><p><strong>Explanation:</strong></p><p>Hope it helps</p><br />
+                                            <h2 class="ez-toc-section" id="math-is-helpful-in-daily-life-for-example-when-ou-building-a-house-or-like-steps-in-our-house-we-can-use-it-by-trigonometry-formulas-measured-by-angles-and-trigonometry-can-be-used-in-oceanography-in">
+                            7. Math is helpful in daily life for example when ou building a house or like steps in our house we can use it by trigonometry formulas measured by angles and trigonometry can be used in oceanography in calculating the height of tides in ocean the sine and cosine functions are fundamental to the theory of period functions those that describe the sound and light waves, calculus is made up of trigonometry has its applications in satellite systems. quadratic equations lend themselves to modeling situations that happen in real life such as the rise and fall of profits from selling gods the decrease   and increase in the amount of time it takes to run a mile based on you aid and so on. a good understanding of math in everyday life is essential for making sense of all the numbers  and problems life throw at us.</h2><br />
+                        <p><strong>Answer:</strong></p><p>yesss i agree keep it up.</p><br />
+                                            <h2 class="ez-toc-section" id="introduction-to-online-collaborative-the-growth-of-online-social-networking-has-created-new-opportunities-for-collaboration-how-can-we-ensure-that-everyone-is-able-to-make-full-use-of-it-in-line-of">
+                            8. Introduction to Online Collaborative The growth of online social networking has created new opportunities for collaboration. How can we ensure that everyone is able to make full use of it? In line of work, we will explore the use of user role assignments as a way to encourage participation in online collaborative. A design for such a roles system to be built into an online collaborative environment that uses the idea of state-space search as a model for problem solving. The simultaneousness of both constructivist ways to deal with learning and the improvement of the Internet has prompted the advancement of a specific type of constructivist educating, initially called PC intervened correspondence (CMC), or arranged leaming. Another vital variable is that in the OCL model, talk gatherings are not an expansion or supplement to center showing materials, for example, course books, recorded addresses, or content in a LMS, however are the center segment of the instructing. Course books, readings and different assets are upheld the exchange, not the other route round. This is a key outline guideline, and clarifies why regularly teachers or coaches grumble, in more "customary" online courses, that understudies don't take an interest in examinations. Frequently this is on the grounds that where online dialogs are auxiliary to more instructive educating, or are not purposely outlined and figured out how to prompt learning development, understudies see the discourses as discretionary or additional work, since they have no immediate effect on evaluations or appraisal. example and meaning ​</h2><br />
+                        <p><strong>The introduction emphasizes the growing importance of online collaborative learning and the need to ensure that it is accessible to all. It is proposed that user role assignments be used to encourage participation in online collaborative environments. In addition, the article discusses the use of constructivist teaching methods and the role of discussion forums in the OCL model, which prioritizes discussions over traditional teaching materials. The article emphasizes the importance of designing and integrating online discussions with course material to ensure their effectiveness and impact on learning.</strong></p><p><strong></strong></p><p><strong>any amount</strong></p><p><strong>09163917783</strong></p><p><strong></strong></p><p></p><br />
+                                            <h2 class="ez-toc-section" id="pretest-matching-typedirection-match-item-on-column-a-with-column-b-write-the-letter-ofyour-answer-on-the-space-provided-ba-middlewareb-operatingsystemc-utility-softwared-device-driverse-compu">
+                            9. PRETEST: MATCHING TYPEDirection. Match item on Column A with Column B. Write the letter ofyour answer on the space provided.Ba. Middlewareb. OperatingSystemc. Utility Softwared. Device Driverse. ComputerSoftwareA1. It is a software designed to help analyze,configure, optimize, or maintain a computer.2. Divided into three such as System Software,Application Software and Programming Languages.3. It has the following examples such as 1keyboards, printers, scanners, digital cameras, andexternal storage devices.4. It acts like the connective tissue betweenapplications, data, and users.5. Examples are Microsoft windows 7, 8 and 10,Apples macos, chrome OS, Blackberry tablet OS andflavors of Linux.6. An interconnection of multiple devices, alsoknown as hosts, that are connected using multiplepaths for the purpose of sending/receiving data ormedia.7. The layout arrangement of the differentdevices in a network.8. The set of rules or algorithms which define theway how entities can communicate across the networkand there exists different protocols defined at eachlayer of the OSI model.f. IP Addressg. Host Nameh. Protocol9. Each device in the network is associated witha unique device name.10. It is known as the logical address, the IPaddress of the system across the network,i. NetworkTopologyj. ComputerNetwork​</h2><br />
+                        <p>1.C</p><p>2.E</p><p>3.D</p><p>4.A</p><p>5.B</p><p>6.J</p><p>7.I</p><p>8.H</p><p>9.G</p><p>10.F</p><p></p><p>Done na po =)</p><p></p><p>Tama po ang mga iyan</p><p>Search nyo po kung hindi sigurado</p><p>or tignan mo sa modules</p><br />
+                                            <h2 class="ez-toc-section" id="lesson-3-economic-systems-circular-flow1-based-in-the-discussion-of-circular-flow-model-why-is-the-model-have-only-two-main-involved-factors-household-and-firm2-explain-the-circular-f">
+                            10. Lesson 3: ECONOMIC 
+SYSTEMS &amp; CIRCULAR FLOW1. Based in the discussion of Circular Flow Model, 
+why is the model have only two main involved 
+factors (Household and Firm)?
+2. Explain the circular flow model by providing 
+concrete examples of each factor involved in the 
+model.3. What economic system is appropriate in the 
+Philippines? Would it be possible to use the 
+command or mixed economic system? 
+</h2><br />
+                        <p><strong>Answer:</strong></p><p>1The circular flow of the economy basically involves two sectors, that is the households who are the providers of the various factors of production and the firms who use the factors of production to come up with goods and services. The firms spend their income on the factors of production and use these factors to priduce goods and serices. Afterwards, the households will use the income from the firms to purchse the goods and services and the process continues until a circular flow is attained. This circular flow also does not involve any external forces like the government policies nor the imports and exports which are taking place within and without the country.</p><p></p><p>2.The circular flow model demonstrates how money moves through society. Money flows from producers to workers as wages and flows back to producers as payment for products. In short, an economy is an endless circular flow of money.</p><p></p><p>That is the basic form of the model, but actual money flows are more complicated. Economists have added in more factors to better depict complex modern economies. These factors are the components of a nation's gross domestic product (GDP) or national income. For that reason, the model is also referred to as the circular flow of income model.</p><p></p><p>3.The Philippines has a mixed economic system which includes a variety of private freedom, combined with centralized economic planning and government regulation. Philippines is a member of the Asia-Pacific Economic Cooperation (APEC) and the Association of Southeast Asian Nations (ASEAN).</p><br />
+                                            <h2 class="ez-toc-section" id="1-it-is-a-set-of-programs-designed-to-perform-a-well-defined-function-in-a-2-it-is-known-as-the-brain-of-the-computer-3-it-is-a-permanent-storage-device-inside-the-computer-system-4-it-is-a-proc">
+                            11. 1. It is a set of programs designed to perform a well-defined function in a 2. It is known as the brain of the computer. 3. It is a permanent storage device inside the computer system. 4. It is a process of entering data and programs into the computer system. 5. The physical docking point of which an external device can be connected 6. It refers to the process of producing results from the data for getting 7. It is a program used for analysis, planning and modeling. 8. It is a software used to satisfy the needs of an organization rather than 9. A well-ordered structure for accessing the main application and contains functions like logging out or searching for applications. 10. The CPU and memory are located on. 11. Servers are computers that provide resources to other computers 12. Windows and the MacOS are examples of two different 13. It is approximately a million bytes. 14. The chips used in computers is made of 15. It is the science that attempts to produce machines that display the computer system. to the computer. useful information. individual users. menu items for major connected to. same type of intelligence that humans do.​</h2><br />
+                        <p><strong>Explanation:</strong></p><p>Lahat naman ng bagay sa mundo, sabi nga nila, ay nagaganap o nangyayare sapagkat may rason. Ang posibilidad ay ang pag-iisip kung ano ang maaaring kalabasan ng isang bagay na pinagpipilian, ginawa, o napanood. Hindi naman sa lahat ng pagkakataon ay lahat ng resulta ating isasagawa ay aayon sa ating kagustuhan, hindi ba?</p><p></p><p>         Ngunit, kung ito'y ibabase natin sa aking mga napag-aralan, may mga paraan tayo upang hanapin o mabatid ang tsansa o probability ng isang event. Halimbawa na ang LOTTO, na sa bawat numero ay hahanapin muna natin ang tsansa makuha o mapili ang mga ito. Kung tutuusin ay napakababa ng tsansang mapili ang lahat ng numerong ginuhitan mo, ngunit hindi ito imposible. Nasa sa iyo na lamang kung ipagpapatuloy mo ito. Isipin natin na sa bawat numerong itataya natin ay mayroon lamang 6 out of 55 na pagkakataong mapili ito. Sabi nga, sa loob ng 34,787,610 na tumaya sa 6/55 LOTTO, isa lamang ang nagwagi o swinerte. Kaya kung opinyon ko ang tatanungin, mas mabuti na lamang kung sa ibang bagay nalang pag-ipunan o ipagbili ang perang itataya sa mga ganitong uri ng sugal.</p><br />
+                                            <h2 class="ez-toc-section" id="1-which-of-the-following-is-an-example-of-a-scientific-model-that-is-too-big-to-seea-model-of-the-cellb-model-of-the-sunc-model-of-an-atomd-model-of-the-human-body2-which-of-the-followin">
+                            12. 1.) Which of the following is an example of a Scientific model that is too big to see?
+A. Model of the Cell
+B. Model of the Sun
+C. Model of an Atom
+D. Model of the Human Body
+2.) Which of the following is an example of an event that occur too fast to see and can be represented by a Scientific model?
+A. Mountain formation
+B. Death of Stars
+C. Growth of frog from being a tadpole
+D. Speed of light
+3.) It is a Scientific model whose characteristics resemble the physical characteristics of the modeled system. It can be seen and touched.
+A. Mathematical Model
+B. Physical Model
+C. Conceptual Model
+D. All of the above
+4.) It is a representation of a system that uses concepts and ideas. It makes comparisons with familiar things to help illustrate or explain an idea.
+A. Mathematical Model
+B. Physical Model
+C. Conceptual Model
+D. All of the above</h2><br />
+                        <p><strong>Answer:</strong></p><p>1.B</p><p>2.A</p><p>3.C</p><p>4.B</p><p><strong>Explanation:</strong></p><p>HOPE IT'S HELP</p><br />
+                                            <h2 class="ez-toc-section" id="worksheet-no-2-science-9-quarter-1-module-2-most-essential-learning-competency-inter-how-ones-lifestyle-can-affect-the-functioning-of-the-respiratory-and-circulatory-systems89lt-27-directions-co">
+                            13. Worksheet No. 2 SCIENCE 9 QUARTER 1 MODULE 2 MOST ESSENTIAL LEARNING COMPETENCY: Inter how one's lifestyle can affect the functioning of the respiratory and circulatory systems(89LT-27) Directions: Complete the graphic organizer (Frayer Model) below. Fill in examples from the topic using key terms as well as your own words in the box. How one's lifestyle can affect the functioning of the respiratory and circulatory systems?​</h2><br />
+                        <p><strong>Answer:</strong></p><p>affect the respiratory and circulatory system</p><p>if u are not eat a healthy food rather u will eat a junckfood</p><br />
+                                            <h2 class="ez-toc-section" id="ano-po-ba-ibang-example-ng-social-system-about-po-sa-model-of-communication-may-reporting-po-ako-sa-monday-about-dyan-pls-pahelp-naman-po-oral-comm-po-itong-subj-na-ito">
+                            14. ano po ba ibang example ng social system about po sa model of communication may reporting po ako sa monday about dyan pls pahelp naman po oral comm po itong subj na ito</h2><br />
+                        <p><strong>Answer:</strong></p><p>The theory of social systems has been contested as a part of sociology. Social order can be expected to emerge as an expectation that is communicated. A communication can be provided with meaning and meaning may evolve into codified meaning. The social system can thus be considered as developing in layers of communication among reflexive actors. At the interfaces between systems theory, communication theory and evolution theory puzzles emerge which can also be formulated as analytical and empirical questions. The mathematical theory of communication can be used for the clarification of the relations among these different perspectives, since a message is expected to contain information</p><br />
+                                            <h2 class="ez-toc-section" id="1-the-society-should-be-a-model-for-social-justice-the-leader-must-see-to-it-that-the-rights-of-each-individual-is-respected-protected-and-valued-____________a-peaceb-respect-for-other-people">
+                            15. 1. The society should be a model for social justice. The leader must see to it that the rights of each individual is respected, protected and valued. ____________
+A. Peace
+B. Respect for Other People
+C. Thrift and Economy
+D. The Call for Social Justice and General Welfare
+2. Development is the societal focus needed to provide each member. Example of this is the system of public health, clean environment and progressive economic system. _________________
+A. Peace
+B. Respect for Other People
+C. Thrift and Economy
+D. The Call for Social Justice and General Welfare
+3. It means the absence of troubles, unity in the family, community and society. There is harmony among members of the community, there is obedience in authority. _____________
+A. Peace
+B. Respect for Other People
+C. Thrift and Economy
+D. The Call for Social Justice and General Welfare
+4. What is the primary goal of the society? ____________
+A. Common Good
+B. Peace
+C. Prosperity
+D. Security
+5. The following are the elements of common good except ______________.
+A. Common Good
+B. Peace
+C. Prosperity
+D. Security</h2><br />
+                        <p></p><p>[tex] = answer = [/tex]</p><p>1. The society should be a model for social justice. The leader must see to it that the rights of each individual is respected, protected and valued. ____________</p><p>A. Peace</p><p>B. Respect for Other People</p><p>C. Thrift and Economy</p>D. The Call for Social Justice and General Welfare<p></p><p>2. Development is the societal focus needed to provide each member. Example of this is the system of public health, clean environment and progressive economic system. _________________</p><p>A. Peace</p><p>B. Respect for Other People</p>C. Thrift and Economy<p>D. The Call for Social Justice and General Welfare</p><p></p><p>3. It means the absence of troubles, unity in the family, community and society. There is harmony among members of the community, there is obedience in authority. _____________</p><p>A. Peace</p>B. Respect for Other People<p>C. Thrift and Economy</p><p>D. The Call for Social Justice and General Welfare</p><p></p><p>4. What is the primary goal of the society? ____________</p><p>A. Common Good</p>B. Peace<p>C. Prosperity</p><p>D. Security</p><p></p><p>5. The following are the elements of common good except ______________.</p><p>A. Common Good</p><p>B. Peace</p>C. Prosperity<p>D. Security</p><p></p><p></p><p>[tex] = answered \: by = [/tex]</p><p><strong>@</strong><strong>F</strong><strong>r</strong><strong>e</strong><strong>t</strong><strong>z</strong><strong>y</strong><strong>C</strong><strong>a</strong><strong>y</strong><strong>a</strong><strong>n</strong><strong>o</strong><strong>n</strong><strong>g</strong></p><br />
+                                            <h2 class="ez-toc-section" id="what-to-do-directions-put-a-check-on-the-blank-if-the-given-example-is-from-the-application-ofsoyles-law-and-cross-out-x-if-not-1-the-scuba-divers-activity-2-on-how-the-hot-air-balloon">
+                            16. WHAT TO DO 
+Directions: 
+Put a check (/) on the blank if the given example is from the application of
+Soyle's Law and cross out (X) if not.
+1. The scuba diver's activity.
+2. On how the hot air balloon works.
+3. The use of lung model in respiratory system.
+tysm!</h2><br />
+                        <p><strong>Answer:</strong></p><p><strong>1.Check</strong></p><p><strong>2.Cross</strong></p><p><strong>3.Check</strong></p><p></p><p><strong>Explanation:</strong></p><p><strong>Hope</strong><strong> </strong><strong>it's help</strong><strong>.</strong><strong>.</strong><strong>.</strong><strong> </strong></p><p><strong>Correct</strong><strong> </strong><strong>me</strong><strong> </strong><strong>if</strong><strong> </strong><strong>im</strong><strong> </strong><strong>wrong</strong><strong> </strong><strong>(</strong><strong>comment</strong><strong> </strong><strong>if</strong><strong> </strong><strong>im</strong><strong> </strong><strong>wrong</strong><strong>)</strong><strong>.</strong><strong>.</strong><strong>.</strong><strong> </strong></p><p></p><p><strong>Heh</strong></p><br />
+                                            <h2 class="ez-toc-section" id="11-one-way-of-changing-our-impact-on-the-environment-we-live-in-is-to-a-use-a-car-instead-of-a-bus-to-get-to-workb-pack-our-garbage-in-smaller-bagsc-bathe-every-day-instead-of-showeringd-becom">
+                            17. 11. One way of changing our impact on the environment we live in is to ...A. use a car instead of a bus to get to workB. pack our garbage in smaller bagsC. bathe every day instead of showeringD. become aware of all the resources you use12. An ecosystem thrives with biotic and abiotic component parts. An example ofan abiotic part of an ecosystem is ...A. micro-bacteriaC. waterD. decaying plantsB. fungus13. Food chains and food webs are models in science which visually show us thedifferent relationships within an ecosystem. The primary difference betweenthe food chain and the food web is ...A. a food chain shows how energy is storedB. a food web shows how energy is usedC. a food web is a complex system of food chainsD. a food chain is a combination of different food webs​</h2><br />
+                        <p><strong>Answer:</strong></p><p>11. D.</p><p>12. C.</p><p>13. D.</p><p><strong>Explanation:</strong></p><p>Based on research lang po </p><br />
+                                            <h2 class="ez-toc-section" id="iii-direction-choose-the-letter-of-the-correct-answer-circle-the-letter-ofyour-answer-1-the-dbms-acts-as-an-interface-between-what-two-components-of-anenterprise-class-database-systema-database">
+                            18. III. Direction: Choose the letter of the correct answer. Circle the letter ofyour answer.1. The DBMS acts as an interface between what two components of anenterprise-class database system?a. Database application and the databaseb. Data and the databaseC. The user and the database applicationd. Database application and SQL2. Which of the following products was an early implementation of therelational model developed by E.F. Codd of IBM?a. IDMSb. DB2c. dBase-11d. R:base3. The following are components of a database excepta. user datab. metadatac. reportsd. indexes4. An application where only one user accesses the database at a giventime is an example of ain)a. single-user database application b. multiuser databaseapplicationc. e-commerce database applicationdatabase applicationd. data mining​</h2><br />
+                        <p><strong>Answer:</strong></p><p>1.D.    2.B.   3.C.    4.A</p><p></p><p>THANK YOU PO AND FOLLOW NA RIN PO</p><br />
+                                            <h2 class="ez-toc-section" id="pa-help-po-badly-needed-18-which-is-the-best-example-of-a-good-paraphrase-for-this-text-the-emergence-of-advanced-information-and-communication-system-and-technology-will-have-an-impact-in-the-soc">
+                            19. pa help po badly needed. 18.	Which is the best example of a good paraphrase for this text?  The emergence of advanced information and communication system and technology will have an impact in the society.  Hence, everyone is enjoined to prepare all the time (Masangya, 2015). a.	Because of the effects of the information and communications technology in the society, people are enjoined to plan and prepare for the future (Masangya, 2015).b.	Everyone is enjoined to prepare for the impact of the emergence of advanced information and communication system and technology (Masangya, 2015).c.	Society must be prepared for the effects of new information and communication system and technology (Masangya, 2015).d.	The impact of information and communication system and technology is inevitable.  Therefore government units should be prepared (Masangya, 2015). 19.	 Which one is the best paraphrase for this text?  In recent years, there has been a growing interest among scholars and practitioners on the effects of the integration of service-learning to the curriculum in higher institutions (Sipacio, 2015). a.	Incorporating service-learning to curricular programs in colleges and universities has prompted researchers and practitioners to conduct related studies (Sipacio, 2015).b.	Recently, there has been an interest among scholars and practitioners in the effects of integrating service-learning to curriculum in higher institutions (Sipacio, 2015).c.	Researchers have become interested on the role of service-learning in tertiary institutions (Sipcacio, 2015).d.	Scolars and professionals have shown during the past few years an increased attention on how service-learning is incorporated in the curriculums of higher education establishments (Sipacio, 2015).20.	Which one is the best paraphrase for this text?  In a knowledge-based society, schools are expected to train an educated and skilled labor force and be flexible to a modern information infrastructure and effective innovative system (Marfito, 2016).a.	According to Marfito (2016), the school’s role of developing educated and skilled workers and their need to be adaptive to innovations are crucial to a knowledge-based economy.b.	Marfito (2016) claims that schools are expected to train an educated and skilled labor force and flexible to a modern information infrastructure and effective innovative system in a knowledge-based society.c.	The knowledge-based economy demands all institutions to produce educated and skilled labor force who are flexible to a modern information infrastructure and effective innovative system.d.	Workers in the knowledge-based society must be educated and skilled, and adaptive to advanced technology.21.	What text structure is used in this excerpt?  An archetype is a basic model or a prototype.  Many films today, for all their hi-tech effects, reflect this archetypal situations and characters.  For example, the conflict between Good and Evil has been there since time immemorial and today, plots of modern films reflect the archetypal conflict between these two forces.a.	Description	b.  definition		c. enumeration	d. cause-effect22.	What text structure is used in this excerpt? Texting, as an abbreviated form of writing used on mobile phones and pagers with tiny screens and keyboards, suspends normal conversation of grammar, spelling, and punctuations.  It is a hybrid construct, combining elements of writing with speech forms but its mixing takes entirely new resonances and characteristics.  Texting appears as though people are talking when in fact they are writing. a.	Cause-effect	b.  definition		c. enumeration	d. description23.	What text structure is used in this excerpt? This early Spanish period house has the typical elongated floor plan where rooms follow each other in a train-like sequence.  Typical too is the wooden projecting upper floor cantilevered by the adobe  zaguan below.  The façade is severely ​</h2><br />
+                        <p><strong>Answer:</strong></p><p>D</p><p>B</p><p>D</p><p>B</p><p>(putol yung sentence but the answer to that is) DESCRIPTION </p><br />
+                                            <h2 class="ez-toc-section" id="which-of-the-following-example-is-a-representation-of-something-difficult-to-display-directlya-newtons-law-of-motionb-big-bang-theoryc-solar-system-modeld-special-theory-of-relativity">
+                            20. Which of the following example is a representation of something difficult to display directly?
+a. Newton's Law of Motion
+b. Big bang theory
+c. Solar system Model
+d. Special Theory of Relativity</h2><br />
+                        <p><strong>Explanation:</strong></p><p>D, Special Theory of Realitivy</p><p><strong>Answer:</strong></p><p>a.newton,s law of motion</p><p>explanation </p><p>I don't know what I answer</p><br />
+                                            <h2 class="ez-toc-section" id="1-read-the-sentences-and-write-true-if-the-statement-is-correct-if-notwrite-false-particles-1-matter-is-composed-of-atoms-in-which-democritus-believed-were-indivisible2-dmitri-mendeleev-discovere">
+                            21. 1.Read the sentences and write TRUE if the statement is correct, if not,write FALSE.particles.1. Matter is composed of atoms, in which Democritus believed were indivisible2. Dmitri Mendeleev discovered the presence of protons in atoms.3. Water molecule is an example of a compound.4. Dalton described that atoms of an element are identical.5. Rutherford discovered nucleus as a positively charged center of an atom.6.Electrons are negatively charged particles that are found in the nucleus.7. Thompson discovered electrons by cathode ray tube.8.Electrons are found in the orbits around the nucleus.9. Neils Bohr's model of an atom is called Plum Pudding Model.Vian10. Rutherford's model is like a solar system.​</h2><br />
+                        <p><strong>Answer:</strong></p><p>1. true</p><p>2. true</p><p>3. false</p><p>4. true</p><p>5. true</p><p>6. false</p><p>7. true</p><p>8. true</p><p>9. false</p><p>10. true</p><p><strong>Explanation:</strong></p><p>sana po maka tulong, hindi po ako sigurado sa ibang sagot</p><p></p><br />
+                                            <h2 class="ez-toc-section" id="pretestdirection-multiple-choices-read-and-understand-sentences-carefully-and-choosethe-letter-of-the-best-answer-ja1-21-it-is-a-multidisciplinary-practice-dealing-with-all-aspects-of-health-and-sa">
+                            22. PRETESTDirection: Multiple Choices. Read and understand sentences carefully and choosethe letter of the best answer.Ja1.21. It is a multidisciplinary practice dealing with all aspects of health and safety in theworkplace, with a strong focus on preventing workplace hazards.A. Accident Prevention Signs and Symbols B. Occupational Health and SafetyC. Personal Protective EquipmentD. Standard Operating Procedure2. What OHS standard is required and reinforced in civil law and/or criminal law?A. EconomicB. LegalC. MoralD. Safety3. These standards are designed to ensure the safety of products, activities orprocesses and others.A. Economic standardsB. Health standardsC. Legal standardsD. safety standards4. It is an established measure; an accurate type; an authoritative model as an example acomparisonA. AidB. MensurationC. StandardsD. Workplace5. It refers to doing things spontaneously without being told or ordered.A. Self-controlB. Self-disciplineC. Self-madeD. Self - study6. The sure way to keep a safe workplace preventing accidents and injuries savespace, time and materials isA. Accident preventionB. Good housekeepingC. Standard procedureD. Workplace hazards7. It is a graduated measurement to allow production of a drawing to any size desired.A. Meter stickB. RulerC. ScaleD. Zigzag rule8. It is the placing of sizes and related information on a drawing.A. CalculatingB. DimensioningC. MeasuringD. Scaling9. It is a system of measurement based on the meter.A. English systemB. Graduated systemC. Metric systemD. Working system10. It is the act of measuring.A. CalculationB. DimensionC. GraduationD. Mensuration​</h2><br />
+                        1. B<br />2. D<br />3. D<br />4. C<br />5. B.<br />6. D. <br />7. C.<br />8. B.<br />9. C.<br />10. B.<br />
+                                            <h2 class="ez-toc-section" id="women-are-expected-to-be-thin-while-men-are-expected-to-be-tall-and-muscular-this-scenario-is-an-example-of-gender-discrimination-true-or-false-seeing-a-guy-with-a-hijab-is-a-terrorist-this-scenari">
+                            23. Women are expected to be thin while men are expected to be tall and muscular. This scenario is an example of gender discrimination. True or False Seeing a guy with a hijab is a terrorist. This scenario is an example of religious stereotype. True or False Media influence results in a change of beliefs or reinforcement in an audience or individual. True or False Hypodermic needle model is a model of communication which concern in a matter or conflict opinion or a point of view.* True or False Racial stereotype involves part of the system of beliefs about the typical characteristics of members of a giving ethnic group, their status, societal and cultural norms. True or False Politics regulates the media industry. True or False Five common stereotypes are culture, social, racism, gender, and religious stereotypes. True or False Media controversy is a beliefs that various traits or acts results in either a change of reinforcement in audience or individual beliefs.* True or False Stereotyping is define as the process of labeling an entire group of people according to the characteristic of some.* True or False​</h2><br />
+                        <p><strong>Answer:</strong></p><p></p><p>pa sagot nito oum </p><p>only genius pwede sumagot ?</p><p><strong>Explanation:</strong></p><p>i</p><p>Answer:</p><p>1. True</p><p>2. True</p><p>3. True</p><p>4. False</p><p>5. True</p><p>6. True</p><p>7. True</p><p>8. True</p><p>9. True</p><p></p><p></p><br />
+                                            <h2 class="ez-toc-section" id="science-9-quarter-2-module-1-written-work-1-direction-write-true-if-the-statement-is-correct-and-false-if-the-statement-is-wrong-1-bohrs-atomic-model-describes-the-atom-like-a-solar-system-2-an-e">
+                            24. SCIENCE 9 QUARTER 2 MODULE 1 (WRITTEN WORK 1) DIRECTION: Write TRUE if the statement is correct and FALSE if the statement is wrong. 1.Bohr's atomic model describes the atom like a solar system.2.An electron can jump to a higher energy level by gaining energy and return to a lower energy level by releasing energy in the form of light. 3. Schrodinger formulated a mathematical equation that describes the behaviour of the electron. 4. The quantum mechanical model of the atom describes the atom as having a nucleus at the center around which the electrons move. 5. The distribution of electrons in the different atomic orbitals is called electron configuration. 6. Atomic orbital serves as the "house" of the electron. 7. The further the energy level from the nucleus, the higher the energy. 8. Atoms are made up subatomic particles namely protons, neutrons, and electrons. 9. An atom with 32 electrons has 4 energy levels. 10. Every sublevel has fixed number of atomic orbitals. 11. This atomic orbital is the place where protons are most probably found. 12. The way in which electrons are distributed in the different orbitals around the nucleus is called the atomic orbitals. 13. An example of electron configuration is 1s22s22p for hydrogen atom.​</h2><br />
+                        <p><strong>Answer:</strong></p><p>SalamatSalamatSalamatSalamatSalamatSalamatSalamatSalamatSalamatSalamatSalamatSalamatSalamatSalamatSalamatSalamatSalamat</p><br />
+                                            <h2 class="ez-toc-section" id="activity-3-matching-type-directions-match-item-on-column-a-with-column-b-draw-a-line-to-connect-them-a-1-it-is-a-software-designed-to-help-analyze-configure-optimize-computer-or-maintain-b-a">
+                            25. ACTIVITY 3- MATCHING TYPE Directions: Match item on Column A with Column B. Draw a line to connect them. A 1. It is a software designed to help analyze, configure, optimize, computer. or maintain B (A. IP Address )2. It acts like the connective tissue between applications, data, and users. (B. Middleware) 3. Examples are keyboard, printers,scanners, digital cameras, and external storage devices. (C.Utility Software)4. It is known as the logical address, the IP address of the system across the network. (D. Device Drivers )5. The set of rules or algorithms which define the way entities can communicate across the network and there exists different protocols defined at each layer of the OSI model. (E. Protocol)​</h2><br />
+                        <p><strong>Answer:</strong></p>CBDAE<p><strong>Explanation:</strong></p><p>sana makatulong po☺️</p><br />
+                                            <h2 class="ez-toc-section" id="direction-multiple-choices-read-and-understand-sentences-carefully-and-choosethe-letter-of-the-best-answer-1-it-is-a-multidisciplinary-practice-dealing-with-all-aspects-of-health-and-safety-in-thew">
+                            26. Direction: Multiple Choices. Read and understand sentences carefully and choosethe letter of the best answer.1. It is a multidisciplinary practice dealing with all aspects of health and safety in theworkplace, with a strong focus on preventing workplace hazards.B. Occupational Health and SafetyA. Accident Prevention Signs and SymbolsD. Standard Operating ProcedureC. Personal Protective Equipment2. What OHS standard is required and reinforced in civil law and/or criminal law?B. LegalA. EconomicD. SafetyC. Moral3. These standards are designed to ensure the safety of products, activities orprocesses and others.A. Economic standardsB. Health standardsC. Legal standardsD. safety standards4. It is an established measure; an accurate type; an authoritative model as an example orcomparisonA. AidB. MensurationC. StandardsD. Workplace5. It refers to doing things spontaneously without being told or ordered.A. Self-controlB. Self - disciplineC. Self - madeD. Self - study6. The sure way to keep a safe workplace preventing accidents and injuries savespace, time and materials isA. Accident preventionB. Good housekeepingC. Standard procedureD. Workplace hazards7. It is a graduated measurement to allow production of a drawing to any size desired.A. Meter stickB. RulerC. ScaleD. Zigzag rule8. It is the placing of sizes and related information on a drawing.A. CalculatingB. DimensioningC. MeasuringD. Scaling9. It is a system of measurement based on the meter.A. English systemB. Graduated systemC. Metric systemD. Working system10. It is the act of measuring.A. CalculationB. DimensionC. GraduationD. Mensuration​</h2><br />
+                        <p><strong>Answer:</strong></p><p>1. a</p><p>2. d</p><p>3. c</p><p>4. b</p><p>6.a</p><p>5.a</p><p>7.d</p><p>8.c</p><p>9.b</p><p>10a</p><br />
+                                            <h2 class="ez-toc-section" id="validating-the-facts-and-writing-comprehensively-you-may-use-theorganizing-information-from-the-secondary-sourceslocation-you-can-organize-information-by-showing-visual-depiction-ofyou-may-use-diagr">
+                            27. validating the facts, and writing comprehensively You may use theorganizing information from the secondary sources:Location-you can organize information by showing visual depiction ofYou may use diagrams, analogues, graphic representationsorganize location. For example Paris of the nervous systempresented using a diagram.Alphabet-some information is easy to organize using specific terrns inlike in dictionaries and index at the back of o textoook)Time-another important factor in organizing information is the time ehumanity or events happened in a person's life journey. Youngtimeline, steps and cycle graphic organizers.Category-the use of category in presenting information is differentused to group similar characteristics such as color sizematerials, gender, age, model price, content and notof vehicles that may be written and presented accordname, model and price.Hierarchy-hierarchies are used to indicate the ranks as to heavibiggest. For example: Rank of population in Lucenaone piece of information is connected to another boyou like to emphasize in your written and oral reporAnswer the following questions:1. What are the secondary sources of information2. What different ideas can you use in organizing information3. How are these ideas helpful in organizing information?​</h2><br />
+                        <p>repor</p><p>Answer the following questions:</p><p>1. What are the secondary sources of information</p><p>2. What different ideas can you use in organizing information</p><p>3. How are these ideas helpful in organizing information</p><br />
+                                            <h2 class="ez-toc-section" id="pretestdirection-multiple-choices-read-and-understand-sentences-carefully-and-choosethe-letter-of-the-best-answer-ja1-21-it-is-a-multidisciplinary-practice-dealing-with-all-aspects-of-health-and-sa">
+                            28. PRETESTDirection: Multiple Choices. Read and understand sentences carefully and choosethe letter of the best answer.Ja1.21. It is a multidisciplinary practice dealing with all aspects of health and safety in theworkplace, with a strong focus on preventing workplace hazards.A. Accident Prevention Signs and Symbols B. Occupational Health and SafetyC. Personal Protective EquipmentD. Standard Operating Procedure2. What OHS standard is required and reinforced in civil law and/or criminal law?A. EconomicB. LegalC. MoralD. Safety3. These standards are designed to ensure the safety of products, activities orprocesses and others.A. Economic standardsB. Health standardsC. Legal standardsD. safety standards4. It is an established measure; an accurate type; an authoritative model as an example acomparisonA. AidB. MensurationC. StandardsD. Workplace5. It refers to doing things spontaneously without being told or ordered.A. Self-controlB. Self-disciplineC. Self-madeD. Self - study6. The sure way to keep a safe workplace preventing accidents and injuries savespace, time and materials isA. Accident preventionB. Good housekeepingC. Standard procedureD. Workplace hazards7. It is a graduated measurement to allow production of a drawing to any size desired.A. Meter stickB. RulerC. ScaleD. Zigzag rule8. It is the placing of sizes and related information on a drawing.A. CalculatingB. DimensioningC. MeasuringD. Scaling9. It is a system of measurement based on the meter.A. English systemB. Graduated systemC. Metric systemD. Working system10. It is the act of measuring.A. CalculationB. DimensionC. GraduationD. Mensuration​</h2><br />
+                        <p><strong>Answer:</strong></p><p>1. C</p><p>2.A</p><p>3.D</p><p>4.B</p><p>5.B</p><p>6.D</p><p>7.A</p><p>8.C</p><p>9.A</p><p><strong>Explanation:</strong></p><p>Not sure</p><br />
+                                            <h2 class="ez-toc-section" id="women-are-expected-to-be-thin-while-men-are-expected-to-be-tall-and-muscular-this-scenario-is-an-example-of-gender-discrimination-2-points-true-false-seeing-a-guy-with-a-hijab-is-a-terrorist-this">
+                            29. Women are expected to be thin while men are expected to be tall and muscular. This scenario is an example of gender discrimination.* 2 points True False Seeing a guy with a hijab is a terrorist. This scenario is an example of religious stereotype.* 2 points True False Media influence results in a change of beliefs or reinforcement in an audience or individual.* 2 points True False Hypodermic needle model is a model of communication which concern in a matter or conflict opinion or a point of view.* 2 points True False Racial stereotype involves part of the system of beliefs about the typical characteristics of members of a giving ethnic group, their status, societal and cultural norms.* 2 points True False Politics regulates the media industry.* 2 points True False Five common stereotypes are culture, social, racism, gender, and religious stereotypes.* 2 points True False Media controversy is a beliefs that various traits or acts results in either a change of reinforcement in audience or individual beliefs.* 2 points True False Stereotyping is define as the process of labeling an entire group of people according to the characteristic of some.* 2 points True False ​</h2><br />
+                        <p><strong>Explanation:</strong></p><p></p><p>pa sagot nito oum </p><p>only genius pwede sumagot ?</p><p></p><br />
+                                            <h2 class="ez-toc-section" id="word-problems-commonly-include-mathematical-modelling-questions-where-data-and-information-about-a-certain-system-is-given-and-a-student-is-required-to-develop-a-model-for-example-jane-had-5-00-t">
+                            30. Word problems commonly include mathematical modelling questions, where data and information about a certain system is given and a student is required to develop a model. For example: Jane had $5.00, then spent $2.00. How much does she have now? ​</h2><br />
+                        <p><strong>Answer:</strong></p><p>7260 ang sagot</p><p><strong>Step-by-step explanation:</strong></p><p>#STUDYHARD PO</p><br />
+                    
+                </div>
+                <div class="youtubeVideo" style="text-align: center">
+                    <h3>Video Terkait</h3>
+                    <iframe width="560" height="315"
+                        src="https://www.youtube.com/embed/UNclCQxgOdI?controls=0" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"allowfullscreen></iframe>
+                </div>
+                <footer class="entry-meta" aria-label="Meta postingan">
+                    <span class="cat-links"><span class="gp-icon icon-categories"><svg viewBox="0 0 512 512"
+                                aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em">
+                                <path
+                                    d="M0 112c0-26.51 21.49-48 48-48h110.014a48 48 0 0143.592 27.907l12.349 26.791A16 16 0 00228.486 128H464c26.51 0 48 21.49 48 48v224c0 26.51-21.49 48-48 48H48c-26.51 0-48-21.49-48-48V112z">
+                                </path>
+                            </svg></span><span class="screen-reader-text">Kategori </span>computer_science</span>
+            </div>
+        </article>
+    </main>
+            </div>
+            <div class="widget-area sidebar is-right-sidebar" id="right-sidebar">
+                <div class="inside-right-sidebar">
+                    <aside id="categories-2" class="widget inner-padding widget_categories">
+                        <h2 class="widget-title">Topik</h2>
+                        <ul>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://phsmarter.github.io/the-role-of-youth-in-nation-building-essay.html">The Role Of Youth In Nation Building Essay</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://phsmarter.github.io/robin-hood-case-analysis.html">Robin Hood Case Analysis</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://phsmarter.github.io/what-is-the-function-of-the-music.html">What Is The Function Of The Music</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://phsmarter.github.io/julia-alvarez-poems.html">Julia Alvarez Poems</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://phsmarter.github.io/core-values-arellano-university.html">Core Values Arellano University</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://phsmarter.github.io/what-you-can-do-for-your-country.html">What You Can Do For Your Country</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://phsmarter.github.io/introduce-yourself-in-100-words-sample.html">Introduce Yourself In 100 Words Sample</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://phsmarter.github.io/importance-of-housekeeping-in-hotel.html">Importance Of Housekeeping In Hotel</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://phsmarter.github.io/importance-of-music-in-our-life.html">Importance Of Music In Our Life</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://phsmarter.github.io/icecream-essay.html">Icecream Essay</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://phsmarter.github.io/school-accomplishment-report-sample.html">School Accomplishment Report Sample</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://phsmarter.github.io/first-essay-of-rizal.html">First Essay Of Rizal</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://phsmarter.github.io/essay-about-new-year-s-resolution.html">Essay About New Year s Resolution</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://phsmarter.github.io/neurotic-search-for-glory.html">Neurotic Search For Glory</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://phsmarter.github.io/starbucks-target-market.html">Starbucks Target Market</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://phsmarter.github.io/freedom-of-speech-issues-in-the-philippines.html">Freedom Of Speech Issues In The Philippines</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://phsmarter.github.io/samemarriage-tagalog-essay.html">SameMarriage Tagalog Essay</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://phsmarter.github.io/education-for-free.html">Education For Free</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://phsmarter.github.io/new-year-s-resolution-100-words.html">New Year s Resolution 100 Words</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://phsmarter.github.io/vygotsky-s-sociocultural-theory-reflection.html">Vygotsky s Sociocultural Theory Reflection</a>
+                                </li>
+                                                    </ul>
+
+                    </aside>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="site-footer">
+        <footer class="site-info" aria-label="Situs" itemtype="https://schema.org/WPFooter" itemscope>
+            <div class="inside-site-info grid-container">
+                <div class="copyright-bar">
+                    <span class="copyright">&copy; 2023 <a href="https://phsmarter.github.io"
+                            itemprop="url">QnA</a></span>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <a title="Gulirkan kembali ke puncak laman" aria-label="Gulirkan kembali ke puncak laman" rel="nofollow"
+        href="#" class="generate-back-to-top" data-scroll-speed="400" data-start-scroll="300">
+        <span class="gp-icon icon-arrow-up"><svg viewBox="0 0 330 512" aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill-rule="evenodd"
+                clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414">
+                <path
+                    d="M305.863 314.916c0 2.266-1.133 4.815-2.832 6.514l-14.157 14.163c-1.699 1.7-3.964 2.832-6.513 2.832-2.265 0-4.813-1.133-6.512-2.832L164.572 224.276 53.295 335.593c-1.699 1.7-4.247 2.832-6.512 2.832-2.265 0-4.814-1.133-6.513-2.832L26.113 321.43c-1.699-1.7-2.831-4.248-2.831-6.514s1.132-4.816 2.831-6.515L158.06 176.408c1.699-1.7 4.247-2.833 6.512-2.833 2.265 0 4.814 1.133 6.513 2.833L303.03 308.4c1.7 1.7 2.832 4.249 2.832 6.515z"
+                    fill-rule="nonzero" />
+            </svg></span>
+    </a>
+    <script id="generate-a11y">
+        ! function() {
+            "use strict";
+            if ("querySelector" in document && "addEventListener" in window) {
+                var e = document.body;
+                e.addEventListener("mousedown", function() {
+                    e.classList.add("using-mouse")
+                }), e.addEventListener("keydown", function() {
+                    e.classList.remove("using-mouse")
+                })
+            }
+        }();
+    </script>
+    <!--[if lte IE 11]>
+<script src='https://phsmarter.github.io/js/classList.min.js' ?ver=3.2.4' id='generate-classlist-js'></script>
+<![endif]-->
+    <script id='generate-menu-js-extra'>
+        var generatepressMenu = {
+            "toggleOpenedSubMenus": "1",
+            "openSubMenuLabel": "Buka Submenu",
+            "closeSubMenuLabel": "Tutup submenu"
+        };
+    </script>
+    <script src='https://phsmarter.github.io/js/menu.min.js' ?ver=3.2.4' id='generate-menu-js'></script>
+    <script id='generate-navigation-search-js-extra'>
+        var generatepressNavSearch = {
+            "open": "Buka Kolom Pencarian",
+            "close": "Tutup Kolom Pencarian"
+        };
+    </script>
+    <script src='https://phsmarter.github.io/js/navigation-search.min.js' ?ver=3.2.4' id='generate-navigation-search-js'></script>
+    <script id='generate-back-to-top-js-extra'>
+        var generatepressBackToTop = {
+            "smooth": "1"
+        };
+    </script>
+    <script src='https://phsmarter.github.io/js/back-to-top.min.js' ?ver=3.2.4' id='generate-back-to-top-js'></script>
+    <script type='text/javascript' src='//jd3j7g5z1fqs.com/96/78/7a/96787a1945876b1a9c10f79941441964.js'></script>
+  <!-- Histats.com  START  (aync)-->
+<script type="text/javascript">var _Hasync= _Hasync|| [];
+_Hasync.push(['Histats.start', '1,4739059,4,0,0,0,00010000']);
+_Hasync.push(['Histats.fasi', '1']);
+_Hasync.push(['Histats.track_hits', '']);
+(function() {
+var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async = true;
+hs.src = ('//s10.histats.com/js15_as.js');
+(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
+})();</script>
+<noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?4739059&101" alt="" border="0"></a></noscript>
+<!-- Histats.com  END  -->
+</body>
+
+</html>
